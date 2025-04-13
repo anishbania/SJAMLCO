@@ -1,0 +1,206 @@
+﻿@using Insurance.Utilities
+@model Insurance.ViewModels.AllCommonViewModel.SiteSettingViewModel
+@inject IUtility Utility
+
+@{
+    ViewData["Title"] = "कार्यालय सेटअप";
+}
+<div class="xs-pd-20-10">
+    <div class="min-height-200px">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="CreateSiteSetting" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="pd-20 p-5 bg-white  border-radius-4 box-shadow mb-30">
+                        <div class="form-container">
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <input asp-for="Id" class="form-control" type="hidden" />
+                                    <label asp-for="Name"></label>
+                                    <input class="form-control" asp-for="Name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Slogan"></label>
+                                    <input class="form-control" asp-for="Slogan" />
+                                    <span asp-validation-for="Slogan" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="State" class="control-label"></label>
+                                    <select asp-for="State" class="form-control" asp-items="@await Utility.GetStateSelectListItems() as SelectList">
+                                        <option value="">--Please select--</option>
+                                    </select>
+                                    <span asp-validation-for="State" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="District" class="control-label"></label>
+                                    <select asp-for="District" class="form-control" asp-items="@await Utility.GetDistrictSelectListItems() as SelectList">
+                                        <option value="">--Please select--</option>
+                                    </select>
+                                    <span asp-validation-for="District" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Palika" class="control-label"></label>
+                                    <select asp-for="Palika" class="form-control" asp-items="@await Utility.GetPalikaSelectListItems() as SelectList">
+                                        <option value="">--Please select--</option>
+                                    </select>
+                                    <span asp-validation-for="Palika" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Ward" class="conrol-label"></label>
+                                    <input asp-for="Ward" class="form-control" />
+                                    <span asp-validation-for="Ward" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Email"></label>
+                                    <input class="form-control" asp-for="Email" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="ContactName"></label>
+                                    <input class="form-control" asp-for="ContactName" />
+                                    <span asp-validation-for="ContactName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="ContactNumber"></label>
+                                    <input class="form-control" asp-for="ContactNumber" />
+                                    <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="MobileNumber"></label>
+                                    <input class="form-control" asp-for="MobileNumber" />
+                                    <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="FaxNo"></label>
+                                    <input class="form-control" asp-for="FaxNo" />
+                                    <span asp-validation-for="FaxNo" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Website"></label>
+                                    <input class="form-control" asp-for="Website" />
+                                    <span asp-validation-for="Website" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Address"></label>
+                                    <input class="form-control" asp-for="Address" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Address2"></label>
+                                    <input class="form-control" asp-for="Address2" />
+                                    <span asp-validation-for="Address2" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="ProfileImage"></label>
+                                    <input asp-for="ProfileImage" class=" form-control" accept="image/png, image/gif, image/jpeg">
+                                    <span asp-validation-for="ProfileImage" class="text-danger"></span>
+                                    @if (Model.LogoPath != null)
+                                    {
+                                        <img src="@Model.LogoPath" alt="" height="100" width="100" />
+                                        <button data-src="@Model.LogoPath" data-id="@Model.Id" class="btn btn-danger" onclick="removeMe(event,this)">Delete</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <a class="btn btn-warning" asp-action="SiteSetting">पछाडी फर्कनुहोस्</a>
+                        <input type="submit" value="सुरक्षित गर्नुहोस्" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('#State').change(function () {
+            $.ajax({
+                url: '@Url.Action("GetDistrictByStateId", "Ajax", new { area = "" })',
+                type: 'GET',
+                data: { id: $(this).val() },
+                success: function (data) {
+                    $('#District').empty().append("<option value=''>-Please Select District-</option>");
+                    $.each(data, function (index, item) {
+                        $('#District').append(`<option value="${item.value}">${item.text}</option>`);
+                    });
+                    $('#Palika').empty().append("<option value=''>-Please Select Palika-</option>");
+                },
+                error: function () {
+                    alert('error in calling ajax !!');
+                }
+            });
+        });
+        $('#District').change(function () {
+            $.ajax({
+                url: '@Url.Action("GetPalikaByDistId", "Ajax", new { area = "" })',
+                type: 'GET',
+                data: { id: $(this).val() },
+                success: function (data) {
+                    $('#Palika').empty().append("<option value=''>-Please Select Palika-</option>");
+                    $.each(data, function (index, item) {
+                        $('#Palika').append(`<option value="${item.value}">${item.text}</option>`);
+                    });
+                },
+                error: function () {
+                    alert('error in calling ajax !!');
+                }
+            });
+        });
+    </script>
+    <script>
+        function removeMe(event, element) {
+            event.preventDefault();
+            var formData = element.dataset.src;
+            var ID = element.dataset.id;
+            debugger;
+            $.confirm({
+                title: 'Confirm!',
+                content: 'Are you sure you want to delete this picture !',
+                buttons: {
+                    Approve: {
+                        text: 'Delete',
+                        btnClass: 'btn btn-danger',
+                        keys: ['enter', 'shift'],
+                        action: function () {
+                            $.ajax({
+                                url: '@Url.Action("DeleteSiteSettingLogo", "Common")',
+                                type: "post",
+                                dataType: "json",
+                                data: { source: formData, id: ID },
+                                success: function (result) {
+                                    debugger;
+                                    /*   $(a).closest('span').remove();*/
+                                    window.location.reload(true);
+                                }
+                            });
+                            $.done(function (response) {
+                                // debugger;
+                                element.remove();
+                            });
+
+                        }
+                    },
+                    cancel: function () {
+                    }
+                }
+            });
+        }
+
+        // debugger;
+
+    </script>
+}

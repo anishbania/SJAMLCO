@@ -1,0 +1,95 @@
+﻿@using Insurance.Models
+@using Insurance.Utilities
+@inject IUtility _utility;
+@{
+    Layout = "/Views/Shared/_SideBar.cshtml";
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-info elevation-1 pt-2"><i class="fas fa-users"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Total Insurance</span>
+                <span class="info-box-number">
+                    @ViewBag.TotalSahakari
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-danger elevation-1 pt-2"><i class="fas fa-user"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Users </span>
+                <span class="info-box-number">@ViewBag.Person</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <!-- fix for small devices only -->
+    @* <div class="clearfix hidden-md-up"></div> *@
+
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-success elevation-1 pt-2">
+                <i class="fa fa-list-ol" aria-hidden="true"></i>
+            </span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Black Listed</span>
+                <span class="info-box-number">@ViewBag.KaloSuchi</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1 pt-2">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Notices</span>
+                <span class="info-box-number">@ViewBag.Suchana</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+
+    <div class="col-md-12 col-xl-4 mt-2">
+        <div class="card bg-white text-dark">
+            <div class="card-body">
+                <div class="">
+                    <p class="text-dark text-center mb-0">Policy Types</p>
+                </div>
+                <div id="dataPieChart" data-colors='["--bs-warning","--bs-primary", "--bs-danger", "--bs-success"]'>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-xl-8 mt-2">
+        <div class="card bg-white text-dark">
+            <div class="card-body">
+                <div class="">
+                    <p class="text-dark text-center mb-0">Invalid Transactions</p>
+                </div>
+                <div id="dataBarChart">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

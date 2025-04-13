@@ -1,0 +1,95 @@
+﻿@using Insurance.Utilities
+@using Insurance.ViewModels
+@model IEnumerable<NotificationModel>
+@inject IUtility _utility;
+
+@{
+    ViewData["Title"] = "पुस्टि नभएको सुचनाहरु";
+    int i = 1;
+}
+
+<style>
+    /* Styles for truncated text */
+    .truncated {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+    }
+
+    /* Styles for expanded text */
+    .expanded {
+        display: block;
+    }
+
+</style>
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">@ViewData["Title"]</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+
+        <div class="table-responsive">
+            <table id="exampleNotification" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>क्र.स.</th>
+                        <th>
+                            सूचना
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="width:5%;">
+                                @i
+                            </td>
+                            <td style="width:85%;">
+                                <div class="message-container">
+                                    <div class="truncated" onclick="toggleMessage(this)">
+                                        @item.Message
+                                    </div>
+                                    <div class="expanded" style="display: none;"> 
+                                        @item.Message
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width:10%">
+                                <a class="text-primary" asp-action="Create" asp-controller="@item.Type" asp-area="FinanceSys" asp-route-id="@item.PrimaryId"><i class="dw dw-edit2"></i> बदल्नुस</a>
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMessage(element) {
+        const messageContainer = element.parentElement;
+        const truncated = messageContainer.querySelector('.truncated');
+        const expanded = messageContainer.querySelector('.expanded');
+
+        if (truncated.style.display === 'none') {
+            // Switch to truncated view
+            truncated.style.display = '-webkit-box';
+            expanded.style.display = 'none';
+        } else {
+            // Switch to expanded view
+            truncated.style.display = 'none';
+            expanded.style.display = 'block';
+        }
+    }
+
+    new DataTable('#exampleNotification');
+
+</script>

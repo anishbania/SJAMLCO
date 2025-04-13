@@ -1,0 +1,35 @@
+﻿@model LogisticItemViewModel
+@inject IUtility _utility
+@using HtmlHelpers.BeginCollectionItemCore
+
+
+<tr class="newRow">
+    @using (Html.BeginCollectionItem("Items"))
+    {       
+        <td>
+            <input asp-for="ID" type="hidden" />
+            <select asp-for="CategoryID" class="form-control" asp-items="@await _utility.GetLogisticCategorySelectListItems() as SelectList">
+                <option value="" selected disabled>--Please Select--</option>
+            </select>
+            <span asp-validation-for="CategoryID" class="text-danger"></span>
+        </td>
+        <td>
+            <input asp-for="ItemName" class="form-control" style="width:auto" />
+            <span asp-validation-for="ItemName" class="text-danger"></span>
+        </td>
+       <td>
+            <input asp-for="UnitType" class="form-control" style="width:auto" />
+            <span asp-validation-for="UnitType" class="text-danger"></span>
+        </td>
+       <td>
+            <input asp-for="Qty" class="form-control" style="width:auto" />
+            <span asp-validation-for="Qty" class="text-danger"></span>
+        </td>
+        <td>
+            <button onclick="DeleteRow(this)" class="btn btn-outline-danger" type="button">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </button>
+        </td>
+    }
+</tr>
+

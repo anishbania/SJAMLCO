@@ -1,0 +1,82 @@
+﻿@using Insurance.ViewModels
+@model FiscalYearViewModel
+
+@{
+    ViewData["Title"] = "आर्थिक बर्ष";
+}
+
+<div class="xs-pd-20-10">
+    <div class="min-height-200px">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Create" enctype="multipart/form-data">
+                    <input asp-for="Id" class="form-control" type="hidden" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="pd-20 px-5 py-2 bg-white  border-radius-4 box-shadow">
+                        <div class="form-container">
+                            <div class="title">
+                                <h4>१. आर्थिक वर्ष विवरण</h4>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Name" class="form-label"></label>
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="LocalName" class="form-label"></label>
+                                    <input asp-for="LocalName" class="form-control" />
+                                    <span asp-validation-for="LocalName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="BsStartDate" class="form-label"></label>
+                                    <input asp-for="BsStartDate" id="miti" class="form-control Nepalidate-picker" />
+                                    <span asp-validation-for="BsEndDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="BsEndDate" class="form-label"></label>
+                                    <input asp-for="BsEndDate" class="form-control Nepalidate-picker" />
+                                    <span asp-validation-for="BsEndDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="PreviousFyId" class="form-label"></label>
+                                    <select class="form-control" asp-for="PreviousFyId" asp-items="@ViewBag.FiscalYears">
+                                        <option value="">--Please Select Fiscal Year--</option>
+                                    </select>
+                                    <span asp-validation-for="PreviousFyId" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="form-label" asp-for="IsActive"></label><br />
+                                    <span>चालु गर्नुहोस &nbsp;</span> <input type="checkbox" asp-for="IsActive" class="from-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <a class="btn btn-warning" asp-action="IndexFiscalYear">पछाडी फर्कनुहोस्</a>
+                        <input type="submit" value="सुरक्षित गर्नुहोस्" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        var date = document.getElementsByClassName("Nepalidate-picker");
+        date.nepaliDatePicker({
+            ndpYear: true,
+            ndpMonth: true,
+            readOnlyInput: true,
+            // unicodeDate: true
+        });
+    </script>
+    <script>
+        NepaliDatePickerCal(document.getElementById("miti"));
+    </script>
+}

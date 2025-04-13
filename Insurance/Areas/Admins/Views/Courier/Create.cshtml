@@ -1,0 +1,119 @@
+﻿@model LogisticDispatchViewModel
+@inject IUtility _utility;
+@{
+    ViewData["Title"] = "Dispatch Items";
+}
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="Id" type="hidden" />
+                <input name="returnUrl" value="@ViewBag.BackUrl" class="form-control" hidden />
+                <div class="card p-4 mb-2">
+                    <h4>1.Logistics Details</h4>
+                    <hr />
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label asp-for="BranchCode" class="form-label"></label>
+                            <select asp-for="BranchCode" class="form-control" asp-items="@await _utility.GetBranchSelectListItems() as SelectList">
+                                <option value="" selected disabled>--Please Select--</option>
+                            </select>
+                            <span asp-validation-for="BranchCode" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="VendorID" class="form-label"></label>
+                            <select asp-for="VendorID" class="form-control" asp-items="@await _utility.GetCourierVendorSelectListItems() as SelectList">
+                                <option value="" selected disabled>--Please Select--</option>
+                            </select>
+                            <span asp-validation-for="Vendor.Id" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="RefNumber" class="form-label"></label>
+                            <input asp-for="RefNumber" class="form-control" />
+                            <span asp-validation-for="RefNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <h4>2.Item Details</h4>
+                    <br />
+                    <div class="form-row">
+                        <div class="table-responsive">
+                            <table id="multiMembertable" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Item Name</th>
+                                        <th>Unit Type</th>
+                                        <th>Quantity</th>
+                                        <th>
+                                            <button class="btn btn-warning mt-1" id="addNewItem" type="button" onclick="addNewItems()"> + Add</button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="newItemList">
+                                    @if (Model.Items.Count > 0)
+                                    {
+                                        foreach (var item in Model.Items)
+                                        {
+                                            <partial name="~/Areas/Admins/Views/Courier/_AddItems.cshtml" model="@item" />
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <partial name="~/Areas/Admins/Views/Courier/_AddItems.cshtml" model="new LogisticItemViewModel()" />
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="Remarks" class="form-label"></label>
+                            <textarea asp-for="Remarks" class="form-control"></textarea>
+                            <span asp-validation-for="Remarks" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                    @* <div>
+                        <!-- Insert the partial view for the supporting file upload -->
+                        <partial name="_SupportingFile"/>
+                    </div> *@
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="SupportingFilePath" class="form-label"></label>
+                            <input asp-for="SupportingFile" multiple="multiple" accept="image/png, image/gif, image/jpeg, application/pdf" class="form-control" />
+                            @if (!string.IsNullOrEmpty(Model.SupportingFilePath))
+                            {
+                                <a href="@Model.SupportingFilePath" target="_blank">Preview</a>
+                            }
+                            <span asp-validation-for="SupportingFile" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="d-flex justify-content-between mt-4">
+                        <a class="btn btn-warning" asp-action="@ViewBag.BackUrl">Back</a>
+                        <input type="submit" value="Send" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        function DeleteRow(e) {
+                var confirmValue = confirm("Are you sure to delete ?");
+                if (confirmValue) {
+                    $(e).closest('tr').remove();
+                }
+            }
+        function addNewItems() {
+            $.get("@Url.Action("AddNewCourierItem", "Courier", new { area = "Admins" })", function (data) {
+                $("#newItemList").append(data);
+            });
+        }
+    </script>
+    }

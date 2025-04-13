@@ -1,0 +1,75 @@
+﻿@using Insurance.Utilities
+@inject IUtility _utility;
+
+@{
+    Layout = "/Views/Shared/_SideBar.cshtml";
+    ViewData["Title"] =" Dashboard";
+}
+<style>
+    .card.bg-white {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        color: #000;
+    }
+
+    .nav-tabs .nav-link {
+        font-weight: bold;
+        color: #555;
+    }
+
+        .nav-tabs .nav-link.active {
+            background-color: #0d6efd;
+            color: #fff;
+            border: none;
+        }
+
+</style>
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-info elevation-1 pt-2">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Share</span>
+                <span class="info-box-number">
+                    @ViewBag.TotalShare
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-danger elevation-1 pt-2"><i class="fas fa-thumbs-up"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Branch Info</span>
+                <span class="info-box-number">@ViewBag.Bachat</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-success elevation-1 pt-2"><i class="fas fa-shopping-cart"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Policy</span>
+                <span class="info-box-number">@ViewBag.Rin</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1 pt-2">
+                <i class="fa fa-usd" aria-hidden="true"></i>
+            </span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">Total Dispatches</span>
+                <span class="info-box-number">@ViewBag.Kulsampati</span>
+            </div>
+        </div>
+    </div>
+</div>

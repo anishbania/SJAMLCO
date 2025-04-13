@@ -1,0 +1,30 @@
+﻿@using Insurance.Areas.Admins.ViewModels
+@model PrayogKartaViewModel
+
+
+@{
+    ViewData["Title"] = "Delete User";
+}
+
+<form asp-action="DeleteConfirm" enctype="multipart/form-data">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title text-danger fw-bolder">Remove User</h5>
+            <p class="card-text">
+                <hr />
+                Are you sure? <br />
+                Do you want to Delete <br />
+                <span class="text-danger fw-bolder">@Model.FullName</span>
+            </p>
+            <a asp-action="Index" class="btn btn-warning">Back</a>
+            <input type="submit" value="Delete User" class="btn btn-danger mt-1 " />
+        </div>
+    </div>
+
+</form>
+
+
+@* @Model.FullName
+
+<span><a asp-action="DeleteConfirm" asp-route-id="@Model.Id" title="Delete">Delete</a> </span> *@

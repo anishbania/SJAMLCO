@@ -1,0 +1,89 @@
+﻿@using Insurance.Areas.Admins.ViewModels
+@model PrayogKartaViewModel
+@inject IUtility _utility;
+
+@{
+    ViewData["Title"] = "User";
+}
+
+
+<div class="xs-pd-20-10">
+    <div class="min-height-200px">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Create" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="pd-20 px-5 py-2 bg-white  border-radius-4 box-shadow">
+                        <div class="form-container">
+                            <div class="title">
+                                <h4>1.User Details</h4>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Role" class="form-label"></label>
+                                    <select asp-for="Role" class="form-control">
+                                        <option value="Admin">Admin</option>
+                                        <option value="User" selected>User</option>
+                                    </select>
+                                    <span asp-validation-for="Role" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="FullName" class="form-label"></label>
+                                    <input asp-for="FullName" class="form-control" autocomplete="FullName" required="true" placeholder="XYZ ABC" />
+                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="PrayogkartaName" class="form-label"></label>
+                                    <input asp-for="PrayogkartaName" class="form-control" autocomplete="PrayogkartaName" required="true" placeholder="ABCDDEF" />
+                                    <span asp-validation-for="PrayogkartaName" class="text-danger"></span>
+                                </div> 
+                                <div class="form-group col-md-3">
+                                    <label asp-for="BranchId" class="form-label"></label>
+                                    <select asp-for="BranchId" class="form-control" asp-items="@await _utility.GetBranchSelectListItems() as SelectList">
+                                        <option value="" selected disabled>--Please Select--</option>
+                                    </select>
+                                    <span asp-validation-for="BranchId" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label asp-for="PhoneNumber" class="form-label"></label>
+                                    <input asp-for="PhoneNumber" class="form-control" autocomplete="phone" required="true" placeholder="9800000000" />
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pd-20 px-5 bg-white border-radius-4 box-shadow mb-30">
+                        <div class="form-container">
+                            <h4>2. Identification Details</h4>
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label asp-for="Email" class="form-label"></label>
+                                    <input asp-for="Email" class="form-control" autocomplete="username" required="true" placeholder="name@example.com" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                @if (Model == null)
+                                {
+                                    <div class="form-group col-md-3">
+                                        <label asp-for="Password" class="form-label"></label>
+                                        <input asp-for="Password" class="form-control" autocomplete="new-password" required="true" placeholder="password" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label asp-for="ConfirmPassword" class="form-label"></label>
+                                        <input asp-for="ConfirmPassword" class="form-control" autocomplete="new-password" required="true" placeholder="password" />
+                                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <a class="btn btn-warning" asp-action="Index">Back</a>
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
