@@ -216,6 +216,132 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\backimg.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\2d731cf2-c9eb-40cf-b225-1517c6700cf4.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Insurance</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Insurance</BasePath>
+      <RelativePath>images/CourierFile/2d731cf2-c9eb-40cf-b225-1517c6700cf4.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>woi4077p7x</Fingerprint>
+      <Integrity>oGOGK3C+i4NTWbQ+5ZumVJp+WUf45jNKOyhWBO4NLpU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\2d731cf2-c9eb-40cf-b225-1517c6700cf4.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\3528b261-db25-4523-986f-79d11abf4f1a.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Insurance</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Insurance</BasePath>
+      <RelativePath>images/CourierFile/3528b261-db25-4523-986f-79d11abf4f1a.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2lvspfvtr5</Fingerprint>
+      <Integrity>GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\3528b261-db25-4523-986f-79d11abf4f1a.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\477aae41-61aa-4d29-8180-7ba76827ff38.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Insurance</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Insurance</BasePath>
+      <RelativePath>images/CourierFile/477aae41-61aa-4d29-8180-7ba76827ff38.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2lvspfvtr5</Fingerprint>
+      <Integrity>GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\477aae41-61aa-4d29-8180-7ba76827ff38.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\51ffa909-e050-4bea-9541-ee8662cde165.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Insurance</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Insurance</BasePath>
+      <RelativePath>images/CourierFile/51ffa909-e050-4bea-9541-ee8662cde165.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2lvspfvtr5</Fingerprint>
+      <Integrity>GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\51ffa909-e050-4bea-9541-ee8662cde165.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\5f1eb3f9-1044-4552-ad08-dd1bbda5c86b.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Insurance</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Insurance</BasePath>
+      <RelativePath>images/CourierFile/5f1eb3f9-1044-4552-ad08-dd1bbda5c86b.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2lvspfvtr5</Fingerprint>
+      <Integrity>GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\5f1eb3f9-1044-4552-ad08-dd1bbda5c86b.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\669af464-e608-48e5-899e-120755ceeb70.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Insurance</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Insurance</BasePath>
+      <RelativePath>images/CourierFile/669af464-e608-48e5-899e-120755ceeb70.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2lvspfvtr5</Fingerprint>
+      <Integrity>GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\669af464-e608-48e5-899e-120755ceeb70.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\67689aa5-8a39-470b-8cc9-b9ec0139df7c.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Insurance</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Insurance</BasePath>
+      <RelativePath>images/CourierFile/67689aa5-8a39-470b-8cc9-b9ec0139df7c.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2lvspfvtr5</Fingerprint>
+      <Integrity>GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\67689aa5-8a39-470b-8cc9-b9ec0139df7c.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Insurance</SourceId>
@@ -233,6 +359,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\901e493d-b5c1-418a-b373-018299fca236.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Insurance</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Insurance</BasePath>
+      <RelativePath>images/CourierFile/901e493d-b5c1-418a-b373-018299fca236.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>woi4077p7x</Fingerprint>
+      <Integrity>oGOGK3C+i4NTWbQ+5ZumVJp+WUf45jNKOyhWBO4NLpU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\901e493d-b5c1-418a-b373-018299fca236.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\eb257990-92b0-4549-b3dc-f8e0ddae503e.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Insurance</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Insurance</BasePath>
+      <RelativePath>images/CourierFile/eb257990-92b0-4549-b3dc-f8e0ddae503e.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2lvspfvtr5</Fingerprint>
+      <Integrity>GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\CourierFile\eb257990-92b0-4549-b3dc-f8e0ddae503e.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\frontImg.jpg'))">
       <SourceType>Package</SourceType>

@@ -1,11 +1,13 @@
 ﻿using Insurance.Areas.Admins.Interface;
 using Insurance.Areas.Admins.ViewModels;
 using Insurance.Services;
+using Insurance.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Insurance.Areas.Admins.Controllers
 {
@@ -16,11 +18,13 @@ namespace Insurance.Areas.Admins.Controllers
         private readonly ILogger<CourierController> _logger;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ICourier _courier;
+        private readonly IUtility _utility;
         private readonly AppDbContext _context;
         private readonly string userId = null;
-        public CourierController(ICourier courier, ILogger<CourierController> logger, AppDbContext context, IHttpContextAccessor httpContextAccessor    )
+        public CourierController(ICourier courier, IUtility utility, ILogger<CourierController> logger, AppDbContext context, IHttpContextAccessor httpContextAccessor    )
         {
             _courier = courier;
+            _utility = utility;
             _context = context;
             _logger = logger;
             _httpContextAccessor = httpContextAccessor;
@@ -52,20 +56,31 @@ namespace Insurance.Areas.Admins.Controllers
         }
 
         [HttpPost]
-        public async Task<JsonResult> UpdateStatus(int id, string status)
+        public async Task<IActionResult> UpdateStatus(int id, string status)
         {
             var dispatch = await _context.LogisticDispatches.FirstOrDefaultAsync(d => d.Id == id);
             if (dispatch != null)
             {
-                dispatch.Status = status;
-                dispatch.ReceivedBy = userId;
-                dispatch.ReceivedDate = DateTime.Now;
+                if (!string.IsNullOrEmpty(status) && status.Trim().ToLower() == "received")
+                {
+                    dispatch.Status = status;
+                    dispatch.ReceivedBy = userId;
+                    dispatch.ReceivedDate = DateTime.Now;
 
+                    // Use the dispatch date if available; otherwise, the current date.
+                    DateTime refDate = dispatch.DispatchDate != DateTime.MinValue ? dispatch.DispatchDate : DateTime.Now;
+                    dispatch.DartaNo = await _utility.GenerateDartaNumber(refDate,dispatch.SequenceNumber);
+                }
+                dispatch.Status = status;
                 _context.Update(dispatch);
                 await _context.SaveChangesAsync();
-                return Json(new { success = true });
+                TempData["success"] = "Status Updated Successfully";
+                return Json(new { success = true, redirectUrl = Url.Action("Index") });
+
             }
-            return Json(new { success = false });
+            TempData["error"] = "Failed to update status";
+            return Json(new { success = false, message = "Dispatch not found." });
+
         }
 
         public async Task<IActionResult>FileUpload(int id)

@@ -42,9 +42,13 @@
                         {
                             <span class="badge badge-success">@item.Status</span>
                         }
-                        else 
+                        else if(item.Status=="RETURNED") 
                         {
-                            <span class="badge badge-secondary">@item.Status</span>
+                            <span class="badge badge-danger">@item.Status</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-info">@item.Status</span>
                         }
                     </td>
                     <td>

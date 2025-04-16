@@ -4,6 +4,7 @@ using Insurance.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Insurance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250416055303_courierupdated")]
+    partial class courierupdated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,12 +81,6 @@ namespace Insurance.Migrations
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
-                    b.Property<string>("ChalaniNo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DartaNo")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("DispatchDate")
                         .HasColumnType("datetime2");
 
@@ -104,6 +101,10 @@ namespace Insurance.Migrations
                     b.Property<DateTime?>("ReceivedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("RefNumber")
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
                     b.Property<string>("Remarks")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
@@ -111,9 +112,6 @@ namespace Insurance.Migrations
                     b.Property<string>("SendBy")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
-                    b.Property<int>("SequenceNumber")
-                        .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .HasMaxLength(15)

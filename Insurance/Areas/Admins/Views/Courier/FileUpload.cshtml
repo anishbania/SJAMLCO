@@ -1,14 +1,12 @@
 ﻿@model LogisticDispatchViewModel
 @{
     ViewData["Title"] = "File View";
-    // Split the comma-separated file paths, if any.
-    var filePaths = !string.IsNullOrEmpty(Model.SupportingFilePath)
-                        ? Model.SupportingFilePath.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                        : new string[] { };
+    var filePaths = !string.IsNullOrEmpty(Model.SupportingFilePath)? Model.SupportingFilePath.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries): new string[] { };
 }
 <div class="form-buttons">
-    <a class="btn btn-warning" asp-action="Details" asp-route-id="@Model.Id"><i class="fa fa-angle-left"></i> Back</a>
+    <a class="btn btn-warning" asp-controller="Courier" asp-action="Details" asp-route-id="@Model.Id"><i class="fa fa-angle-left"></i> Back</a>
 </div>
+<br />
 <div class="xs-pd-20-10">
     <div class="min-height-200px">
         <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">

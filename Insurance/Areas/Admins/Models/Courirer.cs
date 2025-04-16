@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -35,6 +36,7 @@ namespace Insurance.Areas.Admins.Models
     {
         [Key]
         public int Id { get; set; }
+        public int SequenceNumber { get; set; }
 
         [Required, StringLength(3)]
         public string? BranchCode { get; set; }
@@ -44,9 +46,12 @@ namespace Insurance.Areas.Admins.Models
 
         [Required]
         public int VendorID { get; set; }
+        public string ChalaniNo { get; set; }
+        public string DartaNo { get; set; }
 
         [StringLength(15)]
         public string? Status { get; set; }
+        public string? ModeOfCourier { get; set; }
 
         [StringLength(50)]
         public string? SendBy { get; set; }
@@ -58,9 +63,6 @@ namespace Insurance.Areas.Admins.Models
 
         [StringLength(500)]
         public string Remarks { get; set; }
-
-        [StringLength(40)]
-        public string RefNumber { get; set; }
 
         [StringLength(100)]
         public string? ModifiedBy { get; set; }
@@ -82,7 +84,7 @@ namespace Insurance.Areas.Admins.Models
         [StringLength(100)]
         public string? ItemName { get; set; }
 
-        public decimal? Qty { get; set; }
+        public int? Qty { get; set; }
 
         [StringLength(20)]
         public string? UnitType { get; set; }

@@ -10,6 +10,8 @@
             <form asp-action="Create" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input asp-for="Id" type="hidden" />
+                <input asp-for="DartaNo" class="form-control" hidden />
+                <input asp-for="ChalaniNo" class="form-control" hidden />
                 <input name="returnUrl" value="@ViewBag.BackUrl" class="form-control" hidden />
                 <div class="card p-4 mb-2">
                     <h4>1.Logistics Details</h4>
@@ -30,9 +32,13 @@
                             <span asp-validation-for="Vendor.Id" class="text-danger"></span>
                         </div>
                         <div class="form-group col-md-4">
-                            <label asp-for="RefNumber" class="form-label"></label>
-                            <input asp-for="RefNumber" class="form-control" />
-                            <span asp-validation-for="RefNumber" class="text-danger"></span>
+                            <label asp-for="ModeOfCourier" class="form-label"></label>
+                            <select asp-for="ModeOfCourier" class="form-control" required>
+                                <option value="">--Select--</option>
+                                <option value="By air">By air</option>
+                                <option value="By road">By road</option>
+                            </select>
+                            <span asp-validation-for="ModeOfCourier" class="text-danger"></span>
                         </div>
                     </div>
                     <br />
@@ -83,10 +89,7 @@
                             <input asp-for="SupportingFile" multiple="multiple" accept="image/png, image/gif, image/jpeg, application/pdf" class="form-control" />                            
                             <span asp-validation-for="SupportingFile" class="text-danger"></span>
                         </div>
-                    </div>
-                   @*  <div>
-                        <partial name="_SupportingFile" model="Model.CourierSupportingFile">
-                    </div> *@
+                    </div>                  
                     <br />
                     <div class="d-flex justify-content-between mt-4">
                         <a class="btn btn-warning" asp-action="@ViewBag.BackUrl">Back</a>

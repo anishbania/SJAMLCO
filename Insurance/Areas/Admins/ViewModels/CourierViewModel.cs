@@ -8,6 +8,9 @@ namespace Insurance.Areas.Admins.ViewModels
     public class LogisticDispatchViewModel
     {
         public int Id { get; set; }
+        public int SequenceNumber { get; set; }
+        public string ChalaniNo { get; set; }
+        public string DartaNo { get; set; }
         [DisplayName("Vendor Name")]
         public int VendorID { get; set; }
         [DisplayName("Branch Code")]
@@ -18,6 +21,8 @@ namespace Insurance.Areas.Admins.ViewModels
         public string? VendorName { get; set; }
         [DisplayName("Dispatch Date")]
         public DateTime DispatchDate { get; set; }
+        [DisplayName("Mode Of Courier")]
+        public string? ModeOfCourier { get; set; }
         public string? Status { get; set; }
         [DisplayName("Dispatched By")]
         public string? SendBy { get; set; }
@@ -26,8 +31,6 @@ namespace Insurance.Areas.Admins.ViewModels
         [DisplayName("Received Date")]
         public DateTime? ReceivedDate { get; set; }
         public string? Remarks { get; set; }
-        [DisplayName("Ref/Bill No")]
-        public string ?RefNumber { get; set; }
         public string? ModifiedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
         [DisplayName("Supporting File")]
@@ -58,7 +61,7 @@ namespace Insurance.Areas.Admins.ViewModels
         [DisplayName("Item Name")]
         public string? ItemName { get; set; }
         [DisplayName("Quantity")]
-        public decimal? Qty { get; set; }
+        public int? Qty { get; set; }
         [DisplayName("Unit Type")]
         public string ?UnitType { get; set; }
         public int CategoryID { get; set; }

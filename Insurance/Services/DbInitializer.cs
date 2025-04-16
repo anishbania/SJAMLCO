@@ -142,7 +142,7 @@ namespace Insurance.Services
                 context.Genders.AddRange(genders);
                 await context.SaveChangesAsync();
             }
-        } 
+        }
         public static async Task SeedCourierVendor(AppDbContext context)
         {
             var count = await context.CourierVendor.ToListAsync();
@@ -166,22 +166,21 @@ namespace Insurance.Services
             {
                 List<LogisticCategory> categories = new List<LogisticCategory>
                 {
-                    new LogisticCategory { Category = "Laptops and Computers" },
-                    new LogisticCategory { Category = "Printers and Scanners" },
-                    new LogisticCategory { Category = "Furniture and Fixtures" },
-                    new LogisticCategory { Category = "Electrical" },
-                    new LogisticCategory { Category = "Plumbing" },
-                    new LogisticCategory { Category = "Networking" },
-                    new LogisticCategory { Category = "Kitchen Utensils" },
-                    new LogisticCategory { Category = "Office Identity Board" },
-                    new LogisticCategory { Category = "Other Civil Maintenance" },
-                    new LogisticCategory { Category = "Others" }
+                new LogisticCategory { Category = "Policy Documents" },
+                new LogisticCategory { Category = "Office Document" },
+                new LogisticCategory { Category = "Bouchers" },
+                new LogisticCategory { Category = "Branding Items" },
+                new LogisticCategory { Category = "Merchandise Items" },
+                new LogisticCategory { Category = "Fixed Assets" },
+                new LogisticCategory { Category = "Durable Assets" },
+                new LogisticCategory { Category = "Others" }
                 };
 
                 context.LogisticCategories.AddRange(categories);
                 await context.SaveChangesAsync();
             }
         }
+
 
     }
 }

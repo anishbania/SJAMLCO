@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Insurance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250415054602_initial")]
+    [Migration("20250416045825_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -24,30 +24,6 @@ namespace Insurance.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("Insurance.Areas.Admins.Models.CourierSupportingFile", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DispatchId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SupportingFileName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SupportingFilePath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DispatchId");
-
-                    b.ToTable("CourierSupportingFiles");
-                });
 
             modelBuilder.Entity("Insurance.Areas.Admins.Models.CourierVendor", b =>
                 {
@@ -137,6 +113,9 @@ namespace Insurance.Migrations
                     b.Property<string>("Status")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
+
+                    b.Property<string>("SupportingFilePath")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("VendorID")
                         .HasColumnType("int");
@@ -657,17 +636,6 @@ namespace Insurance.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("Insurance.Areas.Admins.Models.CourierSupportingFile", b =>
-                {
-                    b.HasOne("Insurance.Areas.Admins.Models.LogisticDispatch", "LogisticDispatch")
-                        .WithMany()
-                        .HasForeignKey("DispatchId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("LogisticDispatch");
                 });
 
             modelBuilder.Entity("Insurance.Areas.Admins.Models.LogisticDispatch", b =>

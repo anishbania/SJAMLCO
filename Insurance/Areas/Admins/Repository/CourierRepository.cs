@@ -80,10 +80,12 @@ namespace Insurance.Areas.Admins.Repository
                                                      ReceivedBy = _context.Users.Where(d => d.Id == x.ReceivedBy).Select(d => d.FullName).FirstOrDefault(),
                                                      ReceivedDate = x.ReceivedDate,
                                                      Remarks = x.Remarks,
-                                                     RefNumber = x.RefNumber,
                                                      ModifiedBy = x.ModifiedBy,
                                                      ModifiedDate = x.ModifiedDate,
                                                      SupportingFilePath = x.SupportingFilePath,
+                                                     ModeOfCourier = x.ModeOfCourier,
+                                                     ChalaniNo = x.ChalaniNo,
+                                                     DartaNo = x.DartaNo,
                                                      BranchName = _context.Branch.Where(b => b.Id == Convert.ToInt32(x.BranchCode)).Select(b => b.Name).FirstOrDefault(),
                                                      VendorName = _context.CourierVendor.Where(c => c.Id == x.VendorID).Select(c => c.VendorName).FirstOrDefault()
                                                  }).ToListAsync();
@@ -108,10 +110,12 @@ namespace Insurance.Areas.Admins.Repository
                                                      ReceivedBy = _context.Users.Where(d => d.Id == x.ReceivedBy).Select(d => d.FullName).FirstOrDefault(),
                                                      ReceivedDate = x.ReceivedDate,
                                                      Remarks = x.Remarks,
-                                                     RefNumber = x.RefNumber,
                                                      ModifiedBy = x.ModifiedBy,
                                                      ModifiedDate = x.ModifiedDate,
                                                      SupportingFilePath = x.SupportingFilePath,
+                                                     ModeOfCourier = x.ModeOfCourier,
+                                                     ChalaniNo = x.ChalaniNo,
+                                                     DartaNo = x.DartaNo,
                                                      BranchName = _context.Branch.Where(b => b.Id == Convert.ToInt32(x.BranchCode)).Select(b => b.Name).FirstOrDefault(),
                                                      VendorName = _context.CourierVendor.Where(c => c.Id == x.VendorID).Select(c => c.VendorName).FirstOrDefault()
                                                  }).ToListAsync();
@@ -135,9 +139,11 @@ namespace Insurance.Areas.Admins.Repository
                 ReceivedBy = x.ReceivedBy,
                 ReceivedDate = x.ReceivedDate,
                 Remarks = x.Remarks,
-                RefNumber = x.RefNumber,
                 ModifiedBy = x.ModifiedBy,
                 ModifiedDate = x.ModifiedDate,
+                ModeOfCourier = x.ModeOfCourier,
+                ChalaniNo = x.ChalaniNo,
+                DartaNo = x.DartaNo,
                 Items = _context.LogisticItems.Where(c => c.DispatchId == x.Id).Select(c => new LogisticItemViewModel
                 {
                     ID = c.ID,
@@ -176,19 +182,13 @@ namespace Insurance.Areas.Admins.Repository
                     {
                         var data = await _context.LogisticDispatches.FirstOrDefaultAsync(x => x.Id == model.Id);
                         if (data != null)
-                        {
-                            data.BranchCode = model.BranchCode;
-                            data.DispatchDate = DateTime.Now;
-                            data.Status = model.Status;
-                            data.SendBy = model.SendBy;
-                            data.ReceivedBy = model.ReceivedBy;
-                            data.ReceivedDate = model.ReceivedDate;
+                        {                           
+                            data.BranchCode = model.BranchCode;          
                             data.Remarks = model.Remarks;
-                            data.RefNumber = model.RefNumber;
                             data.ModifiedBy = userId;
                             data.ModifiedDate = DateTime.Now;
-                            data.SupportingFilePath = (string.IsNullOrEmpty(model.SupportingFilePath)) ? data.SupportingFilePath : model.SupportingFilePath;
-
+                            data.ModeOfCourier= model.ModeOfCourier;
+                            data.SupportingFilePath = (string.IsNullOrEmpty(model.SupportingFilePath)) ? data.SupportingFilePath : model.SupportingFilePath;                           
                             if (model.Items.Count > 0)
                             {
                                 foreach (var item in model.Items)
@@ -230,22 +230,22 @@ namespace Insurance.Areas.Admins.Repository
                     }
                     else
                     {
+                        int count = await _context.LogisticDispatches.CountAsync() + 1;
                         LogisticDispatch data = new()
                         {
                             BranchCode = model.BranchCode,
                             DispatchDate = DateTime.Now,
                             VendorID = model.VendorID,
                             Status = "NEW",
-                            SendBy = userId,
-                            ReceivedBy = model.ReceivedBy,
-                            ReceivedDate = model.ReceivedDate,
+                            SendBy = userId,                           
                             Remarks = model.Remarks,
-                            RefNumber = model.RefNumber,
-                            ModifiedBy = model.ModifiedBy,
-                            ModifiedDate = model.ModifiedDate,
+                            ModeOfCourier = model.ModeOfCourier,
                             SupportingFilePath = model.SupportingFilePath,
+                            SequenceNumber = count  // Store the sequence number.
 
                         };
+                        DateTime refDate = data.DispatchDate != DateTime.MinValue ? data.DispatchDate : DateTime.Now;
+                        data.ChalaniNo = await _utility.GenerateChalaniNumber(refDate,data.SequenceNumber); 
                         await _context.LogisticDispatches.AddAsync(data);
                         await _context.SaveChangesAsync();
                         if (model.Items.Count > 0)

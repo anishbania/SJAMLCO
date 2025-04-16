@@ -33,7 +33,7 @@
                     <div class="col-4">
                         <img src="~/images/logo.png"
                              class="img-fluid"
-                             style="height:80px;width:200px; mix-blend-mode: multiply; opacity:0.8;"
+                             style="height:40px;width:150px; mix-blend-mode: multiply; opacity:0.8;"
                              alt="Logo" />
                     </div>
                     <!-- Middle: Title -->
@@ -53,18 +53,32 @@
                 <h5 class="mb-3">Dispatched Details</h5>
                 <br />
                 <div class="row mb-3">
+                    <div class="col-sm-5">
+                        @if (User.IsInRole("User"))
+                        {
+                            <p><strong>Reg/Darta:</strong> @Model.DartaNo</p>
+                        }
+                        else
+                        {
+                            <p><strong>Ref/Chalani:</strong> @Model.ChalaniNo</p>
+                        }
+                    </div>
                     <div class="col-sm-4">
                         <p><strong>Branch:</strong> @Model.BranchName</p>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <p><strong>Dispatched Date:</strong> @Model.DispatchDate.ToString("MMMM dd, yyyy")</p>
                     </div>
-                    <div class="col-sm-4">
-                        <p><strong>Vendor Name:</strong> @Model.VendorName</p>
-                    </div>
+                    
                 </div>
                 <div class="row mb-3">
-                    <div class="col-sm-2">
+                    <div class="col-sm-5">
+                        <p><strong>Vendor Name:</strong> @Model.VendorName</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p><strong>MOC:</strong> @Model.ModeOfCourier</p>
+                    </div>
+                    <div class="col-sm-3">
                         <p>
                             <strong>Status:</strong>
                             @if (User.IsInRole("User"))
@@ -72,12 +86,27 @@
                                 <select asp-for="Status" id="Status" class="form-control" onchange="updateStatus(this.value, @Model.Id)" required>
                                     <option value="">--Select--</option>
                                     <option value="RECEIVED">RECEIVED</option>
+                                    <option value="DISPATCHED">DISPATCHED</option>
+                                    <option value="RETURNED">RETURNED</option>
                                 </select>
                                 <span asp-validation-for="Status" class="text-danger"></span>
                             }
                             else
                             {
-                                <span>@Model.Status</span>
+                                @if (Model.Status == "NEW")
+                                {
+                                    <select asp-for="Status" id="Status" class="form-control" onchange="updateStatus(this.value, @Model.Id)" required>
+                                        <option value="">--Select--</option>
+                                        <option value="RECEIVED">RECEIVED</option>
+                                        <option value="DISPATCHED">DISPATCHED</option>
+                                        <option value="RETURNED">RETURNED</option>
+                                    </select>
+                                    <span asp-validation-for="Status" class="text-danger"></span>
+                                }
+                                else
+                                {
+                                    <span>@Model.Status</span>
+                                }
                             }
                         </p>
                     </div>
@@ -146,22 +175,21 @@
             window.print();
             document.body.innerHTML = originalContents;
         }
-
         function updateStatus(newStatus, dispatchId) {
-            debugger;
             $.ajax({
                 url: '@Url.Action("UpdateStatus", "Courier", new { area = "Admins" })',
                 type: 'POST',
                 data: { id: dispatchId, status: newStatus },
                 success: function (response) {
-                    if (response.success) {
-                        alert("Status updated successfully.");
+                    if (response.success && response.redirectUrl) {
+                        // Redirect the browser to the index page
+                        window.location.href = response.redirectUrl;
                     } else {
-                        alert("Failed to update status.");
+                        alert(response.message || "Failed to update status");
                     }
                 },
                 error: function () {
-                    alert("Error occurred while updating status.");
+                    alert("An error occurred while updating the status.");
                 }
             });
         }

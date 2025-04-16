@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Insurance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250415080840_updated")]
-    partial class updated
+    [Migration("20250416075945_dartachalani")]
+    partial class dartachalani
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -81,8 +81,17 @@ namespace Insurance.Migrations
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
+                    b.Property<string>("ChalaniNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DartaNo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DispatchDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ModeOfCourier")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(100)
@@ -97,10 +106,6 @@ namespace Insurance.Migrations
 
                     b.Property<DateTime?>("ReceivedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("RefNumber")
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Remarks")
                         .HasMaxLength(500)
@@ -145,8 +150,8 @@ namespace Insurance.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<decimal?>("Qty")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int?>("Qty")
+                        .HasColumnType("int");
 
                     b.Property<string>("UnitType")
                         .HasMaxLength(20)

@@ -1,379 +1,415 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Insurance.bundle.scp.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Insurance.bundle.scp.css",
       "PackagePath": "staticwebassets\\Insurance.ri21wky8pf.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\Login.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\Login.css",
       "PackagePath": "staticwebassets\\css\\Login.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\OverlayScrollbars.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\OverlayScrollbars.min.css",
       "PackagePath": "staticwebassets\\css\\OverlayScrollbars.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\adminlte.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\adminlte.min.css",
       "PackagePath": "staticwebassets\\css\\adminlte.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\adminlte.min.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\adminlte.min.css.map",
       "PackagePath": "staticwebassets\\css\\adminlte.min.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\all.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\all.min.css",
       "PackagePath": "staticwebassets\\css\\all.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\apexcharts.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\apexcharts.css",
       "PackagePath": "staticwebassets\\css\\apexcharts.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\site.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\style.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\favicon.ico",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\AppImage\\backImg.jpg",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\AppImage\\backImg.jpg",
       "PackagePath": "staticwebassets\\images\\AppImage\\backImg.jpg"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\AppImage\\logo.png",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\AppImage\\logo.png",
       "PackagePath": "staticwebassets\\images\\AppImage\\logo.png"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\2d731cf2-c9eb-40cf-b225-1517c6700cf4.pdf",
+      "PackagePath": "staticwebassets\\images\\CourierFile\\2d731cf2-c9eb-40cf-b225-1517c6700cf4.pdf"
+    },
+    {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\3528b261-db25-4523-986f-79d11abf4f1a.png",
+      "PackagePath": "staticwebassets\\images\\CourierFile\\3528b261-db25-4523-986f-79d11abf4f1a.png"
+    },
+    {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\477aae41-61aa-4d29-8180-7ba76827ff38.png",
+      "PackagePath": "staticwebassets\\images\\CourierFile\\477aae41-61aa-4d29-8180-7ba76827ff38.png"
+    },
+    {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\51ffa909-e050-4bea-9541-ee8662cde165.png",
+      "PackagePath": "staticwebassets\\images\\CourierFile\\51ffa909-e050-4bea-9541-ee8662cde165.png"
+    },
+    {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\5f1eb3f9-1044-4552-ad08-dd1bbda5c86b.png",
+      "PackagePath": "staticwebassets\\images\\CourierFile\\5f1eb3f9-1044-4552-ad08-dd1bbda5c86b.png"
+    },
+    {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\669af464-e608-48e5-899e-120755ceeb70.png",
+      "PackagePath": "staticwebassets\\images\\CourierFile\\669af464-e608-48e5-899e-120755ceeb70.png"
+    },
+    {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\67689aa5-8a39-470b-8cc9-b9ec0139df7c.png",
+      "PackagePath": "staticwebassets\\images\\CourierFile\\67689aa5-8a39-470b-8cc9-b9ec0139df7c.png"
+    },
+    {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg",
       "PackagePath": "staticwebassets\\images\\CourierFile\\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\backimg.jpeg",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\901e493d-b5c1-418a-b373-018299fca236.pdf",
+      "PackagePath": "staticwebassets\\images\\CourierFile\\901e493d-b5c1-418a-b373-018299fca236.pdf"
+    },
+    {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\eb257990-92b0-4549-b3dc-f8e0ddae503e.png",
+      "PackagePath": "staticwebassets\\images\\CourierFile\\eb257990-92b0-4549-b3dc-f8e0ddae503e.png"
+    },
+    {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\backimg.jpeg",
       "PackagePath": "staticwebassets\\images\\backimg.jpeg"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\frontImg.jpg",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\frontImg.jpg",
       "PackagePath": "staticwebassets\\images\\frontImg.jpg"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\logo.png",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\statics\\avataaars.svg",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\statics\\avataaars.svg",
       "PackagePath": "staticwebassets\\images\\statics\\avataaars.svg"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\BarChart.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\BarChart.js",
       "PackagePath": "staticwebassets\\js\\BarChart.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\Chart.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\Chart.min.js",
       "PackagePath": "staticwebassets\\js\\Chart.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\CombinedSamitiGenderPieChart.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\CombinedSamitiGenderPieChart.js",
       "PackagePath": "staticwebassets\\js\\CombinedSamitiGenderPieChart.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\LoaneeData.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\LoaneeData.js",
       "PackagePath": "staticwebassets\\js\\LoaneeData.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\PieChart.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\PieChart.js",
       "PackagePath": "staticwebassets\\js\\PieChart.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\PieChartKarmachari.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\PieChartKarmachari.js",
       "PackagePath": "staticwebassets\\js\\PieChartKarmachari.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\PieChartSadasya.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\PieChartSadasya.js",
       "PackagePath": "staticwebassets\\js\\PieChartSadasya.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\PieChartSamiti.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\PieChartSamiti.js",
       "PackagePath": "staticwebassets\\js\\PieChartSamiti.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\adminlte.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\adminlte.min.js",
       "PackagePath": "staticwebassets\\js\\adminlte.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\adminlte.min.js.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\adminlte.min.js.map",
       "PackagePath": "staticwebassets\\js\\adminlte.min.js.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\apexcharts.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\apexcharts.js",
       "PackagePath": "staticwebassets\\js\\apexcharts.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\dashboard2.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\dashboard2.js",
       "PackagePath": "staticwebassets\\js\\dashboard2.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\demo.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\demo.js",
       "PackagePath": "staticwebassets\\js\\demo.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\jquery.mapael.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\jquery.mapael.min.js",
       "PackagePath": "staticwebassets\\js\\jquery.mapael.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\jquery.mousewheel.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\jquery.mousewheel.js",
       "PackagePath": "staticwebassets\\js\\jquery.mousewheel.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\jquery.overlayScrollbars.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\jquery.overlayScrollbars.min.js",
       "PackagePath": "staticwebassets\\js\\jquery.overlayScrollbars.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\raphael.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\raphael.min.js",
       "PackagePath": "staticwebassets\\js\\raphael.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\script.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\site.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\js\\usa_states.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\usa_states.min.js",
       "PackagePath": "staticwebassets\\js\\usa_states.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

@@ -32,6 +32,8 @@ namespace Insurance.Utilities
         Task<FiscalYearViewModel> GetFiscalYearByIdAsync(int id);
         Task<bool> InsertUpdateFiscalYearAsync(FiscalYearViewModel model);
         bool RemoveFile(string filePath);
+        Task<string> GenerateChalaniNumber(DateTime referenceDate,int SequenceNumber);
+        Task<string> GenerateDartaNumber(DateTime referenceDate,int SequenceNumber);
 
 
 

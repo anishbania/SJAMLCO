@@ -1,6 +1,7 @@
 ﻿using Insurance.Models;
 using Insurance.Services;
 using Insurance.ViewModels;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Security.Claims;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace Insurance.Utilities
 {
     public class Utility : IUtility
@@ -320,6 +322,36 @@ namespace Insurance.Utilities
         {
             return new SelectList(await _context.Genders.ToListAsync(), "GenderNepali", "GenderNepali");
         }
+        private string GetDynamicFiscalYear(DateTime date)
+        {
+            int bsYear;
+            // Check the cutoff based on our assumption: July 17 is Shrawan 1.
+            if (date.Month > 7 || (date.Month == 7 && date.Day >= 17))
+            {
+                bsYear = date.Year + 57;
+            }
+            else
+            {
+                bsYear = date.Year + 56;
+            }
+            string nextYearTwoDigits = (bsYear + 1).ToString();
+            nextYearTwoDigits = nextYearTwoDigits.Substring(nextYearTwoDigits.Length - 2); // last two digits
+            return $"{bsYear}/{nextYearTwoDigits}";
+        }
 
+        public async Task<string> GenerateChalaniNumber(DateTime referenceDate, int SequenceNumber)
+        {
+            // Count dispatches in the same fiscal year.
+            string fiscalYear = GetDynamicFiscalYear(referenceDate);           
+            string sequence = SequenceNumber.ToString("D3");  // Format as 3-digit sequence.
+            return $"SJLIC-Admin-Cha no {sequence}-{fiscalYear}";
+        }
+
+        public async Task<string> GenerateDartaNumber(DateTime referenceDate, int SequenceNumber)
+        {
+            string fiscalYear = GetDynamicFiscalYear(referenceDate);
+            string sequence = SequenceNumber.ToString("D3");  // Format as 3-digit sequence.
+            return $"SJLIC-Admin-Reg no {sequence}-{fiscalYear}";
+        }
     }
 }

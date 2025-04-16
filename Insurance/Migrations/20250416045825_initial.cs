@@ -329,7 +329,8 @@ namespace Insurance.Migrations
                     Remarks = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     RefNumber = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
                     ModifiedBy = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    SupportingFilePath = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -360,27 +361,6 @@ namespace Insurance.Migrations
                         column: x => x.StateId,
                         principalTable: "State",
                         principalColumn: "StateId");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CourierSupportingFiles",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DispatchId = table.Column<int>(type: "int", nullable: false),
-                    SupportingFilePath = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SupportingFileName = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CourierSupportingFiles", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CourierSupportingFiles_LogisticDispatches_DispatchId",
-                        column: x => x.DispatchId,
-                        principalTable: "LogisticDispatches",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -471,11 +451,6 @@ namespace Insurance.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CourierSupportingFiles_DispatchId",
-                table: "CourierSupportingFiles",
-                column: "DispatchId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_District_StateId",
                 table: "District",
                 column: "StateId");
@@ -521,9 +496,6 @@ namespace Insurance.Migrations
 
             migrationBuilder.DropTable(
                 name: "Branch");
-
-            migrationBuilder.DropTable(
-                name: "CourierSupportingFiles");
 
             migrationBuilder.DropTable(
                 name: "FinanceTypes");
