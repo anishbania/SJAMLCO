@@ -10,15 +10,7 @@ wwwroot\favicon.ico
 wwwroot\images\AppImage\backImg.jpg
 wwwroot\images\AppImage\logo.png
 wwwroot\images\backimg.jpeg
-wwwroot\images\CourierFile\0aad44fa-fc3f-47a2-aeec-7f5325587a32.jpg
-wwwroot\images\CourierFile\4e742319-6702-43dd-8740-fa6d9b093ba4.jpg
-wwwroot\images\CourierFile\aa1787e8-91da-4808-b07e-9314d272ec33.jpg
-wwwroot\images\CourierFile\b36d32a1-948a-48e1-acc2-df8aa70b3530.jpg
-wwwroot\images\CourierFile\d473c201-5bcc-413e-9d2d-256be32342c3.jpg
-wwwroot\images\CourierFile\e532332f-3a5a-4d2c-bd34-84143b144289.jpg
-wwwroot\images\CourierFile\e84afd0a-88d7-489a-aac8-3b9ae261c312.jpg
-wwwroot\images\CourierFile\fc36cb84-35c6-4d5e-9a75-932f0a292c5f.jpg
-wwwroot\images\CourierFile\fed7a4d7-578d-4059-a13e-0c6093ef278a.jpg
+wwwroot\images\CourierFile\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg
 wwwroot\images\frontImg.jpg
 wwwroot\images\logo.png
 wwwroot\images\statics\avataaars.svg

@@ -32,7 +32,6 @@ namespace Insurance.Areas.Admins.ViewModels
         public DateTime? ModifiedDate { get; set; }
         [DisplayName("Supporting File")]
         public string? SupportingFilePath { get; set; }
-        //public IFormFile? SupportingFile { get; set; }
         public List<IFormFile>? SupportingFile { get; set; } = new List<IFormFile>();
 
         public CourierVendorViewModel Vendor { get; set; } = new CourierVendorViewModel();
@@ -66,20 +65,4 @@ namespace Insurance.Areas.Admins.ViewModels
         [DisplayName("Category Name")]
         public string ?CategoryName { get; set; }
     }
-    //public class CourierSupportingFileViewModel
-    //{
-    //    public CourierSupportingFileViewModel()
-    //    {
-    //        CourierSupportingFile = new List<CourierSupportingFileViewModel>();
-    //    }
-    //    public int Id { get; set; }
-    //    public int DispatchId { get; set; }
-    //    public string? SupportingFilePath { get; set; }
-    //    public string? SupportingFileName { get; set; }
-
-    //    public List<IFormFile> Files { get; set; }
-    //    public List<CourierSupportingFileViewModel> CourierSupportingFile { get; set; }
-
-
-    //}
 }

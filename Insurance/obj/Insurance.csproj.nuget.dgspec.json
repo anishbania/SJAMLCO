@@ -54,13 +54,9 @@
               "target": "Package",
               "version": "[1.1.0, )"
             },
-            "EntityFramework": {
+            "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
               "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.AspNet.Providers.Core": {
-              "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -72,27 +68,35 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.6, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.3, )"
             }
           },
           "imports": [

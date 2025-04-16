@@ -5,8 +5,6 @@
     Layout = null;
     ViewData["Title"] = "Log in";
 }
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -21,11 +19,8 @@
     <div class="container">
         <input type="checkbox" id="flip">
         <div class="cover">
-            <div class="front">
-                @*  <div class="text">
-            <span class="text-1">AML <br> Reporting Portal</span>
-         </div> *@
-                <img src="~/images/backimg.jpeg" style="width:contain" />
+            <div class="front">               
+                <img src="~/images/backimg.jpeg">
             </div>
         </div>
         <div class="forms">
@@ -43,7 +38,7 @@
                             <div class="input-box">
                                 <i class="fas fa-lock"></i>
                                 <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                            </div>
+                            </div>                           
                             <div class="checkbox mb-3">
                                 <label asp-for="Input.RememberMe" class="form-label">
                                     <input class="form-check-input" asp-for="Input.RememberMe" />
@@ -67,4 +62,3 @@
     }
 </body>
 </html>
-

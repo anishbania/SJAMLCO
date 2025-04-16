@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MfpVTiRo0trElERNWQ7t5jNVWCs/zT6PibEIKsSzLeQ=",
+  "Hash": "eDY4mVcGHXoG5D5lH2HsUcW8DfOZ9JID0ZezvZba8hI=",
   "Source": "Insurance",
   "BasePath": "_content/Insurance",
   "Mode": "Default",
@@ -16,6 +16,48 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\anish\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.4\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\anish\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.4\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "25o87uqmvr",
+      "Integrity": "Nuu0BHvGBlwN6c5FSVjV9yxX0YPfwg3ufdOucRJCOz0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\anish\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.4\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\anish\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.4\\staticwebassets\\QuickGrid.razor.js",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\anish\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.4\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "QuickGrid.razor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "eu7w3d5g1a",
+      "Integrity": "tnamWuQ2F5I2J8hbtBt4/9i8Mb2y2o+9Tepj5tUrSdU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\anish\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.4\\staticwebassets\\QuickGrid.razor.js"
+    },
     {
       "Identity": "C:\\Users\\anish\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.4\\staticwebassets\\V5\\css\\site.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
@@ -1291,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "ri21wky8pf",
-      "Integrity": "/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA=",
+      "Fingerprint": "2nzlfzxmc9",
+      "Integrity": "Uu1A/2jiXYikhHgUab4WeBhyNgOLA0HU4LHByfJ4VXM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Insurance.styles.css"
@@ -1417,8 +1459,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "0qi96ml94t",
-      "Integrity": "CDUvfAoGjx56BQ/CDeMAgL2U46S5OeC3P+Yui3b811o=",
+      "Fingerprint": "vzqnswyg3c",
+      "Integrity": "ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Login.css"
@@ -1571,12 +1613,12 @@
       "OriginalItemSpec": "wwwroot\\images\\backimg.jpeg"
     },
     {
-      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\0aad44fa-fc3f-47a2-aeec-7f5325587a32.jpg",
+      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg",
       "SourceId": "Insurance",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\",
       "BasePath": "_content/Insurance",
-      "RelativePath": "images/CourierFile/0aad44fa-fc3f-47a2-aeec-7f5325587a32#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/CourierFile/76172e6c-ab6c-4fb0-b4ee-08815cde8879#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1589,175 +1631,7 @@
       "Integrity": "dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\0aad44fa-fc3f-47a2-aeec-7f5325587a32.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\4e742319-6702-43dd-8740-fa6d9b093ba4.jpg",
-      "SourceId": "Insurance",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\",
-      "BasePath": "_content/Insurance",
-      "RelativePath": "images/CourierFile/4e742319-6702-43dd-8740-fa6d9b093ba4#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jmi53kfovm",
-      "Integrity": "dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\4e742319-6702-43dd-8740-fa6d9b093ba4.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\aa1787e8-91da-4808-b07e-9314d272ec33.jpg",
-      "SourceId": "Insurance",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\",
-      "BasePath": "_content/Insurance",
-      "RelativePath": "images/CourierFile/aa1787e8-91da-4808-b07e-9314d272ec33#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jmi53kfovm",
-      "Integrity": "dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\aa1787e8-91da-4808-b07e-9314d272ec33.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\b36d32a1-948a-48e1-acc2-df8aa70b3530.jpg",
-      "SourceId": "Insurance",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\",
-      "BasePath": "_content/Insurance",
-      "RelativePath": "images/CourierFile/b36d32a1-948a-48e1-acc2-df8aa70b3530#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jmi53kfovm",
-      "Integrity": "dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\b36d32a1-948a-48e1-acc2-df8aa70b3530.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\d473c201-5bcc-413e-9d2d-256be32342c3.jpg",
-      "SourceId": "Insurance",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\",
-      "BasePath": "_content/Insurance",
-      "RelativePath": "images/CourierFile/d473c201-5bcc-413e-9d2d-256be32342c3#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jmi53kfovm",
-      "Integrity": "dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\d473c201-5bcc-413e-9d2d-256be32342c3.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\e532332f-3a5a-4d2c-bd34-84143b144289.jpg",
-      "SourceId": "Insurance",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\",
-      "BasePath": "_content/Insurance",
-      "RelativePath": "images/CourierFile/e532332f-3a5a-4d2c-bd34-84143b144289#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "m86tpmi6kr",
-      "Integrity": "1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\e532332f-3a5a-4d2c-bd34-84143b144289.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\e84afd0a-88d7-489a-aac8-3b9ae261c312.jpg",
-      "SourceId": "Insurance",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\",
-      "BasePath": "_content/Insurance",
-      "RelativePath": "images/CourierFile/e84afd0a-88d7-489a-aac8-3b9ae261c312#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "m86tpmi6kr",
-      "Integrity": "1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\e84afd0a-88d7-489a-aac8-3b9ae261c312.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\fc36cb84-35c6-4d5e-9a75-932f0a292c5f.jpg",
-      "SourceId": "Insurance",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\",
-      "BasePath": "_content/Insurance",
-      "RelativePath": "images/CourierFile/fc36cb84-35c6-4d5e-9a75-932f0a292c5f#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jmi53kfovm",
-      "Integrity": "dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\fc36cb84-35c6-4d5e-9a75-932f0a292c5f.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\fed7a4d7-578d-4059-a13e-0c6093ef278a.jpg",
-      "SourceId": "Insurance",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\",
-      "BasePath": "_content/Insurance",
-      "RelativePath": "images/CourierFile/fed7a4d7-578d-4059-a13e-0c6093ef278a#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "jmi53kfovm",
-      "Integrity": "dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\fed7a4d7-578d-4059-a13e-0c6093ef278a.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg"
     },
     {
       "Identity": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\frontImg.jpg",
@@ -3442,6 +3316,80 @@
   ],
   "Endpoints": [
     {
+      "Route": "_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "AssetFile": "C:\\Users\\anish\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.4\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8251"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Nuu0BHvGBlwN6c5FSVjV9yxX0YPfwg3ufdOucRJCOz0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Mar 2024 23:35:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Nuu0BHvGBlwN6c5FSVjV9yxX0YPfwg3ufdOucRJCOz0="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Microsoft.AspNetCore.Components.QuickGrid/QuickGrid.razor.js",
+      "AssetFile": "C:\\Users\\anish\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.4\\staticwebassets\\QuickGrid.razor.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tnamWuQ2F5I2J8hbtBt4/9i8Mb2y2o+9Tepj5tUrSdU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Mar 2024 23:19:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tnamWuQ2F5I2J8hbtBt4/9i8Mb2y2o+9Tepj5tUrSdU="
+        }
+      ]
+    },
+    {
       "Route": "css/adminlte.min.4qmibhxkz9.css",
       "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\adminlte.min.css",
       "Selectors": [],
@@ -3770,51 +3718,6 @@
       ]
     },
     {
-      "Route": "css/Login.0qi96ml94t.css",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\Login.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5466"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"CDUvfAoGjx56BQ/CDeMAgL2U46S5OeC3P+Yui3b811o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 08:31:04 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0qi96ml94t"
-        },
-        {
-          "Name": "label",
-          "Value": "css/Login.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-CDUvfAoGjx56BQ/CDeMAgL2U46S5OeC3P+Yui3b811o="
-        }
-      ]
-    },
-    {
       "Route": "css/Login.css",
       "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\Login.css",
       "Selectors": [],
@@ -3833,11 +3736,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"CDUvfAoGjx56BQ/CDeMAgL2U46S5OeC3P+Yui3b811o=\""
+          "Value": "\"ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 08:31:04 GMT"
+          "Value": "Sun, 13 Apr 2025 11:16:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3847,7 +3750,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-CDUvfAoGjx56BQ/CDeMAgL2U46S5OeC3P+Yui3b811o="
+          "Value": "sha256-ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU="
+        }
+      ]
+    },
+    {
+      "Route": "css/Login.vzqnswyg3c.css",
+      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\css\\Login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 11:16:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vzqnswyg3c"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU="
         }
       ]
     },
@@ -6646,8 +6594,8 @@
       ]
     },
     {
-      "Route": "images/CourierFile/0aad44fa-fc3f-47a2-aeec-7f5325587a32.jmi53kfovm.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\0aad44fa-fc3f-47a2-aeec-7f5325587a32.jpg",
+      "Route": "images/CourierFile/76172e6c-ab6c-4fb0-b4ee-08815cde8879.jmi53kfovm.jpg",
+      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6668,7 +6616,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 07:50:48 GMT"
+          "Value": "Tue, 15 Apr 2025 09:58:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6682,7 +6630,7 @@
         },
         {
           "Name": "label",
-          "Value": "images/CourierFile/0aad44fa-fc3f-47a2-aeec-7f5325587a32.jpg"
+          "Value": "images/CourierFile/76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg"
         },
         {
           "Name": "integrity",
@@ -6691,8 +6639,8 @@
       ]
     },
     {
-      "Route": "images/CourierFile/0aad44fa-fc3f-47a2-aeec-7f5325587a32.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\0aad44fa-fc3f-47a2-aeec-7f5325587a32.jpg",
+      "Route": "images/CourierFile/76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg",
+      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6713,663 +6661,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 07:50:48 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/4e742319-6702-43dd-8740-fa6d9b093ba4.jmi53kfovm.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\4e742319-6702-43dd-8740-fa6d9b093ba4.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 07:51:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jmi53kfovm"
-        },
-        {
-          "Name": "label",
-          "Value": "images/CourierFile/4e742319-6702-43dd-8740-fa6d9b093ba4.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/4e742319-6702-43dd-8740-fa6d9b093ba4.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\4e742319-6702-43dd-8740-fa6d9b093ba4.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 07:51:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/aa1787e8-91da-4808-b07e-9314d272ec33.jmi53kfovm.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\aa1787e8-91da-4808-b07e-9314d272ec33.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Apr 2025 06:02:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jmi53kfovm"
-        },
-        {
-          "Name": "label",
-          "Value": "images/CourierFile/aa1787e8-91da-4808-b07e-9314d272ec33.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/aa1787e8-91da-4808-b07e-9314d272ec33.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\aa1787e8-91da-4808-b07e-9314d272ec33.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Apr 2025 06:02:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/b36d32a1-948a-48e1-acc2-df8aa70b3530.jmi53kfovm.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\b36d32a1-948a-48e1-acc2-df8aa70b3530.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 06:03:24 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jmi53kfovm"
-        },
-        {
-          "Name": "label",
-          "Value": "images/CourierFile/b36d32a1-948a-48e1-acc2-df8aa70b3530.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/b36d32a1-948a-48e1-acc2-df8aa70b3530.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\b36d32a1-948a-48e1-acc2-df8aa70b3530.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 06:03:24 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/d473c201-5bcc-413e-9d2d-256be32342c3.jmi53kfovm.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\d473c201-5bcc-413e-9d2d-256be32342c3.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 07:51:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jmi53kfovm"
-        },
-        {
-          "Name": "label",
-          "Value": "images/CourierFile/d473c201-5bcc-413e-9d2d-256be32342c3.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/d473c201-5bcc-413e-9d2d-256be32342c3.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\d473c201-5bcc-413e-9d2d-256be32342c3.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 07:51:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/e532332f-3a5a-4d2c-bd34-84143b144289.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\e532332f-3a5a-4d2c-bd34-84143b144289.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1663772"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 05:51:36 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/e532332f-3a5a-4d2c-bd34-84143b144289.m86tpmi6kr.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\e532332f-3a5a-4d2c-bd34-84143b144289.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1663772"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 05:51:36 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "m86tpmi6kr"
-        },
-        {
-          "Name": "label",
-          "Value": "images/CourierFile/e532332f-3a5a-4d2c-bd34-84143b144289.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/e84afd0a-88d7-489a-aac8-3b9ae261c312.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\e84afd0a-88d7-489a-aac8-3b9ae261c312.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1663772"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Apr 2025 06:02:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/e84afd0a-88d7-489a-aac8-3b9ae261c312.m86tpmi6kr.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\e84afd0a-88d7-489a-aac8-3b9ae261c312.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1663772"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Apr 2025 06:02:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "m86tpmi6kr"
-        },
-        {
-          "Name": "label",
-          "Value": "images/CourierFile/e84afd0a-88d7-489a-aac8-3b9ae261c312.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-1jVUXK+phs8HhmlfrYdH+L2GC6eumWamfhOB3Zy6+i4="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/fc36cb84-35c6-4d5e-9a75-932f0a292c5f.jmi53kfovm.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\fc36cb84-35c6-4d5e-9a75-932f0a292c5f.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 04:23:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jmi53kfovm"
-        },
-        {
-          "Name": "label",
-          "Value": "images/CourierFile/fc36cb84-35c6-4d5e-9a75-932f0a292c5f.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/fc36cb84-35c6-4d5e-9a75-932f0a292c5f.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\fc36cb84-35c6-4d5e-9a75-932f0a292c5f.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 04:23:54 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/fed7a4d7-578d-4059-a13e-0c6093ef278a.jmi53kfovm.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\fed7a4d7-578d-4059-a13e-0c6093ef278a.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 06:02:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jmi53kfovm"
-        },
-        {
-          "Name": "label",
-          "Value": "images/CourierFile/fed7a4d7-578d-4059-a13e-0c6093ef278a.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0="
-        }
-      ]
-    },
-    {
-      "Route": "images/CourierFile/fed7a4d7-578d-4059-a13e-0c6093ef278a.jpg",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\wwwroot\\images\\CourierFile\\fed7a4d7-578d-4059-a13e-0c6093ef278a.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "42896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dW97BoiVunCbLlTJDMC4V0YrDGw7shRAL1vWcPkAwP0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Apr 2025 06:02:34 GMT"
+          "Value": "Tue, 15 Apr 2025 09:58:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7630,6 +6922,55 @@
       ]
     },
     {
+      "Route": "Insurance.2nzlfzxmc9.styles.css",
+      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Insurance.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1249"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Uu1A/2jiXYikhHgUab4WeBhyNgOLA0HU4LHByfJ4VXM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 04:46:59 GMT"
+        },
+        {
+          "Name": "Link",
+          "Value": "<_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css>; rel=\"preload\"; as=\"style\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2nzlfzxmc9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Uu1A/2jiXYikhHgUab4WeBhyNgOLA0HU4LHByfJ4VXM="
+        },
+        {
+          "Name": "label",
+          "Value": "Insurance.styles.css"
+        }
+      ]
+    },
+    {
       "Route": "Insurance.bundle.scp.css",
       "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Insurance.bundle.scp.css",
       "Selectors": [],
@@ -7652,7 +6993,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 04:30:43 GMT"
+          "Value": "Tue, 15 Apr 2025 04:46:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7689,7 +7030,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 04:30:43 GMT"
+          "Value": "Tue, 15 Apr 2025 04:46:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7712,51 +7053,6 @@
       ]
     },
     {
-      "Route": "Insurance.ri21wky8pf.styles.css",
-      "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Insurance.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1127"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 04:30:43 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ri21wky8pf"
-        },
-        {
-          "Name": "label",
-          "Value": "Insurance.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA="
-        }
-      ]
-    },
-    {
       "Route": "Insurance.styles.css",
       "AssetFile": "C:\\Users\\anish\\OneDrive\\Desktop\\Projects\\SuryaJyoti\\Insurance\\Insurance\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Insurance.styles.css",
       "Selectors": [],
@@ -7766,8 +7062,12 @@
           "Value": "bytes"
         },
         {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
           "Name": "Content-Length",
-          "Value": "1127"
+          "Value": "1249"
         },
         {
           "Name": "Content-Type",
@@ -7775,21 +7075,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA=\""
+          "Value": "\"Uu1A/2jiXYikhHgUab4WeBhyNgOLA0HU4LHByfJ4VXM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Apr 2025 04:30:43 GMT"
+          "Value": "Tue, 15 Apr 2025 04:46:59 GMT"
         },
         {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Name": "Link",
+          "Value": "<_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css>; rel=\"preload\"; as=\"style\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA="
+          "Value": "sha256-Uu1A/2jiXYikhHgUab4WeBhyNgOLA0HU4LHByfJ4VXM="
         }
       ]
     },

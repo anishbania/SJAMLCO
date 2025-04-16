@@ -17,7 +17,7 @@ namespace Insurance.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.3")
+                .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -39,7 +39,6 @@ namespace Insurance.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("VendorName")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -97,12 +96,10 @@ namespace Insurance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RefNumber")
-                        .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Remarks")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -184,7 +181,6 @@ namespace Insurance.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("HasLoggedIn")
@@ -217,7 +213,6 @@ namespace Insurance.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("PrayogkartaName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
@@ -271,11 +266,9 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DistrictId"));
 
                     b.Property<string>("DistrictName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DistrictName_Nep")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("StateId")
@@ -297,7 +290,6 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -320,11 +312,9 @@ namespace Insurance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("BsEndDate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BsStartDate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
@@ -343,7 +333,6 @@ namespace Insurance.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("LocalName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -376,11 +365,9 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GenderId"));
 
                     b.Property<string>("GenderEnglish")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GenderNepali")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("GenderId");
@@ -397,11 +384,9 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NepaliName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -421,11 +406,9 @@ namespace Insurance.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("PalikaName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PalikaName_Nep")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PalikaId");
@@ -444,52 +427,42 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Address2")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ContactName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ContactNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("District")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ExpireDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FaxNo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LogoPath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MobileNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Palika")
                         .HasColumnType("int");
 
                     b.Property<string>("Slogan")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("State")
@@ -499,7 +472,6 @@ namespace Insurance.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Website")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -516,11 +488,9 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StateId"));
 
                     b.Property<string>("StateName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StateName_Nep")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("StateId");

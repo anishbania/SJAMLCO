@@ -68,28 +68,17 @@ namespace Insurance.Areas.Admins.Controllers
             return Json(new { success = false });
         }
 
+        public async Task<IActionResult>FileUpload(int id)
+        {
+            var filePathData = await _context.LogisticDispatches .Where(x => x.Id == id).Select(x => x.SupportingFilePath) .FirstOrDefaultAsync();
+            // Create a new view model instance and assign the file paths to the property
+            var model = new LogisticDispatchViewModel
+            {
+                SupportingFilePath = filePathData
+            };
 
-        //public async Task<IActionResult> SupportingFile(int id)
-        //{
-        //    CourierSupportingFileViewModel model = new CourierSupportingFileViewModel();
-        //    model.CourierSupportingFile = await _courier.GetCourierFileById(id);
-        //    model.DispatchId = id;
-        //    return PartialView(model);
-        //}
-
-        //[HttpPost]
-        //public async Task<IActionResult> SupportingFile(CourierSupportingFileViewModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (await _courier.InsertCourierFiles(model))
-        //        {
-
-        //            return RedirectToAction("Index");
-        //        }
-        //    }
-        //    return PartialView(model);
-        //}
+            return View(model);
+        }       
         public async Task<IActionResult> Details(int id)
         {
             return View(await _courier.GetCourierId(id));

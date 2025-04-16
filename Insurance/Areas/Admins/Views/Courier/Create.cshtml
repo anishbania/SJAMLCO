@@ -77,21 +77,16 @@
                         </div>
                     </div>
                     <br />
-                    @* <div>
-                        <!-- Insert the partial view for the supporting file upload -->
-                        <partial name="_SupportingFile"/>
-                    </div> *@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label asp-for="SupportingFilePath" class="form-label"></label>
-                            <input asp-for="SupportingFile" multiple="multiple" accept="image/png, image/gif, image/jpeg, application/pdf" class="form-control" />
-                            @if (!string.IsNullOrEmpty(Model.SupportingFilePath))
-                            {
-                                <a href="@Model.SupportingFilePath" target="_blank">Preview</a>
-                            }
+                            <input asp-for="SupportingFile" multiple="multiple" accept="image/png, image/gif, image/jpeg, application/pdf" class="form-control" />                            
                             <span asp-validation-for="SupportingFile" class="text-danger"></span>
                         </div>
                     </div>
+                   @*  <div>
+                        <partial name="_SupportingFile" model="Model.CourierSupportingFile">
+                    </div> *@
                     <br />
                     <div class="d-flex justify-content-between mt-4">
                         <a class="btn btn-warning" asp-action="@ViewBag.BackUrl">Back</a>

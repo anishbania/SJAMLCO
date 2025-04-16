@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Plugins;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using System.Web.Providers.Entities;
+//using System.Web.Providers.Entities;
 
 namespace Insurance.Areas.Admins.Repository
 {
@@ -276,53 +276,6 @@ namespace Insurance.Areas.Admins.Repository
                 }
             }
         }
-
-        //public async Task<bool> InsertCourierFiles(CourierSupportingFileViewModel model)
-        //{
-        //    using (var transaction = _context.Database.BeginTransaction())
-        //    {
-        //        try
-        //        {
-        //            var aa = await _context.CourierSupportingFiles.Where(x => x.DispatchId == model.DispatchId).ToListAsync();
-        //            foreach (var item in aa)
-        //            {
-        //                _context.Remove(item);
-        //                _context.SaveChanges();
-        //            }
-        //            foreach (var file in model.Files)
-        //            {
-        //                var path = await _commonRepository.UploadImgReturnPathAndName("Sifarish/Aabiwahit", file);
-        //                var files = new CourierSupportingFile()
-        //                {
-        //                    DispatchId = model.DispatchId,
-        //                    SupportingFileName = path.FileName,
-        //                    SupportingFilePath = path.FilePath,
-        //                };
-        //                await _context.CourierSupportingFiles.AddAsync(files);
-        //                await _context.SaveChangesAsync();
-        //            }
-        //            await transaction.CommitAsync();
-        //            return true;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            _logger.LogInformation("CourierFile Repo add files Error User Id = " + userId + " Date : " + DateTime.Now + " Error log : " + ex);
-        //            await transaction.RollbackAsync();
-        //            return false;
-        //        }
-        //    }
-        //}
-        //public async Task<List<CourierSupportingFileViewModel>> GetCourierFileById(int id)
-        //{
-        //    var data = await _context.CourierSupportingFiles.Where(x => x.DispatchId == id)
-        //         .Select(x => new CourierSupportingFileViewModel()
-        //         {
-        //             Id = x.Id,
-        //             DispatchId = x.DispatchId,
-        //             SupportingFileName = x.SupportingFileName,
-        //             SupportingFilePath = x.SupportingFilePath,
-        //         }).ToListAsync();
-        //    return data;
-        //}
+        
     }
 }

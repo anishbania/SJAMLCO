@@ -95,17 +95,4 @@ namespace Insurance.Areas.Admins.Models
         [ForeignKey("DispatchId")]
         public virtual LogisticDispatch? Dispatch { get; set; }
     }
-    //public class CourierSupportingFile
-    //{
-    //    [Key]
-    //    public int Id { get; set; }
-    //    public int DispatchId { get; set; }
-    //    public string? SupportingFilePath { get; set; }
-    //    public string? SupportingFileName { get; set; }      
-
-    //    [ForeignKey("DispatchId")]
-    //    public LogisticDispatch? LogisticDispatch { get; set; }
-
-
-    //}
 }

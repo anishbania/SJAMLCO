@@ -20,7 +20,7 @@
         <button class="btn btn-success" type="button" onclick="printDiv('print')">
             <i class="fa fa-print" aria-hidden="true"></i> Print
         </button>
-        <a asp-controller="Courier" asp-action="SupportingFile" class="btn btn-info">
+        <a asp-controller="Courier" asp-action="FileUpload" asp-route-id="@Model.Id" class="btn btn-info">
             <i class="fa fa-file" aria-hidden="true"></i> View Files
         </a>
     </div>

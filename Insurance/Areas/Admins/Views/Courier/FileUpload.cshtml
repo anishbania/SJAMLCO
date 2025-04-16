@@ -1,0 +1,88 @@
+﻿@model LogisticDispatchViewModel
+@{
+    ViewData["Title"] = "File View";
+    // Split the comma-separated file paths, if any.
+    var filePaths = !string.IsNullOrEmpty(Model.SupportingFilePath)
+                        ? Model.SupportingFilePath.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                        : new string[] { };
+}
+<div class="form-buttons">
+    <a class="btn btn-warning" asp-action="Details" asp-route-id="@Model.Id"><i class="fa fa-angle-left"></i> Back</a>
+</div>
+<div class="xs-pd-20-10">
+    <div class="min-height-200px">
+        <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+            <div class="form-container">
+                <div>
+                    @foreach (var filePath in filePaths)
+                    {
+                        // Determine the file type by checking the file extension
+                        if (filePath.Trim().EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
+                        {
+                            <div style="display: flex; align-items: center; margin: 5px;">
+                                <a href="@filePath" target="_blank" title="View PDF">
+                                    <iframe src="@filePath" width="600" height="600" title="PDF Document"></iframe>
+                                </a>
+                                <button type="button" onclick="removeMe(this)" data-path="@filePath" class="btn btn-danger btn-sm">
+                                    Delete
+                                </button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div style="display: inline-block; margin: 5px;">
+                                <img src="@filePath" data-path="@filePath" alt="Uploaded File" width="600" height="600" onclick="removeMe(this)" />
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="imageTemplate">
+    <img src="" class="img-fluid" style="width:200px" onclick="removeMe(this)" />
+</div>
+<div id="errorDiv" class="errorDiv" style="color:red"></div>
+
+@section Scripts {
+    <script>
+        function removeMe(element) {
+            var filePath = element.dataset.path;
+            if (!filePath) {
+                alert("File information is missing.");
+                return;
+            }
+            $.confirm({
+                title: 'Confirm!',
+                content: 'Are you sure you want to delete this file?',
+                buttons: {
+                    Approve: {
+                        text: 'Delete',
+                        btnClass: 'btn btn-danger',
+                        keys: ['enter', 'shift'],
+                        action: function () {
+                            $.ajax({
+                                url: '@Url.Action("DeletePicture", "BelowTwoYear", new { area = "Admin" })',
+                                type: "POST",
+                                dataType: "json",
+                                data: { source: filePath },
+                                success: function (result) {
+                                    if (result) {
+                                        $(element).closest('div').remove();
+                                    } else {
+                                        alert("Failed to delete the file.");
+                                    }
+                                },
+                                error: function () {
+                                    alert("An error occurred while deleting the file.");
+                                }
+                            });
+                        }
+                    },
+                    Cancel: function () { }
+                }
+            });
+        }
+    </script>
+}
