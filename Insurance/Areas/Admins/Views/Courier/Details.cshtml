@@ -13,7 +13,70 @@
             padding: 0;
         }
     }
+
+    .status-badge {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+
+    .status-NEW {
+        background-color: #e9ecef;
+        color: #495057;
+    }
+
+    .status-RECEIVED {
+        background-color: #cff4fc;
+        color: #055160;
+    }
+
+    .status-DISPATCHED {
+        background-color: #d1e7dd;
+        color: #0f5132;
+    }
+
+    .status-RETURNED {
+        background-color: #f8d7da;
+        color: #842029;
+    }
+
+    .form-buttons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .status-control {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        gap: 10px;
+    }
+
+    .status-label {
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+
+    @@media (max-width: 768px) {
+        .form-buttons
+
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .status-control {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    }
 </style>
+
 <div class="container my-4">
     <div class="form-buttons">
         <a class="btn btn-warning" asp-action="Index"><i class="fa fa-angle-left"></i> Back</a>
@@ -23,6 +86,34 @@
         <a asp-controller="Courier" asp-action="FileUpload" asp-route-id="@Model.Id" class="btn btn-info">
             <i class="fa fa-file" aria-hidden="true"></i> View Files
         </a>
+
+        <!-- Status Update Control -->
+        <div class="status-control">
+            <span class="status-label">Status:</span>
+            @if ((User.IsInRole("User") || (User.IsInRole("Admin") && Model.Status == "NEW")))
+            {
+                <div class="input-group" style="width: auto;">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text status-badge status-@Model.Status">@Model.Status</span>
+                    </div>
+                    <select id="Status" class="form-control" onchange="updateStatus(this.value, @Model.Id)" required>
+                        <option value="">Change Status</option>
+                        <option value="RECEIVED">RECEIVED</option>
+                        <option value="DISPATCHED">DISPATCHED</option>
+                        <option value="RETURNED">RETURNED</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" onclick="updateStatus($('#Status').val(), @Model.Id)">
+                            <i class="fa fa-check"></i> Update
+                        </button>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <span class="status-badge status-@Model.Status">@Model.Status</span>
+            }
+        </div>
     </div>
     <br />
     <section id="print">
@@ -69,7 +160,6 @@
                     <div class="col-sm-3">
                         <p><strong>Dispatched Date:</strong> @Model.DispatchDate.ToString("MMMM dd, yyyy")</p>
                     </div>
-                    
                 </div>
                 <div class="row mb-3">
                     <div class="col-sm-5">
@@ -79,36 +169,7 @@
                         <p><strong>MOC:</strong> @Model.ModeOfCourier</p>
                     </div>
                     <div class="col-sm-3">
-                        <p>
-                            <strong>Status:</strong>
-                            @if (User.IsInRole("User"))
-                            {
-                                <select asp-for="Status" id="Status" class="form-control" onchange="updateStatus(this.value, @Model.Id)" required>
-                                    <option value="">--Select--</option>
-                                    <option value="RECEIVED">RECEIVED</option>
-                                    <option value="DISPATCHED">DISPATCHED</option>
-                                    <option value="RETURNED">RETURNED</option>
-                                </select>
-                                <span asp-validation-for="Status" class="text-danger"></span>
-                            }
-                            else
-                            {
-                                @if (Model.Status == "NEW")
-                                {
-                                    <select asp-for="Status" id="Status" class="form-control" onchange="updateStatus(this.value, @Model.Id)" required>
-                                        <option value="">--Select--</option>
-                                        <option value="RECEIVED">RECEIVED</option>
-                                        <option value="DISPATCHED">DISPATCHED</option>
-                                        <option value="RETURNED">RETURNED</option>
-                                    </select>
-                                    <span asp-validation-for="Status" class="text-danger"></span>
-                                }
-                                else
-                                {
-                                    <span>@Model.Status</span>
-                                }
-                            }
-                        </p>
+                        <p><strong>Status:</strong> @Model.Status</p>
                     </div>
                 </div>
                 <hr />
@@ -175,21 +236,41 @@
             window.print();
             document.body.innerHTML = originalContents;
         }
+
         function updateStatus(newStatus, dispatchId) {
+            if (!newStatus) {
+                alert("Please select a status to update");
+                return;
+            }
+
+            // Show loading indicator
+            const updateBtn = document.querySelector('.input-group-append button');
+            const originalBtnContent = updateBtn.innerHTML;
+            updateBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Updating...';
+            updateBtn.disabled = true;
+
             $.ajax({
                 url: '@Url.Action("UpdateStatus", "Courier", new { area = "Admins" })',
                 type: 'POST',
                 data: { id: dispatchId, status: newStatus },
                 success: function (response) {
                     if (response.success && response.redirectUrl) {
+                        // Show success message
+                        alert("Status updated successfully!");
                         // Redirect the browser to the index page
                         window.location.href = response.redirectUrl;
                     } else {
                         alert(response.message || "Failed to update status");
+                        // Reset button
+                        updateBtn.innerHTML = originalBtnContent;
+                        updateBtn.disabled = false;
                     }
                 },
                 error: function () {
                     alert("An error occurred while updating the status.");
+                    // Reset button
+                    updateBtn.innerHTML = originalBtnContent;
+                    updateBtn.disabled = false;
                 }
             });
         }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RKN4gktTRIYT/DZRePFlntZZdC+PeqVOpzvjodYG8X8=",
+  "Hash": "hqnjEdgVkc5gDgOXnCORMRyfFeZ4RPrdzz+bDMrdjl4=",
   "Source": "Insurance",
   "BasePath": "_content/Insurance",
   "Mode": "Default",
@@ -374,6 +374,27 @@
       "OriginalItemSpec": "wwwroot\\images\\CourierFile\\477aae41-61aa-4d29-8180-7ba76827ff38.png"
     },
     {
+      "Identity": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\5006c014-1bd6-48e9-9b07-10cf19d53baf.png",
+      "SourceId": "Insurance",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\",
+      "BasePath": "_content/Insurance",
+      "RelativePath": "images/CourierFile/5006c014-1bd6-48e9-9b07-10cf19d53baf#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2lvspfvtr5",
+      "Integrity": "GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\5006c014-1bd6-48e9-9b07-10cf19d53baf.png"
+    },
+    {
       "Identity": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\51ffa909-e050-4bea-9541-ee8662cde165.png",
       "SourceId": "Insurance",
       "SourceType": "Discovered",
@@ -456,6 +477,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\CourierFile\\67689aa5-8a39-470b-8cc9-b9ec0139df7c.png"
+    },
+    {
+      "Identity": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\73e4921a-4dd6-40a3-886f-5dc281d5e60b.png",
+      "SourceId": "Insurance",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\",
+      "BasePath": "_content/Insurance",
+      "RelativePath": "images/CourierFile/73e4921a-4dd6-40a3-886f-5dc281d5e60b#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2lvspfvtr5",
+      "Integrity": "GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\CourierFile\\73e4921a-4dd6-40a3-886f-5dc281d5e60b.png"
     },
     {
       "Identity": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\76172e6c-ab6c-4fb0-b4ee-08815cde8879.jpg",
@@ -7029,6 +7071,88 @@
       ]
     },
     {
+      "Route": "images/CourierFile/5006c014-1bd6-48e9-9b07-10cf19d53baf.2lvspfvtr5.png",
+      "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\5006c014-1bd6-48e9-9b07-10cf19d53baf.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 05:00:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2lvspfvtr5"
+        },
+        {
+          "Name": "label",
+          "Value": "images/CourierFile/5006c014-1bd6-48e9-9b07-10cf19d53baf.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM="
+        }
+      ]
+    },
+    {
+      "Route": "images/CourierFile/5006c014-1bd6-48e9-9b07-10cf19d53baf.png",
+      "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\5006c014-1bd6-48e9-9b07-10cf19d53baf.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 05:00:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM="
+        }
+      ]
+    },
+    {
       "Route": "images/CourierFile/51ffa909-e050-4bea-9541-ee8662cde165.2lvspfvtr5.png",
       "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\51ffa909-e050-4bea-9541-ee8662cde165.png",
       "Selectors": [],
@@ -7343,6 +7467,88 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 16 Apr 2025 10:32:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM="
+        }
+      ]
+    },
+    {
+      "Route": "images/CourierFile/73e4921a-4dd6-40a3-886f-5dc281d5e60b.2lvspfvtr5.png",
+      "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\73e4921a-4dd6-40a3-886f-5dc281d5e60b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 07:14:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2lvspfvtr5"
+        },
+        {
+          "Name": "label",
+          "Value": "images/CourierFile/73e4921a-4dd6-40a3-886f-5dc281d5e60b.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM="
+        }
+      ]
+    },
+    {
+      "Route": "images/CourierFile/73e4921a-4dd6-40a3-886f-5dc281d5e60b.png",
+      "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\CourierFile\\73e4921a-4dd6-40a3-886f-5dc281d5e60b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25501"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GuwrsOpTteuilW1M+OP06CJyPVLwRt/cwL614ruozcM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 07:14:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7875,7 +8081,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 04:30:30 GMT"
+          "Value": "Thu, 17 Apr 2025 05:40:59 GMT"
         },
         {
           "Name": "Link",
@@ -7920,7 +8126,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 04:30:30 GMT"
+          "Value": "Thu, 17 Apr 2025 05:40:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7957,7 +8163,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 04:30:30 GMT"
+          "Value": "Thu, 17 Apr 2025 05:40:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8006,7 +8212,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 04:30:30 GMT"
+          "Value": "Thu, 17 Apr 2025 05:40:59 GMT"
         },
         {
           "Name": "Link",

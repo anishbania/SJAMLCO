@@ -10,6 +10,8 @@ namespace Insurance.Areas.Admins.Interface
 
         public Task<LogisticDispatchViewModel> GetCourierId(int id);
         public Task<bool> DeleteCourier(int id);
+        //Task<bool> Delete(string source, int id);
+
 
     }
 }

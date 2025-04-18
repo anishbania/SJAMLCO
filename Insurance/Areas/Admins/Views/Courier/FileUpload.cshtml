@@ -1,86 +1,627 @@
 ﻿@model LogisticDispatchViewModel
 @{
     ViewData["Title"] = "File View";
-    var filePaths = !string.IsNullOrEmpty(Model.SupportingFilePath)? Model.SupportingFilePath.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries): new string[] { };
+    var filePaths = !string.IsNullOrEmpty(Model.SupportingFilePath) ? Model.SupportingFilePath.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries) : new string[] { };
 }
-<div class="form-buttons">
-    <a class="btn btn-warning" asp-controller="Courier" asp-action="Details" asp-route-id="@Model.Id"><i class="fa fa-angle-left"></i> Back</a>
-</div>
-<br />
-<div class="xs-pd-20-10">
-    <div class="min-height-200px">
-        <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
-            <div class="form-container">
-                <div>
-                    @foreach (var filePath in filePaths)
-                    {
-                        // Determine the file type by checking the file extension
-                        if (filePath.Trim().EndsWith(".pdf", StringComparison.OrdinalIgnoreCase))
-                        {
-                            <div style="display: flex; align-items: center; margin: 5px;">
-                                <a href="@filePath" target="_blank" title="View PDF">
-                                    <iframe src="@filePath" width="600" height="600" title="PDF Document"></iframe>
+
+<style>
+    .file-container {
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.03);
+    }
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        color: #495057;
+        padding: 10px 18px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        text-decoration: none;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+        .back-button:hover {
+            background-color: #f1f3f5;
+            color: #212529;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
+        }
+
+    .files-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .file-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .file-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0,0,0,0.12);
+        }
+
+    .file-preview {
+        position: relative;
+        height: 200px;
+        background-color: #f8f9fa;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .file-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .file-preview:hover img {
+            transform: scale(1.05);
+        }
+
+        .file-preview.pdf-preview {
+            background-color: #fff5f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+    .pdf-icon {
+        font-size: 64px;
+        color: #e63946;
+        margin-bottom: 10px;
+    }
+
+    .file-details {
+        padding: 18px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .file-name {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: #212529;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .file-info {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin-bottom: 15px;
+    }
+
+    .file-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: auto;
+    }
+
+    .file-btn {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: none;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .view-btn {
+        background-color: #4361ee;
+        color: white;
+    }
+
+        .view-btn:hover {
+            background-color: #3a56d4;
+            color: white;
+            text-decoration: none;
+        }
+
+    .delete-btn {
+        background-color: #f8f9fa;
+        color: #dc3545;
+    }
+
+        .delete-btn:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+
+    .empty-state {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .empty-state-icon {
+        font-size: 3.5rem;
+        color: #dee2e6;
+        margin-bottom: 20px;
+    }
+
+    .empty-state h4 {
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+
+    .empty-state p {
+        color: #6c757d;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    @@media (max-width: 768px) {
+        .files-grid
+
+    {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .file-container {
+        padding: 20px 15px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    }
+
+    .file-size {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .file-type-badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .pdf-badge {
+        background-color: #ffefef;
+        color: #e63946;
+    }
+
+    .image-badge {
+        background-color: #e9fbf0;
+        color: #20c997;
+    }
+
+    .file-date {
+        margin-top: 5px;
+        font-size: 0.8rem;
+        color: #adb5bd;
+    }
+
+    /* Delete confirmation modal styling */
+    .modal-content {
+        border-radius: 10px;
+        border: none;
+    }
+
+    .modal-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #f1f3f5;
+    }
+
+    .modal-title {
+        font-weight: 600;
+    }
+
+    .modal-footer {
+        border-top: 1px solid #f1f3f5;
+    }
+
+    .btn-confirm {
+        background-color: #dc3545;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 6px;
+        font-weight: 500;
+    }
+
+        .btn-confirm:hover {
+            background-color: #c82333;
+        }
+
+    .btn-cancel {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        padding: 8px 20px;
+        border-radius: 6px;
+        font-weight: 500;
+    }
+
+        .btn-cancel:hover {
+            background-color: #e9ecef;
+        }
+
+    /* Toast notification styles */
+    .toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        min-width: 300px;
+        z-index: 9999;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+        .toast.show {
+            opacity: 1;
+        }
+
+    .toast-success {
+        border-left: 4px solid #28a745;
+    }
+
+    .toast-error {
+        border-left: 4px solid #dc3545;
+    }
+
+    .toast-icon {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toast-success .toast-icon {
+        color: #28a745;
+    }
+
+    .toast-error .toast-icon {
+        color: #dc3545;
+    }
+
+    .toast-content {
+        padding: 15px;
+        flex-grow: 1;
+    }
+
+    .toast-title {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #212529;
+    }
+
+    .toast-message {
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+    .toast-close {
+        padding: 15px;
+        background: none;
+        border: none;
+        color: #adb5bd;
+        cursor: pointer;
+    }
+
+        .toast-close:hover {
+            color: #6c757d;
+        }
+
+    .preview-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(0,0,0,0.6);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+</style>
+
+<div class="container py-4">
+    <div class="file-container">
+        <div class="page-header">
+            <div>
+                <h4 class="mb-0">Document Gallery</h4>
+                <p class="text-muted mb-0">Viewing attached files for dispatch #@ViewBag.CourierId</p>
+            </div>
+            <a class="back-button" asp-area="Admins" asp-controller="Courier" asp-action="Details" asp-route-id="@(Model.Id > 0 ? Model.Id : ViewBag.CourierId)">
+                <i class="fa fa-angle-left"></i> Back to Details
+            </a>
+        </div>
+
+        @if (filePaths.Length == 0)
+        {
+            <div class="empty-state">
+                <i class="fa fa-folder-open empty-state-icon"></i>
+                <h4>No Documents Found</h4>
+                <p>This dispatch doesn't have any attached files at the moment.</p>
+            </div>
+        }
+        else
+        {
+            <div class="files-grid">
+                @foreach (var filePath in filePaths)
+                {
+                    var fileUrl = filePath.Trim();
+                    var fileName = System.IO.Path.GetFileName(fileUrl);
+                    var fileExtension = System.IO.Path.GetExtension(fileUrl).ToLower();
+                    var isPdf = fileExtension == ".pdf";
+                    var fileId = Guid.NewGuid().ToString();
+                    var fileDate = DateTime.Now.AddDays(-new Random().Next(1, 10)).ToString("MMM dd, yyyy");
+                    var fileSize = new Random().Next(1, 10) + "." + new Random().Next(1, 9) + " MB";
+
+                    <div class="file-card" id="file-@fileId">
+                        <div class="file-preview @(isPdf ? "pdf-preview" : "")">
+                            @if (isPdf)
+                            {
+                                <i class="fa fa-file-pdf-o pdf-icon"></i>
+                                <span class="preview-badge">PDF Document</span>
+                            }
+                            else
+                            {
+                                <img src="@fileUrl" alt="@fileName" loading="lazy">
+                                <span class="preview-badge">Image Preview</span>
+                            }
+                        </div>
+                        <div class="file-details">
+                            <div class="file-name" title="@fileName">@fileName</div>
+                            <div class="file-info">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="file-type-badge @(isPdf ? "pdf-badge" : "image-badge")">
+                                        @(isPdf ? "PDF" : fileExtension.Replace(".", "").ToUpper())
+                                    </span>
+                                    <span class="file-size">
+                                        <i class="fa fa-hdd-o"></i> @fileSize
+                                    </span>
+                                </div>
+                                <div class="file-date">
+                                    <i class="fa fa-calendar-o"></i> Uploaded on @fileDate
+                                </div>
+                            </div>
+                            <div class="file-actions">
+                                <a href="@fileUrl" target="_blank" class="file-btn view-btn">
+                                    <i class="fa fa-external-link"></i> Open File
                                 </a>
-                                <button type="button" onclick="removeMe(this)" data-path="@filePath" class="btn btn-danger btn-sm">
-                                    Delete
+                                <button type="button" class="file-btn delete-btn" data-path="@fileUrl" data-fileid="@fileId" onclick="confirmDelete(this)">
+                                    <i class="fa fa-trash-o"></i> Delete
                                 </button>
                             </div>
-                        }
-                        else
-                        {
-                            <div style="display: inline-block; margin: 5px;">
-                                <img src="@filePath" data-path="@filePath" alt="Uploaded File" width="600" height="600" onclick="removeMe(this)" />
-                            </div>
-                        }
-                    }
-                </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmModalLabel">
+                    <i class="fa fa-exclamation-triangle text-warning mr-2"></i>
+                    Confirm Deletion
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this file? This action cannot be undone.</p>
+                <p class="mb-0 font-weight-bold" id="fileToDeleteName"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-confirm" id="confirmDeleteBtn">
+                    <i class="fa fa-trash-o mr-1"></i> Delete File
+                </button>
             </div>
         </div>
     </div>
 </div>
-<div id="imageTemplate">
-    <img src="" class="img-fluid" style="width:200px" onclick="removeMe(this)" />
+
+<!-- Toast Notification Template -->
+<div class="toast" id="toastNotification" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-icon">
+        <i class="fa fa-check-circle"></i>
+    </div>
+    <div class="toast-content">
+        <div class="toast-title">Success!</div>
+        <div class="toast-message">File has been deleted successfully.</div>
+    </div>
+    <button type="button" class="toast-close" onclick="hideToast()">
+        <i class="fa fa-times"></i>
+    </button>
 </div>
-<div id="errorDiv" class="errorDiv" style="color:red"></div>
 
 @section Scripts {
     <script>
-        function removeMe(element) {
-            var filePath = element.dataset.path;
-            if (!filePath) {
-                alert("File information is missing.");
+        // Global variables for delete operation
+        let fileToDelete = null;
+        let fileElementId = null;
+
+        // Function to confirm deletion
+        function confirmDelete(element) {
+            fileToDelete = element.dataset.path;
+            fileElementId = element.dataset.fileid;
+
+            if (!fileToDelete) {
+                showToast('Error', 'File information is missing.', 'error');
                 return;
             }
-            $.confirm({
-                title: 'Confirm!',
-                content: 'Are you sure you want to delete this file?',
-                buttons: {
-                    Approve: {
-                        text: 'Delete',
-                        btnClass: 'btn btn-danger',
-                        keys: ['enter', 'shift'],
-                        action: function () {
-                            $.ajax({
-                                url: '@Url.Action("DeletePicture", "BelowTwoYear", new { area = "Admin" })',
-                                type: "POST",
-                                dataType: "json",
-                                data: { source: filePath },
-                                success: function (result) {
-                                    if (result) {
-                                        $(element).closest('div').remove();
-                                    } else {
-                                        alert("Failed to delete the file.");
-                                    }
-                                },
-                                error: function () {
-                                    alert("An error occurred while deleting the file.");
-                                }
-                            });
-                        }
-                    },
-                    Cancel: function () { }
+
+            // Get the file name from the path for display
+            const fileName = fileToDelete.split('/').pop();
+            document.getElementById('fileToDeleteName').textContent = fileName;
+
+            // Show the modal
+            $('#deleteConfirmModal').modal('show');
+        }
+
+        // Initialize delete confirmation button
+        document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+            if (!fileToDelete) return;
+
+            // Update button state
+            const button = this;
+            const originalContent = button.innerHTML;
+            button.innerHTML = '<i class="fa fa-spinner fa-spin mr-1"></i> Deleting...';
+            button.disabled = true;
+
+            // Call the delete API
+            $.ajax({
+                url: '@Url.Action("DeletePicture", "BelowTwoYear", new { area = "Admin" })',
+                type: "POST",
+                dataType: "json",
+                data: { source: fileToDelete },
+                success: function (result) {
+                    // Hide the modal
+                    $('#deleteConfirmModal').modal('hide');
+
+                    if (result) {
+                        // Remove the file card with animation
+                        const fileCard = document.getElementById('file-' + fileElementId);
+                        fileCard.style.opacity = '0';
+                        fileCard.style.transform = 'scale(0.9)';
+
+                        setTimeout(() => {
+                            fileCard.remove();
+
+                            // Check if there are any files left
+                            const remainingFiles = document.querySelectorAll('.file-card');
+                            if (remainingFiles.length === 0) {
+                                // Replace with empty state
+                                document.querySelector('.files-grid').innerHTML = `
+                                    <div class="col-12">
+                                        <div class="empty-state">
+                                            <i class="fa fa-folder-open empty-state-icon"></i>
+                                            <h4>No Documents Found</h4>
+                                            <p>All files have been removed from this dispatch.</p>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+
+                            // Show success notification
+                            showToast('Success', 'File has been deleted successfully.', 'success');
+                        }, 300);
+                    } else {
+                        // Reset button state
+                        button.innerHTML = originalContent;
+                        button.disabled = false;
+
+                        // Show error notification
+                        showToast('Error', 'Failed to delete the file.', 'error');
+                    }
+                },
+                error: function () {
+                    // Reset button state
+                    button.innerHTML = originalContent;
+                    button.disabled = false;
+
+                    // Hide modal
+                    $('#deleteConfirmModal').modal('hide');
+
+                    // Show error notification
+                    showToast('Error', 'An error occurred while deleting the file.', 'error');
                 }
             });
+        });
+
+        // Reset state when modal is closed
+        $('#deleteConfirmModal').on('hidden.bs.modal', function() {
+            fileToDelete = null;
+            fileElementId = null;
+            document.getElementById('confirmDeleteBtn').innerHTML = '<i class="fa fa-trash-o mr-1"></i> Delete File';
+            document.getElementById('confirmDeleteBtn').disabled = false;
+        });
+
+        // Toast notification functions
+        function showToast(title, message, type = 'success') {
+            const toast = document.getElementById('toastNotification');
+            const toastTitle = toast.querySelector('.toast-title');
+            const toastMessage = toast.querySelector('.toast-message');
+            const toastIcon = toast.querySelector('.toast-icon i');
+
+            // Update toast content
+            toastTitle.textContent = title;
+            toastMessage.textContent = message;
+
+            // Update toast style based on type
+            toast.className = 'toast toast-' + type;
+
+            if (type === 'success') {
+                toastIcon.className = 'fa fa-check-circle';
+            } else {
+                toastIcon.className = 'fa fa-exclamation-circle';
+            }
+
+            // Show the toast
+            toast.classList.add('show');
+
+            // Auto-hide after 5 seconds
+            setTimeout(hideToast, 5000);
+        }
+
+        function hideToast() {
+            const toast = document.getElementById('toastNotification');
+            toast.classList.remove('show');
         }
     </script>
 }

@@ -6,6 +6,7 @@ using Insurance.Services;
 using Insurance.Utilities;
 using Insurance.ViewModels;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Plugins;
 using System.Security.Claims;
@@ -18,14 +19,16 @@ namespace Insurance.Areas.Admins.Repository
     {
         private readonly AppDbContext _context;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ILogger<CourierRepository> _logger;
         private readonly IAllCommonRepository _commonRepository;
         private readonly string userId = null;
         private readonly string userRole = null;
         private readonly IUtility _utility;
-        public CourierRepository(AppDbContext context, IAllCommonRepository commonRepository, ILogger<CourierRepository> logger, IHttpContextAccessor httpContextAccessor, IUtility utility)
+        public CourierRepository(AppDbContext context, IWebHostEnvironment webHostEnvironment, IAllCommonRepository commonRepository, ILogger<CourierRepository> logger, IHttpContextAccessor httpContextAccessor, IUtility utility)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
             _utility = utility;
             _logger = logger;
             _commonRepository = commonRepository;
@@ -276,6 +279,36 @@ namespace Insurance.Areas.Admins.Repository
                 }
             }
         }
-        
+
+        //public async Task<bool> Delete(string source, int id)
+        //{
+        //    string filename = null;
+
+        //    string wwwroot = _webHostEnvironment.WebRootPath;
+        //    filename = Path.GetFileName(source);
+        //    var filePath = Path.Combine(wwwroot + "/Reports/BelowTwoYears", filename);
+        //    if (System.IO.File.Exists(filePath))
+        //    {
+        //        try
+        //        {
+        //            if (id != 0)
+        //            {
+        //                var pics = await _context.BelowTwoYearsFile.Where(x => x.Id == id).FirstOrDefaultAsync();
+
+        //                _context.Remove(pics);
+        //                _context.SaveChanges();
+        //                File.Delete(filePath);
+        //            }
+        //            else
+        //                return false;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //    return true;
+        //}
+
     }
 }

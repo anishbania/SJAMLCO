@@ -349,7 +349,11 @@ namespace Insurance.Utilities
 
         public async Task<string> GenerateDartaNumber(DateTime referenceDate, int SequenceNumber)
         {
-            string fiscalYear = GetDynamicFiscalYear(referenceDate);
+            string fiscalYear = GetDynamicFiscalYear(referenceDate);            
+            int branchCode = (from u in _context.Users
+                              join b in _context.Branch on u.BranchId equals b.Id
+                              where u.Id == UserId
+                              select b.Code).FirstOrDefault();
             string sequence = SequenceNumber.ToString("D3");  // Format as 3-digit sequence.
             return $"SJLIC-Admin-Reg no {sequence}-{fiscalYear}";
         }

@@ -91,7 +91,7 @@ namespace Insurance.Areas.Admins.Controllers
             {
                 SupportingFilePath = filePathData
             };
-
+            ViewBag.CourierId = id;
             return View(model);
         }       
         public async Task<IActionResult> Details(int id)
@@ -110,6 +110,13 @@ namespace Insurance.Areas.Admins.Controllers
             }
             return View();
         }
+
+        //[HttpPost]
+        //public async Task<JsonResult> DeletePicture(string source, int id)
+        //{
+        //    return Json(await _courier.Delete(source, id));
+
+        //}
         public IActionResult AddNewCourierItem() => PartialView("~/Areas/Admins/Views/Courier/_AddItems.cshtml", new LogisticItemViewModel());
 
     }
