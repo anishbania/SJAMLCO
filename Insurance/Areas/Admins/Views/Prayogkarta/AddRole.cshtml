@@ -1,0 +1,36 @@
+﻿@using Insurance.Areas.Admins.ViewModels
+@model UserRolesModel
+@inject IUtility _utility;
+
+@{
+    ViewData["Title"] = "Add Role";
+}
+
+
+<div class="xs-pd-20-10">
+    <div class="min-height-200px">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="AddRole" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="pd-20 px-5 py-2 bg-white  border-radius-4 box-shadow">
+                        <div class="form-container">                           
+                            <div class="row">                                
+                                <div class="form-group col-md-3">
+                                    <label asp-for="RoleName" class="form-label"></label>
+                                    <input asp-for="RoleName" class="form-control" required="true" />
+                                    <span asp-validation-for="RoleName" class="text-danger"></span>
+                                </div>                                                                                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <a class="btn btn-warning" asp-action="Roles">Back</a>
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

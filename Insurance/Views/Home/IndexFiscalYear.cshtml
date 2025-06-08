@@ -4,17 +4,18 @@
 @inject IUtility _utility;
 
 @{
-    ViewData["Title"] = "आर्थिक बर्ष";
+    ViewData["Title"] = "Fiscal Year";
     int i = 1;
+    Layout = "_SideBar";
 }
 
-<a class="btn btn-outline-primary btn-sm" asp-action="Create"><i class="bi bi-plus-circle-fill"></i> नयाँ @ViewData["Title"]</a>
+<a class="btn btn-outline-primary btn-sm" asp-action="Create"><i class="bi bi-plus-circle-fill"></i> New @ViewData["Title"]</a>
 
 
 <table id="example" class="table table-striped" style="width:100%">
     <thead>
         <tr>
-            <th>क्र.स.</th>
+            <th>S.N</th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -57,7 +58,7 @@
                     <span class="font-italic">@(item.IsActive ? "चालु वर्ष" : "")</span>
                 </td>
                 <td>
-                    <a class="text-primary" asp-action="Create" asp-route-id="@item.Id"><i class="dw dw-edit2"></i> चालु गर्नुहोस</a>
+                    <a class="text-primary" asp-action="Create" asp-route-id="@item.Id"><i class="dw dw-edit2"></i> Release</a>
                 </td>
             </tr>
             i++;
@@ -66,4 +67,4 @@
 </table>
 
 
-<partial name="~/Areas/FinanceSys/Views/Shared/_AddDatatable.cshtml">
+<partial name="~/Areas/Risk/Views/Shared/_AddDatatable.cshtml">

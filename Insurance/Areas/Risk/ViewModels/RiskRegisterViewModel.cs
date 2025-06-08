@@ -1,0 +1,66 @@
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
+namespace Insurance.Areas.Risk.ViewModels
+{
+    public class RiskRegisterViewModel
+    {
+        public int ID { get; set; }
+        [Required]
+        [DisplayName("Risk ID")]
+        public int RiskID { get; set; }
+
+        [DisplayName("Register Date")]
+        public DateTime? RegisterDate { get; set; } = DateTime.Now;
+
+        [DisplayName("Risk Description")]
+        [Required]
+        public string RiskDescription { get; set; }
+        [Required]
+        [DisplayName("Department")]
+        public string Department { get; set; }
+
+        [DisplayName("Primary Risk")]
+        [Required]
+        public string PrimaryRisk { get; set; }
+
+        [DisplayName("Secondary Risk")]
+        [Required]
+        public string SecondaryRisk { get; set; }
+
+        [DisplayName("LikeHood")]
+        [Required]
+        public string LikeHood { get; set; }
+
+        [DisplayName("Impact")]
+        [Required]
+        public string Impact { get; set; }
+
+        [DisplayName("Risk Owner")]
+        [Required]
+        public string RiskOwner { get; set; }
+
+        [DisplayName("Mitigation Action")]
+        [Required]
+        public string MitigationAction { get; set; }
+
+        [DisplayName("Risk Status")]
+        [Required]
+        public string RiskStatus { get; set; }
+
+        [DisplayName("Closed Date")]
+        public DateTime? ClosedDate { get; set; } = DateTime.Now;
+
+        [DisplayName("Quantification")]
+        public int Quantification { get; set; }
+
+        [DisplayName("Updated Date")]
+        public DateTime? UpdatedDate { get; set; }
+
+        [DisplayName("Remarks")]
+        public string Remarks { get; set; }
+
+        [DisplayName("Risk Response")]
+        public string RiskResponse { get; set; }
+    }
+}

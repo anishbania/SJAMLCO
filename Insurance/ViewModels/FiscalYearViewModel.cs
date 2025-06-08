@@ -5,21 +5,21 @@ namespace Insurance.ViewModels
     public class FiscalYearViewModel
     {
         public int Id { get; set; }
-        [Required, Display(Name = "नाम")]
+        [Required, Display(Name = "Name")]
         public string Name { get; set; }
-        [Required, Display(Name = "स्थानिय नाम")]
+        [Required, Display(Name = "Local Name")]
         public string LocalName { get; set; }
-        [Required, Display(Name = "सुरूको मिति")]
+        [Required, Display(Name = "Starting Date(BS)")]
         public string BsStartDate { get; set; }
-        [Required, Display(Name = "अन्तिम मिति")]
+        [Required, Display(Name = "End Date(BS)")]
         public string BsEndDate { get; set; }
-        [Display(Name = "सुरूको मिति(English)")]
+        [Display(Name = "Starting Date(AD)")]
         public Nullable<System.DateTime> AdStartDate { get; set; }
-        [Display(Name = "अन्तिम मिति(English)")]
+        [Display(Name = "End Date(AD)")]
         public Nullable<System.DateTime> AdEndDate { get; set; }
-        [Display(Name = "स्थिति")]
+        [Display(Name = "Status")]
         public bool IsActive { get; set; }
-        [Display(Name = "अघिल्लो वित्तीय वर्ष")]
+        [Display(Name = "Previous Fiscal Year")]
         public Nullable<int> PreviousFyId { get; set; }
 
     }

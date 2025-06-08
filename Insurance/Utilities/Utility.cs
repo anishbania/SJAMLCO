@@ -18,12 +18,13 @@ namespace Insurance.Utilities
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IWebHostEnvironment _env;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly string UserId = null;
         private readonly string UserRole = null;
 
 
-        public Utility(AppDbContext context, IWebHostEnvironment env, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public Utility(AppDbContext context, IWebHostEnvironment env, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
             _httpContextAccessor = httpContextAccessor;
@@ -32,8 +33,13 @@ namespace Insurance.Utilities
             _signInManager = signInManager;
             UserId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             UserRole = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
+            _roleManager = roleManager;
         }
-
+        public async Task<SelectList> GetUserType()
+        {
+            var roles = await _roleManager.Roles.Select(r => new { r.Name }).ToListAsync();
+            return new SelectList(roles, "Name", "Name");
+        }
         public async Task<string> GetUserName()
         {
             ApplicationUser? user = await _userManager.FindByIdAsync(UserId);
@@ -321,6 +327,26 @@ namespace Insurance.Utilities
         public async Task<SelectList> GetGenderSelectListItems()
         {
             return new SelectList(await _context.Genders.ToListAsync(), "GenderNepali", "GenderNepali");
+        } 
+        public async Task<SelectList> GetDepartmentSelectListItems()
+        {
+            return new SelectList(await _context.Departments.ToListAsync(), "Name", "Name");
+        }
+        public async Task<SelectList> GetRiskCategorySelectListItems()
+        {
+            return new SelectList(await _context.RiskCategories.ToListAsync(), "Name", "Name");
+        }
+        public async Task<SelectList> GetLikehoodSelectListItems()
+        {
+            return new SelectList(await _context.Likehoods.ToListAsync(), "Name", "Name");
+        }
+        public async Task<SelectList> GetImpactSelectListItems()
+        {
+            return new SelectList(await _context.Impacts.ToListAsync(), "Name", "Name");
+        }
+        public async Task<SelectList> GetRiskStatusSelectListItems()
+        {
+            return new SelectList(await _context.RiskStatus.ToListAsync(), "Name", "Name");
         }
         private string GetDynamicFiscalYear(DateTime date)
         {

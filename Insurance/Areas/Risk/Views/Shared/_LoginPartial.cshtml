@@ -1,0 +1,39 @@
+﻿@using Insurance.Models
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<style>
+    .dropstart .dropdown-toggle::before {
+        display: none; 
+    }
+</style>
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="dropdown dropstart">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="far fa-user"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton1">
+                <li>
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/ChangePassword">
+                        <i class="fas fa-lock mr-2"></i> Change Password
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">
+                        <i class="fa fa-sign-out mr-2" aria-hidden="true"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" asp-area="Identity" asp-page="/Account/Login"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i> Login</a></li>
+    }
+</ul>

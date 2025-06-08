@@ -17,11 +17,8 @@
 </head>
 <body>
     <div class="container">
-        <input type="checkbox" id="flip">
         <div class="cover">
-            <div class="front">               
-                <img src="~/images/backimg.jpeg">
-            </div>
+            <img src="~/images/logo.png" style="width:450px; height:400px">
         </div>
         <div class="forms">
             <div class="form-content">
@@ -38,7 +35,7 @@
                             <div class="input-box">
                                 <i class="fas fa-lock"></i>
                                 <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                            </div>                           
+                            </div>
                             <div class="checkbox mb-3">
                                 <label asp-for="Input.RememberMe" class="form-label">
                                     <input class="form-check-input" asp-for="Input.RememberMe" />

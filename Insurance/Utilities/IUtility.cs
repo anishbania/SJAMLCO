@@ -6,6 +6,7 @@ namespace Insurance.Utilities
 {
     public interface IUtility
     {
+        Task<SelectList> GetUserType();
         Task<string> GetUserName();
         Task<string> GetLoggedUserEmail();
         Task<SelectList> GetStateSelectListItems();
@@ -14,6 +15,16 @@ namespace Insurance.Utilities
         Task<SelectList> GetPalikaSelectListItems();
         Task<SelectList> GetPalikaSelectListItems(int? id);
         Task<SelectList> GetGenderSelectListItems();
+
+
+        Task<SelectList> GetDepartmentSelectListItems();
+        Task<SelectList> GetRiskCategorySelectListItems();
+        Task<SelectList> GetLikehoodSelectListItems();
+        Task<SelectList> GetImpactSelectListItems();
+        Task<SelectList> GetRiskStatusSelectListItems();
+
+
+
         Task<SelectList> GetMonthSelectListItems();
         Task<SelectList> GetBranchSelectListItems();
         Task<SelectList> GetCourierVendorSelectListItems();

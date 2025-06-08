@@ -1,4 +1,5 @@
 ﻿using Insurance.Areas.Admins.Models;
+using Insurance.Areas.Risk.Models;
 using Insurance.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -15,34 +16,38 @@ namespace Insurance.Services
             }
 
             //create roles
-            var existsAdmin = await roleManager.RoleExistsAsync("Admin");
-            if (!existsAdmin)
+            var roles = new[]
             {
-                await roleManager.CreateAsync(new IdentityRole("Admin"));
-            }
-            var existsUser = await roleManager.RoleExistsAsync("User");
-            if (!existsUser)
+                "IT",
+                "RSuperAdmin",
+                "RAdmin",
+                "Executive",
+                "User"
+            };
+            foreach (var role in roles)
             {
-                await roleManager.CreateAsync(new IdentityRole("User"));
+                if (!await roleManager.RoleExistsAsync(role))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(role));
+                }
             }
-
             //create an admin
-            var adminUsers = await userManager.GetUsersInRoleAsync("Admin");
+            var adminUsers = await userManager.GetUsersInRoleAsync("IT");
             if (!adminUsers.Any())
             {
                 var user = new ApplicationUser
                 {
-                    FullName = "SiddhiLife Admin",
-                    PrayogkartaName = "SuryaJyoti Life Insurance",
-                    Email = "siddhilife@gmail.com",
-                    UserName = "siddhilife@gmail.com"
+                    FullName = "Anish Baniya",
+                    PrayogkartaName = "IT-Anish",
+                    Email = "anish.baniya@suryajyotilife.com",
+                    UserName = "anish.baniya@suryajyotilife.com"
                 };
 
-                string defaultPass = "Siddhilife@123";
+                string defaultPass = "Anish@123";
                 var result = await userManager.CreateAsync(user, defaultPass);
                 if (result.Succeeded)
                 {
-                    await userManager.AddToRoleAsync(user, "Admin");
+                    await userManager.AddToRoleAsync(user, "IT");
                 }
             }
         }
@@ -180,7 +185,103 @@ namespace Insurance.Services
                 await context.SaveChangesAsync();
             }
         }
+        public static async Task SeedDepartments(AppDbContext context)
+        {
+            var existing = await context.Departments.ToListAsync();
+            if (existing.Count == 0)
+            {
+                List<Department> departments = new List<Department>
+                {
+                    new Department { Name = "ADMIN" },
+                    new Department { Name = "AGENCY" },
+                    new Department { Name = "BOD" },
+                    new Department { Name = "BRANDING" },
+                    new Department { Name = "CLAIM AND LEGAL" },
+                    new Department { Name = "CORPORATE SALES" },
+                    new Department { Name = "CUSTOMER SERVICE" },
+                    new Department { Name = "FINANCE" },
+                    new Department { Name = "HUMAN RESOURCE" },
+                    new Department { Name = "INTERNAL AUDIT" },
+                    new Department { Name = "IT"},
+                    new Department { Name = "REINSURANCE" },
+                    new Department { Name = "TRAINING" },
+                    new Department { Name = "UNDERWRITING" },
+                };
+                context.Departments.AddRange(departments);
+                await context.SaveChangesAsync();
+            }
 
+        }
 
+        public static async Task SeedRiskCategory(AppDbContext context)
+        {
+            var riskCategory = await context.RiskCategories.ToListAsync();
+            if (riskCategory.Count == 0)
+            {
+                List<RiskCategory> years = new List<RiskCategory>()
+                {
+                    new RiskCategory {Name="Insurance Risk"},
+                    new RiskCategory {Name="Market Risk"},
+                    new RiskCategory {Name="Credit Risk"},
+                    new RiskCategory {Name="Operational Risk"},
+                    new RiskCategory {Name="Strategic Risk"},
+                    new RiskCategory {Name="Compliance Risk"},
+                    new RiskCategory {Name="Conduct Risk"},
+                    new RiskCategory {Name="Money Laundering"},
+                    new RiskCategory {Name="Climate Risk"},
+                    new RiskCategory {Name="Reputational Risk"},
+
+                };
+                context.RiskCategories.AddRange(years);
+                await context.SaveChangesAsync();
+            }
+        }
+        public static async Task SeedLikehood(AppDbContext context)
+        {
+            var likehood = await context.Likehoods.ToListAsync();
+            if (likehood.Count == 0)
+            {
+                List<Likehood> years = new List<Likehood>()
+                {
+                    new Likehood {Name="Rare"},
+                    new Likehood {Name="Likely"},
+                    new Likehood {Name="Not Likely"},
+                    new Likehood {Name="High Likely"},
+                    new Likehood {Name="Expected"},
+                };
+                context.Likehoods.AddRange(years);
+                await context.SaveChangesAsync();
+            }
+        } 
+        public static async Task SeedImpact(AppDbContext context)
+        {
+            var impacts = await context.Impacts.ToListAsync();
+            if (impacts.Count == 0)
+            {
+                List<Impact> years = new List<Impact>()
+                {
+                    new Impact {Name="Low"},
+                    new Impact {Name="Moderate"},
+                    new Impact {Name="High"},                   
+                };
+                context.Impacts.AddRange(years);
+                await context.SaveChangesAsync();
+            }
+        } 
+        public static async Task SeedRiskStatus(AppDbContext context)
+        {
+            var existing = await context.RiskStatus.ToListAsync();
+            if (existing.Count == 0)
+            {
+                List<RiskStatus> riskStatus = new List<RiskStatus>()
+                {
+                    new RiskStatus {Name="Open"},
+                    new RiskStatus {Name="Close"},
+                    new RiskStatus {Name="In Progress"},                   
+                };
+                context.RiskStatus.AddRange(riskStatus);
+                await context.SaveChangesAsync();
+            }
+        }
     }
 }

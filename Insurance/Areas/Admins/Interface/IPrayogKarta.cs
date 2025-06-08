@@ -11,5 +11,10 @@ namespace Insurance.Areas.FinanceSys.Interface
         Task<ResponseModel> Create(PrayogKartaViewModel prayogKarta);
         Task<ResponseModel> Delete(string id);
         Task<bool> ResetPass(string id);
+        Task<List<UserRolesModel>> GetRoles();
+        Task<UserRolesModel> GetRolesById(string id);
+        Task<bool> CreateRole(UserRolesModel model);
+        Task<ResponseModel> DeleteRole(string id);
+
     }
 }

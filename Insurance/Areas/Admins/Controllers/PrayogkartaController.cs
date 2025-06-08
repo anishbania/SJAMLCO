@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Insurance.Areas.FinanceSys.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "IT")]
     [Area("Admins")]
     public class PrayogkartaController : Controller
     {
@@ -42,12 +42,39 @@ namespace Insurance.Areas.FinanceSys.Controllers
             }
             return View();
         }
-
+        public async Task<IActionResult>Roles()
+        {
+            return View(await _prayogKarta.GetRoles());
+        }
+        public async Task<IActionResult>AddRole(string? id)
+        {
+            return View(await _prayogKarta.GetRolesById(id));
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddRole(UserRolesModel model)
+        {
+            if (await _prayogKarta.CreateRole(model))
+            {
+                TempData["success"] = "Role added successfully";
+                return RedirectToAction("Roles");
+            }
+            return View(model);
+        }
         [HttpPost]
         public async Task<IActionResult> DeleteConfirm(string id)
         {
             ResponseModel response = await _prayogKarta.Delete(id);
             return RedirectToAction("Index");
+        } 
+        [HttpPost]
+        public async Task<IActionResult> DeleteRole(string id)
+        {
+            ResponseModel response = await _prayogKarta.DeleteRole(id);
+            if(response.Status)
+            {
+                TempData["error"] = "Role Deleted";
+            }
+            return RedirectToAction("Roles");
         }
 
         public async Task<IActionResult> ResetPass(string id)

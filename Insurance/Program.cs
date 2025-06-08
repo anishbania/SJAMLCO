@@ -9,6 +9,8 @@ using System.Security.Claims;
 using Insurance.Repositories;
 using Insurance.Areas.Admins.Interface;
 using Insurance.Areas.Admins.Repository;
+using Insurance.Areas.Risk.Interface;
+using Insurance.Areas.Risk.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +52,7 @@ builder.Services.AddScoped<IUtility, Utility>();
 builder.Services.AddScoped<IPrayogKarta, PrayogKartaRepository>();
 builder.Services.AddScoped<IAllCommonRepository, AllCommonRepository>();
 builder.Services.AddScoped<ICourier, CourierRepository>();
+builder.Services.AddScoped<IRiskRegister, RiskRegisterRepository>();
 
 builder.Services.AddAuthorization(options =>
 {
@@ -89,6 +92,12 @@ app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
+    endpoints.MapGet("/", ctx =>
+    {
+        ctx.Response.Redirect("/Identity/Account/Login");
+        return Task.CompletedTask;
+    });
+
     endpoints.MapControllerRoute(
       name: "areas",
       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
@@ -98,6 +107,8 @@ app.UseEndpoints(endpoints =>
         name: "default",
         pattern: "{controller=LandingPage}/{action=Index}/{id?}"
     );
+    endpoints.MapRazorPages();
+
 });
 
 app.MapRazorPages();
@@ -121,6 +132,11 @@ static async Task InitializeDatabaseAsync(WebApplication app)
         await DbInitializer.SeedGender(context);
         await DbInitializer.SeedCourierVendor(context);
         await DbInitializer.SeedLogisticCategories(context);
+        await DbInitializer.SeedDepartments(context);
+        await DbInitializer.SeedRiskCategory(context);
+        await DbInitializer.SeedLikehood(context);
+        await DbInitializer.SeedImpact(context);
+        await DbInitializer.SeedRiskStatus(context);
         DbInitializer.SeedProDisPal(context);
        
     }

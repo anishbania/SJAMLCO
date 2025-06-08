@@ -85,6 +85,19 @@ namespace Insurance.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Departments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Departments", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FinanceTypes",
                 columns: table => new
                 {
@@ -139,6 +152,32 @@ namespace Insurance.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Impacts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Impacts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Likehoods",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Likehoods", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "LogisticCategories",
                 columns: table => new
                 {
@@ -163,6 +202,63 @@ namespace Insurance.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Mahinas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RiskCategories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RiskCategories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RiskRegisters",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RiskID = table.Column<int>(type: "int", nullable: false),
+                    RegisterDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RiskDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Department = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PrimaryRisk = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecondaryRisk = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LikeHood = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Impact = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RiskOwner = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MitigationAction = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RiskStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClosedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Quantification = table.Column<int>(type: "int", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreadtedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Remarks = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RiskResponse = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RiskRegisters", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RiskStatus",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RiskStatus", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -319,15 +415,18 @@ namespace Insurance.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    SequenceNumber = table.Column<int>(type: "int", nullable: false),
                     BranchCode = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     DispatchDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     VendorID = table.Column<int>(type: "int", nullable: false),
+                    ChalaniNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DartaNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
+                    ModeOfCourier = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SendBy = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     ReceivedBy = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     ReceivedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Remarks = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    RefNumber = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
                     ModifiedBy = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     SupportingFilePath = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -371,7 +470,7 @@ namespace Insurance.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DispatchId = table.Column<int>(type: "int", nullable: true),
                     ItemName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    Qty = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    Qty = table.Column<int>(type: "int", nullable: true),
                     UnitType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     CategoryID = table.Column<int>(type: "int", nullable: false)
                 },
@@ -498,6 +597,9 @@ namespace Insurance.Migrations
                 name: "Branch");
 
             migrationBuilder.DropTable(
+                name: "Departments");
+
+            migrationBuilder.DropTable(
                 name: "FinanceTypes");
 
             migrationBuilder.DropTable(
@@ -507,6 +609,12 @@ namespace Insurance.Migrations
                 name: "Genders");
 
             migrationBuilder.DropTable(
+                name: "Impacts");
+
+            migrationBuilder.DropTable(
+                name: "Likehoods");
+
+            migrationBuilder.DropTable(
                 name: "LogisticItems");
 
             migrationBuilder.DropTable(
@@ -514,6 +622,15 @@ namespace Insurance.Migrations
 
             migrationBuilder.DropTable(
                 name: "Palika");
+
+            migrationBuilder.DropTable(
+                name: "RiskCategories");
+
+            migrationBuilder.DropTable(
+                name: "RiskRegisters");
+
+            migrationBuilder.DropTable(
+                name: "RiskStatus");
 
             migrationBuilder.DropTable(
                 name: "SiteSetting");

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hqnjEdgVkc5gDgOXnCORMRyfFeZ4RPrdzz+bDMrdjl4=",
+  "Hash": "5cRKcKdCme9vCmup+zDpT9cTmfA2RHOm2HCBfUzaLmA=",
   "Source": "Insurance",
   "BasePath": "_content/Insurance",
   "Mode": "Default",
@@ -157,8 +157,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vzqnswyg3c",
-      "Integrity": "ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU=",
+      "Fingerprint": "3u2hjnq804",
+      "Integrity": "m3dBXBtUWIs4cZzzKBNafd5+fbdHVAUlV1ts3ohLgbs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Login.css"
@@ -283,8 +283,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "bk7xjt7tmo",
-      "Integrity": "dSRg2dJYrbW6MPMaGZrxcH27CfoMQafkgNmAaIKPxp0=",
+      "Fingerprint": "f21wa8lpn1",
+      "Integrity": "mTjo8xIYGTf7dkghQfbJqtAGeaswldJbIXjLLFgrUUA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\AppImage\\logo.png"
@@ -3949,6 +3949,51 @@
       ]
     },
     {
+      "Route": "css/Login.3u2hjnq804.css",
+      "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\Login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"m3dBXBtUWIs4cZzzKBNafd5+fbdHVAUlV1ts3ohLgbs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 08 Jun 2025 11:14:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3u2hjnq804"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-m3dBXBtUWIs4cZzzKBNafd5+fbdHVAUlV1ts3ohLgbs="
+        }
+      ]
+    },
+    {
       "Route": "css/Login.css",
       "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\Login.css",
       "Selectors": [],
@@ -3959,7 +4004,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5466"
+          "Value": "2217"
         },
         {
           "Name": "Content-Type",
@@ -3967,11 +4012,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU=\""
+          "Value": "\"m3dBXBtUWIs4cZzzKBNafd5+fbdHVAUlV1ts3ohLgbs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 04:30:32 GMT"
+          "Value": "Sun, 08 Jun 2025 11:14:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3981,52 +4026,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU="
-        }
-      ]
-    },
-    {
-      "Route": "css/Login.vzqnswyg3c.css",
-      "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\css\\Login.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5466"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 04:30:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "vzqnswyg3c"
-        },
-        {
-          "Name": "label",
-          "Value": "css/Login.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ayTqHOuYjOp9zK/69BoFWwTYft9STGg0hO+5dR16IdU="
+          "Value": "sha256-m3dBXBtUWIs4cZzzKBNafd5+fbdHVAUlV1ts3ohLgbs="
         }
       ]
     },
@@ -6661,7 +6661,7 @@
       ]
     },
     {
-      "Route": "images/AppImage/logo.bk7xjt7tmo.png",
+      "Route": "images/AppImage/logo.f21wa8lpn1.png",
       "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\AppImage\\logo.png",
       "Selectors": [],
       "ResponseHeaders": [
@@ -6671,7 +6671,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7549"
+          "Value": "384456"
         },
         {
           "Name": "Content-Type",
@@ -6679,11 +6679,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"dSRg2dJYrbW6MPMaGZrxcH27CfoMQafkgNmAaIKPxp0=\""
+          "Value": "\"mTjo8xIYGTf7dkghQfbJqtAGeaswldJbIXjLLFgrUUA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 04:30:32 GMT"
+          "Value": "Sun, 08 Jun 2025 02:19:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6693,7 +6693,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "bk7xjt7tmo"
+          "Value": "f21wa8lpn1"
         },
         {
           "Name": "label",
@@ -6701,7 +6701,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-dSRg2dJYrbW6MPMaGZrxcH27CfoMQafkgNmAaIKPxp0="
+          "Value": "sha256-mTjo8xIYGTf7dkghQfbJqtAGeaswldJbIXjLLFgrUUA="
         }
       ]
     },
@@ -6716,7 +6716,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7549"
+          "Value": "384456"
         },
         {
           "Name": "Content-Type",
@@ -6724,11 +6724,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"dSRg2dJYrbW6MPMaGZrxcH27CfoMQafkgNmAaIKPxp0=\""
+          "Value": "\"mTjo8xIYGTf7dkghQfbJqtAGeaswldJbIXjLLFgrUUA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 16 Apr 2025 04:30:32 GMT"
+          "Value": "Sun, 08 Jun 2025 02:19:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6738,7 +6738,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-dSRg2dJYrbW6MPMaGZrxcH27CfoMQafkgNmAaIKPxp0="
+          "Value": "sha256-mTjo8xIYGTf7dkghQfbJqtAGeaswldJbIXjLLFgrUUA="
         }
       ]
     },
@@ -8081,7 +8081,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 17 Apr 2025 05:40:59 GMT"
+          "Value": "Sun, 08 Jun 2025 06:41:49 GMT"
         },
         {
           "Name": "Link",
@@ -8126,7 +8126,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 17 Apr 2025 05:40:59 GMT"
+          "Value": "Sun, 08 Jun 2025 06:41:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8163,7 +8163,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 17 Apr 2025 05:40:59 GMT"
+          "Value": "Sun, 08 Jun 2025 06:41:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8212,7 +8212,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 17 Apr 2025 05:40:59 GMT"
+          "Value": "Sun, 08 Jun 2025 06:41:49 GMT"
         },
         {
           "Name": "Link",

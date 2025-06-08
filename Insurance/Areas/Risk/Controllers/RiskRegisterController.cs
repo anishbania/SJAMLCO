@@ -1,0 +1,57 @@
+﻿using Insurance.Areas.Risk.Interface;
+using Insurance.Areas.Risk.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+
+namespace Insurance.Areas.Risk.Controllers
+{
+    [Area("Risk")]
+    public class RiskRegisterController : Controller
+    {
+        private readonly IRiskRegister _riskRegister;
+        public RiskRegisterController(IRiskRegister riskRegister)
+        {
+            _riskRegister = riskRegister;
+        }
+        public async Task<IActionResult> Index()
+        {
+            return View(await _riskRegister.GetAllRiskRegistersAsync());
+        }
+        public async Task<IActionResult> CreateUpdate(int? id)
+        {
+            return View(await _riskRegister.GetRiskRegisterByIdAsync(id ?? 0));
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateUpdate(RiskRegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = await _riskRegister.AddUpdateRiskRegisterAsync(model);
+                if (response.Status)
+                {
+                    TempData["success"] = response.Message;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    TempData["error"] = response.Message;
+                }
+            }
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = await _riskRegister.DeleteRiskRegisterAsync(id);
+            if (response.Status)
+            {
+                TempData["success"] = response.Message;
+            }
+            else
+            {
+                TempData["error"] = response.Message;
+            }
+            return RedirectToAction("Index");
+        }
+    }
+}

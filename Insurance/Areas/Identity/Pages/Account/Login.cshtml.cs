@@ -125,7 +125,7 @@ namespace Insurance.Areas.Identity.Pages.Account
                     user.LastLoginDate = DateTime.Now;
 
                     await _userManager.UpdateAsync(user);
-                    TempData["success"] = "तपाई लगिन हुनुभएको छ |";
+                    TempData["success"] = "Successfully Logged In";
                     return RedirectToAction("RedirectRought", "Home", new { area = "" });
 
                 }

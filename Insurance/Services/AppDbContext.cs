@@ -1,4 +1,5 @@
 ﻿using Insurance.Areas.Admins.Models;
+using Insurance.Areas.Risk.Models;
 using Insurance.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,16 @@ namespace Insurance.Services
         public DbSet<FinanceType> FinanceTypes { get; set; }
         public DbSet<Mahina> Mahinas { get; set; }
         public DbSet<SiteSetting> SiteSetting { get; set; }
+
+        #region Risk Register 
+        public DbSet<RiskRegister> RiskRegisters { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<RiskCategory> RiskCategories { get; set; }
+        public DbSet<Likehood> Likehoods { get; set; }
+        public DbSet<Impact> Impacts { get; set; }
+        public DbSet<RiskStatus> RiskStatus { get; set; } 
+        #endregion
+
     }
 }
 

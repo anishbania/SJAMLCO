@@ -12,6 +12,7 @@ using System.Security.Claims;
 
 namespace Insurance.Controllers
 {
+    [Authorize(Roles = "SuperAdmin,Admin,IT")]
     public class UserController : Controller
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
@@ -31,7 +32,6 @@ namespace Insurance.Controllers
 
         }
 
-        [Authorize(Roles = "User")]
         public IActionResult Index()
         {
 

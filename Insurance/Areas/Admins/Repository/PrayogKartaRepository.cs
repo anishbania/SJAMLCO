@@ -11,12 +11,16 @@ namespace Insurance.Areas.FinanceSys.Repository
     public class PrayogKartaRepository : IPrayogKarta
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly AppDbContext _context; 
+        private readonly AppDbContext _context;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ILogger<PrayogKartaRepository> _logger;
 
-        public PrayogKartaRepository(UserManager<ApplicationUser> userManager, AppDbContext context)
+        public PrayogKartaRepository(UserManager<ApplicationUser> userManager, AppDbContext context, RoleManager<IdentityRole> roleManager, ILogger<PrayogKartaRepository> logger)
         {
             _userManager = userManager;
             _context = context;
+            _roleManager = roleManager;
+            _logger = logger;
         }
 
         public async Task<ResponseModel> Create(PrayogKartaViewModel prayogKarta)
@@ -109,6 +113,22 @@ namespace Insurance.Areas.FinanceSys.Repository
             }
             responseModel.Status = false;
             return responseModel;
+        } 
+        public async Task<ResponseModel> DeleteRole(string id)
+        {
+            ResponseModel responseModel = new();
+            var role = await _roleManager.FindByIdAsync(id);
+            if (role != null)
+            {
+                var result = await _roleManager.DeleteAsync(role);
+                if (result.Succeeded)
+                {
+                    responseModel.Status = true;
+                    return responseModel;
+                }
+            }
+            responseModel.Status = false;
+            return responseModel;
         }
 
         public async Task<bool> ResetPass(string id)
@@ -176,6 +196,46 @@ namespace Insurance.Areas.FinanceSys.Repository
                 return prayogKarta;
             }
             return null;
+        }
+
+        public async  Task<List<UserRolesModel>> GetRoles()
+        {
+            var roles = _roleManager.Roles;
+            var roleModels = roles.Select(role => new UserRolesModel
+            {
+                Id = role.Id,
+                RoleName = role.NormalizedName,
+            }).ToList();
+
+            return await Task.FromResult(roleModels);
+        }
+
+        public async  Task<UserRolesModel> GetRolesById(string id)
+        {
+            var role = await _roleManager.FindByIdAsync(id);
+            if (role != null)
+            {
+                UserRolesModel roles = new UserRolesModel();
+                roles.Id = role.Id;
+                roles.RoleName = role.Name;
+                return roles;
+            }
+            return null;
+        }
+
+        public async Task<bool> CreateRole(UserRolesModel model)
+        {
+            var existingRole = await _roleManager.FindByNameAsync(model.RoleName);
+            if (existingRole != null)
+            {
+                _logger.LogInformation("Failed to Create a new role for " + model.RoleName + " because it is already created.");
+                return false;
+            }
+
+            var newRole = new IdentityRole(model.RoleName);
+            var result = await _roleManager.CreateAsync(newRole);
+
+            return true;
         }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Insurance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250416045825_initial")]
+    [Migration("20250608090249_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -81,8 +81,17 @@ namespace Insurance.Migrations
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
+                    b.Property<string>("ChalaniNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DartaNo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DispatchDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ModeOfCourier")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(100)
@@ -98,10 +107,6 @@ namespace Insurance.Migrations
                     b.Property<DateTime?>("ReceivedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("RefNumber")
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
-
                     b.Property<string>("Remarks")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
@@ -109,6 +114,9 @@ namespace Insurance.Migrations
                     b.Property<string>("SendBy")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("SequenceNumber")
+                        .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .HasMaxLength(15)
@@ -145,8 +153,8 @@ namespace Insurance.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<decimal?>("Qty")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int?>("Qty")
+                        .HasColumnType("int");
 
                     b.Property<string>("UnitType")
                         .HasMaxLength(20)
@@ -159,6 +167,156 @@ namespace Insurance.Migrations
                     b.HasIndex("DispatchId");
 
                     b.ToTable("LogisticItems");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.Risk.Models.Department", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.Risk.Models.Impact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Impacts");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.Risk.Models.Likehood", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Likehoods");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.Risk.Models.RiskCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RiskCategories");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.Risk.Models.RiskRegister", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<DateTime?>("ClosedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreadtedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Impact")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LikeHood")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MitigationAction")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PrimaryRisk")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantification")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("RegisterDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RiskDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RiskID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RiskOwner")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RiskResponse")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RiskStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondaryRisk")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("RiskRegisters");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.Risk.Models.RiskStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RiskStatus");
                 });
 
             modelBuilder.Entity("Insurance.Models.ApplicationUser", b =>
