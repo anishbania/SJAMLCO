@@ -28,6 +28,23 @@ namespace Insurance.Areas.Risk.Repository
         {
             ResponseModel response = new();
             var username = _httpContextAccessor.HttpContext!.User.FindFirstValue(ClaimTypes.Name) ?? _httpContextAccessor.HttpContext.User.Identity.Name;
+            var departmentPrefixes = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["ADMIN"] = "ADM",
+                ["AGENCY"] = "AGY",
+                ["BOD"] = "BOD",
+                ["BRANDING"] = "BRD",
+                ["CLAIM AND LEGAL"] = "CLG",
+                ["CORPORATE SALES"] = "CPS",
+                ["CUSTOMER SERVICE"] = "CUS",
+                ["FINANCE"] = "FIN",
+                ["HUMAN RESOURCE"] = "HR",
+                ["INTERNAL AUDIT"] = "IAD",
+                ["IT"] = "IT",
+                ["REINSURANCE"] = "REI",
+                ["TRAINING"] = "TRN",
+                ["UNDERWRITING"] = "UND"
+            };
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
@@ -67,9 +84,42 @@ namespace Insurance.Areas.Risk.Repository
                     }
                     else
                     {
+                        // 2) Determine the prefix for this department
+                        if (!departmentPrefixes.TryGetValue(model.Department, out var prefix))
+                        {
+                            // fallback or error if department unknown
+                            return new ResponseModel
+                            {
+                                Status = false,
+                                Message = $"Unknown department '{model.Department}'. cannot assign RiskID."
+                            };
+                        }
+
+                        // 3) Fetch existing RiskIDs for that prefix, pick the max numeric suffix
+                        //    e.g. existing: FIN-0012, FIN-0013 → we want suffix=13
+                        var latest = await _context.RiskRegisters
+                            .Where(r => r.RiskID.StartsWith(prefix + "-"))
+                            .OrderByDescending(r => r.RiskID)
+                            .Select(r => r.RiskID)
+                            .FirstOrDefaultAsync();
+
+                        int nextNumber = 1;
+                        if (!string.IsNullOrEmpty(latest))
+                        {
+                            // parse the suffix after the dash
+                            var parts = latest.Split('-');
+                            if (parts.Length == 2 && int.TryParse(parts[1], out var lastNum))
+                            {
+                                nextNumber = lastNum + 1;
+                            }
+                        }
+
+                        // 4) Build new RiskID — e.g. "FIN-1" 
+                        var newRiskId = $"{prefix}-{nextNumber}";
                         RiskRegister abc = new()
                         {
-                            RiskID = model.RiskID,
+
+                            RiskID =newRiskId,
                             RegisterDate = model.RegisterDate,
                             RiskDescription = model.RiskDescription,
                             Department = model.Department,

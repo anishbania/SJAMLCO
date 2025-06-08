@@ -6,11 +6,11 @@ namespace Insurance.Areas.Risk.ViewModels
     public class RiskRegisterViewModel
     {
         public int ID { get; set; }
-        [Required]
         [DisplayName("Risk ID")]
-        public int RiskID { get; set; }
+        public string RiskID { get; set; }
 
         [DisplayName("Register Date")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? RegisterDate { get; set; } = DateTime.Now;
 
         [DisplayName("Risk Description")]
@@ -49,12 +49,14 @@ namespace Insurance.Areas.Risk.ViewModels
         public string RiskStatus { get; set; }
 
         [DisplayName("Closed Date")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? ClosedDate { get; set; } = DateTime.Now;
 
         [DisplayName("Quantification")]
         public int Quantification { get; set; }
 
         [DisplayName("Updated Date")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? UpdatedDate { get; set; }
 
         [DisplayName("Remarks")]

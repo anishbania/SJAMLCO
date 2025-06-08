@@ -6,7 +6,7 @@ namespace Insurance.Areas.Risk.Models
     {
         [Key]
         public int ID { get; set; }
-        public  int  RiskID { get; set; }
+        public  string  RiskID { get; set; }
         public DateTime? RegisterDate { get; set; }
         public string RiskDescription { get; set; }
         public string Department { get; set; }

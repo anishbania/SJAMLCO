@@ -1,59 +1,59 @@
-﻿@model IEnumerable<RiskRegisterViewModel>
-@{
-    ViewData["Title"] = "Risk Register";
-    int i = 1;
-}
+﻿@model IEnumerable<RiskRegisterViewModel>  
+@{  
+    ViewData["Title"] = "Risk Register";  
+    int i = 1;  
+}  
 
-<a asp-controller="RiskRegister" asp-action="CreateUpdate" asp-area="Risk" class="btn btn-sm btn-outline-primary"><i class="bi bi-plus-circle-fill"></i>&nbsp; New Risk</a>
-<div class="table-responsive">
-    <table id="example" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>S.N</th>
-                <th>Actions</th>
-                <th>@Html.DisplayNameFor(model => model.RiskID)</th>
-                <th>@Html.DisplayNameFor(model => model.RegisterDate)</th>
-                <th>@Html.DisplayNameFor(model => model.Department)</th>
-                <th>@Html.DisplayNameFor(model => model.PrimaryRisk)</th>
-                <th>@Html.DisplayNameFor(model => model.SecondaryRisk)</th>
-                <th>@Html.DisplayNameFor(model => model.LikeHood)</th>
-                <th>@Html.DisplayNameFor(model => model.Impact)</th>
-                <th>@Html.DisplayNameFor(model => model.RiskOwner)</th>
-                <th>@Html.DisplayNameFor(model => model.RiskStatus)</th>
-                <th>@Html.DisplayNameFor(model => model.ClosedDate)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @i
-                    </td>
-                    <td>
-                        <div class="d-inline">
-                            <a asp-action="Create" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-pencil"></i></a>
-                            <a asp-action="Details" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-eye text-warning"></i></a>
-                            <form asp-action="Delete" asp-route-id="@item.ID" data-ajax="true" data-ajax-method="post" data-ajax-confirm="Are you sure?" data-ajax-complete="deletePage" class="d-inline">
-                                <button type="submit" class="btn btn-link p-0"> <i class="bi bi-trash text-red"></i></button>
-                            </form>
-                        </div>
-                    </td>
-                    <td>@item.RiskID</td>S
-                    <td>@item.RegisterDate</td>
+<a asp-controller="RiskRegister" asp-action="CreateUpdate" asp-area="Risk" class="btn btn-sm btn-outline-primary"><i class="bi bi-plus-circle-fill"></i>&nbsp; New Risk</a>  
+<div class="table-responsive">  
+    <table id="example" class="table table-striped" style="width:100%">  
+        <thead>  
+            <tr>  
+                <th>S.N</th>  
+                <th>Actions</th>  
+                <th>@Html.DisplayNameFor(model => model.RiskID)</th>  
+                <th>@Html.DisplayNameFor(model => model.RegisterDate)</th>  
+                <th>@Html.DisplayNameFor(model => model.Department)</th>  
+                <th>@Html.DisplayNameFor(model => model.PrimaryRisk)</th>  
+                <th>@Html.DisplayNameFor(model => model.SecondaryRisk)</th>  
+                <th>@Html.DisplayNameFor(model => model.LikeHood)</th>  
+                <th>@Html.DisplayNameFor(model => model.Impact)</th>  
+                <th>@Html.DisplayNameFor(model => model.RiskOwner)</th>  
+                <th>@Html.DisplayNameFor(model => model.RiskStatus)</th>  
+                <th>@Html.DisplayNameFor(model => model.ClosedDate)</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            @foreach (var item in Model)  
+            {  
+                <tr>  
+                    <td>  
+                        @i  
+                    </td>  
+                    <td>  
+                        <div class="d-inline">  
+                            <a asp-action="CreateUpdate" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-pencil"></i></a>  
+                            <a asp-action="Details" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-eye text-warning"></i></a>  
+                            <form asp-action="Delete" asp-route-id="@item.ID" data-ajax="true" data-ajax-method="post" data-ajax-confirm="Are you sure?" data-ajax-complete="deletePage" class="d-inline">  
+                                <button type="submit" class="btn btn-link p-0"> <i class="bi bi-trash text-red"></i></button>  
+                            </form>  
+                        </div>  
+                    </td>  
+                    <td>@item.RiskID</td>
+                    <td>@(item.RegisterDate.HasValue? item.RegisterDate.Value.ToString("yyyy-MM-dd") : string.Empty)</td>
                     <td>@item.Department</td>
-                    <td>@item.PrimaryRisk</td>
-                    <td>@item.SecondaryRisk</td>
-                    <td>@item.LikeHood</td>
-                    <td>@item.Impact</td>
-                    <td>@item.RiskOwner</td>
-                    <td>@item.RiskStatus</td>
-                    <td>@item.ClosedDate</td>                                                                   
-                </tr>
-                i++;
-            }
-        </tbody>
-    </table>
-</div>
-<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+                    <td>@item.PrimaryRisk</td>  
+                    <td>@item.SecondaryRisk</td>  
+                    <td>@item.LikeHood</td>  
+                    <td>@item.Impact</td>  
+                    <td>@item.RiskOwner</td>  
+                    <td>@item.RiskStatus</td>  
+                    <td>@(item.ClosedDate.HasValue ? item.ClosedDate.Value.ToString("yyyy-MM-dd") : string.Empty)</td>  
+                </tr>  
+                i++;  
+            }  
+        </tbody>  
+    </table>  
+</div>  
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">  
 <partial name="_AddDatatable">
