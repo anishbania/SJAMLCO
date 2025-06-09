@@ -348,40 +348,40 @@ namespace Insurance.Utilities
         {
             return new SelectList(await _context.RiskStatus.ToListAsync(), "Name", "Name");
         }
-        private string GetDynamicFiscalYear(DateTime date)
-        {
-            int bsYear;
-            // Check the cutoff based on our assumption: July 17 is Shrawan 1.
-            if (date.Month > 7 || (date.Month == 7 && date.Day >= 17))
-            {
-                bsYear = date.Year + 57;
-            }
-            else
-            {
-                bsYear = date.Year + 56;
-            }
-            string nextYearTwoDigits = (bsYear + 1).ToString();
-            nextYearTwoDigits = nextYearTwoDigits.Substring(nextYearTwoDigits.Length - 2); // last two digits
-            return $"{bsYear}/{nextYearTwoDigits}";
-        }
+        //private string GetDynamicFiscalYear(DateTime date)
+        //{
+        //    int bsYear;
+        //    // Check the cutoff based on our assumption: July 17 is Shrawan 1.
+        //    if (date.Month > 7 || (date.Month == 7 && date.Day >= 17))
+        //    {
+        //        bsYear = date.Year + 57;
+        //    }
+        //    else
+        //    {
+        //        bsYear = date.Year + 56;
+        //    }
+        //    string nextYearTwoDigits = (bsYear + 1).ToString();
+        //    nextYearTwoDigits = nextYearTwoDigits.Substring(nextYearTwoDigits.Length - 2); // last two digits
+        //    return $"{bsYear}/{nextYearTwoDigits}";
+        //}
 
-        public async Task<string> GenerateChalaniNumber(DateTime referenceDate, int SequenceNumber)
-        {
-            // Count dispatches in the same fiscal year.
-            string fiscalYear = GetDynamicFiscalYear(referenceDate);           
-            string sequence = SequenceNumber.ToString("D3");  // Format as 3-digit sequence.
-            return $"SJLIC-Admin-Cha no {sequence}-{fiscalYear}";
-        }
+        //public async Task<string> GenerateChalaniNumber(DateTime referenceDate, int SequenceNumber)
+        //{
+        //    // Count dispatches in the same fiscal year.
+        //    string fiscalYear = GetDynamicFiscalYear(referenceDate);           
+        //    string sequence = SequenceNumber.ToString("D3");  // Format as 3-digit sequence.
+        //    return $"SJLIC-Admin-Cha no {sequence}-{fiscalYear}";
+        //}
 
-        public async Task<string> GenerateDartaNumber(DateTime referenceDate, int SequenceNumber)
-        {
-            string fiscalYear = GetDynamicFiscalYear(referenceDate);            
-            int branchCode = (from u in _context.Users
-                              join b in _context.Branch on u.BranchId equals b.Id
-                              where u.Id == UserId
-                              select b.Code).FirstOrDefault();
-            string sequence = SequenceNumber.ToString("D3");  // Format as 3-digit sequence.
-            return $"SJLIC-Admin-Reg no {sequence}-{fiscalYear}";
-        }
+        //public async Task<string> GenerateDartaNumber(DateTime referenceDate, int SequenceNumber)
+        //{
+        //    string fiscalYear = GetDynamicFiscalYear(referenceDate);            
+        //    int branchCode = (from u in _context.Users
+        //                      join b in _context.Branch on u.BranchId equals b.Id
+        //                      where u.Id == UserId
+        //                      select b.Code).FirstOrDefault();
+        //    string sequence = SequenceNumber.ToString("D3");  // Format as 3-digit sequence.
+        //    return $"SJLIC-Admin-Reg no {sequence}-{fiscalYear}";
+        //}
     }
 }

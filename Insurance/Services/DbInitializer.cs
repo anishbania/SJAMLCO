@@ -243,11 +243,11 @@ namespace Insurance.Services
             {
                 List<Likehood> years = new List<Likehood>()
                 {
-                    new Likehood {Name="Rare"},
-                    new Likehood {Name="Likely"},
-                    new Likehood {Name="Not Likely"},
-                    new Likehood {Name="High Likely"},
-                    new Likehood {Name="Expected"},
+                    new Likehood { NumScore = 1, Name = "Rare" },
+                    new Likehood { NumScore = 2, Name = "Not Likely" },
+                    new Likehood { NumScore = 3, Name = "Likely" },
+                    new Likehood { NumScore = 4, Name = "High Likely" },
+                    new Likehood { NumScore = 5, Name = "Expected" }
                 };
                 context.Likehoods.AddRange(years);
                 await context.SaveChangesAsync();
@@ -260,9 +260,9 @@ namespace Insurance.Services
             {
                 List<Impact> years = new List<Impact>()
                 {
-                    new Impact {Name="Low"},
-                    new Impact {Name="Moderate"},
-                    new Impact {Name="High"},                   
+                    new Impact { NumScore = 1, Name = "Low" },
+                    new Impact { NumScore = 2, Name = "Moderate" },
+                    new Impact { NumScore = 3, Name = "High" }
                 };
                 context.Impacts.AddRange(years);
                 await context.SaveChangesAsync();

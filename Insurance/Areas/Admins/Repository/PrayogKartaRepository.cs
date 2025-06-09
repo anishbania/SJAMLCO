@@ -44,7 +44,7 @@ namespace Insurance.Areas.FinanceSys.Repository
                 {
                     existingUser.FullName = prayogKarta.FullName;
                     existingUser.PhoneNumber = prayogKarta.PhoneNumber;
-                    existingUser.BranchId = prayogKarta.BranchId;
+                    existingUser.Department = prayogKarta.Department;
                     existingUser.Email = prayogKarta.Email;
                     existingUser.PrayogkartaName = prayogKarta.PrayogkartaName;
                     var updateResult = await _userManager.UpdateAsync(existingUser);
@@ -71,7 +71,7 @@ namespace Insurance.Areas.FinanceSys.Repository
                 {
                     FullName = prayogKarta.FullName,
                     PrayogkartaName = prayogKarta.PrayogkartaName,
-                    BranchId= prayogKarta.BranchId,
+                    Department= prayogKarta.Department,
                     Email = prayogKarta.Email,
                     PhoneNumber = prayogKarta.PhoneNumber,
                     HasLoggedIn = false,
@@ -163,7 +163,7 @@ namespace Insurance.Areas.FinanceSys.Repository
                 {
                     Id = item.Id,
                     FullName = item.FullName,
-                    BranchId = item.BranchId,
+                    Department = item.Department,
                     PrayogkartaName = item.PrayogkartaName,
                     Email = item.Email,
                     PhoneNumber = item.PhoneNumber,
@@ -186,7 +186,7 @@ namespace Insurance.Areas.FinanceSys.Repository
                 {
                     Id = users.Id,
                     FullName = users.FullName,
-                    BranchId = users.BranchId,
+                    Department = users.Department,
                     PrayogkartaName = users.PrayogkartaName,
                     Email = users.Email,
                     PhoneNumber = users.PhoneNumber,

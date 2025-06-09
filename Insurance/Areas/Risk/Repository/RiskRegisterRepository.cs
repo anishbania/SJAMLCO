@@ -15,6 +15,8 @@ namespace Insurance.Areas.Risk.Repository
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly AppDbContext _context;
         private readonly string userId = null;
+        private readonly string userRole = null;
+
         public RiskRegisterRepository(ILogger<RiskRegisterRepository> logger, IConfiguration configuration, AppDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
@@ -22,6 +24,8 @@ namespace Insurance.Areas.Risk.Repository
             _configuration = configuration;
             _context = context;
             userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            userRole = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
+
             _httpContextAccessor = httpContextAccessor;
         }
         public async Task<ResponseModel> AddUpdateRiskRegisterAsync(RiskRegisterViewModel model)
@@ -41,7 +45,7 @@ namespace Insurance.Areas.Risk.Repository
                 ["HUMAN RESOURCE"] = "HR",
                 ["INTERNAL AUDIT"] = "IAD",
                 ["IT"] = "IT",
-                ["REINSURANCE"] = "REI",
+                ["REINSURANCE"] = "RI",
                 ["TRAINING"] = "TRN",
                 ["UNDERWRITING"] = "UND"
             };
@@ -54,7 +58,6 @@ namespace Insurance.Areas.Risk.Repository
                         var data = await _context.RiskRegisters.FirstOrDefaultAsync(x => x.ID == model.ID);
                         if (data != null)
                         {
-                            data.RiskID = model.RiskID;
                             data.RegisterDate = model.RegisterDate;
                             data.RiskDescription = model.RiskDescription;
                             data.Department = model.Department;
@@ -71,6 +74,8 @@ namespace Insurance.Areas.Risk.Repository
                             data.UpdatedBy = username;
                             data.Remarks = model.Remarks;
                             data.RiskResponse = model.RiskResponse;
+                            data.LikehoodId = await _context.Likehoods.Where(x => x.Name == model.LikeHood).Select(x => x.Id).FirstOrDefaultAsync();
+                            data.ImpactId = await _context.Impacts.Where(x => x.Name == model.Impact).Select(x => x.Id).FirstOrDefaultAsync();
 
 
                             _context.Entry(data).State = EntityState.Modified;
@@ -120,6 +125,8 @@ namespace Insurance.Areas.Risk.Repository
                         {
 
                             RiskID =newRiskId,
+                            LikehoodId = await _context.Likehoods.Where(x=>x.Name==model.LikeHood).Select(x=>x.Id).FirstOrDefaultAsync(),
+                            ImpactId = await _context.Impacts.Where(x => x.Name == model.Impact).Select(x => x.Id).FirstOrDefaultAsync(),
                             RegisterDate = model.RegisterDate,
                             RiskDescription = model.RiskDescription,
                             Department = model.Department,
@@ -187,28 +194,67 @@ namespace Insurance.Areas.Risk.Repository
 
         public async Task<List<RiskRegisterViewModel>> GetAllRiskRegistersAsync()
         {
-            var result = await (from x in _context.RiskRegisters
-                                select new RiskRegisterViewModel()
-                                {
-                                    ID = x.ID,
-                                    RiskID = x.RiskID,
-                                    RegisterDate = x.RegisterDate,
-                                    RiskDescription = x.RiskDescription,
-                                    Department = x.Department,
-                                    PrimaryRisk = x.PrimaryRisk,
-                                    SecondaryRisk = x.SecondaryRisk,
-                                    LikeHood = x.LikeHood,
-                                    Impact = x.Impact,
-                                    RiskOwner = x.RiskOwner,
-                                    MitigationAction = x.MitigationAction,
-                                    RiskStatus = x.RiskStatus,
-                                    ClosedDate = x.ClosedDate,
-                                    Quantification = x.Quantification,
-                                    UpdatedDate = x.UpdatedDate,
-                                    Remarks = x.Remarks,
-                                    RiskResponse = x.RiskResponse
-                                }).ToListAsync() ?? new List<RiskRegisterViewModel>();
-            return result;
+            if(userRole=="IT")
+            {
+                var result = await (from x in _context.RiskRegisters
+                                    select new RiskRegisterViewModel()
+                                    {
+                                        ID = x.ID,
+                                        RiskID = x.RiskID,
+                                        RegisterDate = x.RegisterDate,
+                                        RiskDescription = x.RiskDescription,
+                                        Department = x.Department,
+                                        PrimaryRisk = x.PrimaryRisk,
+                                        SecondaryRisk = x.SecondaryRisk,
+                                        LikeHood = x.LikeHood,
+                                        Impact = x.Impact,
+                                        RiskOwner = x.RiskOwner,
+                                        MitigationAction = x.MitigationAction,
+                                        RiskStatus = x.RiskStatus,
+                                        ClosedDate = x.ClosedDate,
+                                        Quantification = x.Quantification,
+                                        UpdatedDate = x.UpdatedDate,
+                                        Remarks = x.Remarks,
+                                        RiskResponse = x.RiskResponse,
+                                        LikehoodId = x.LikehoodId,
+                                        ImpactId = x.ImpactId,
+                                        LikeHoodScore = x.Likehood != null ? x.Likehood.NumScore : 0,
+                                        ImpactScore = x.Impacts != null ? x.Impacts.NumScore : 0,
+                                    }).ToListAsync() ?? new List<RiskRegisterViewModel>();
+                return result;
+            }
+            else
+            {
+                var deparment = await _context.Users.AsNoTracking().Where(x => x.Id == userId).Select(x => x.Department).FirstOrDefaultAsync();
+                var result = await (from x in _context.RiskRegisters
+                                    where x.Department == deparment
+                                    select new RiskRegisterViewModel()
+                                    {
+                                        ID = x.ID,
+                                        RiskID = x.RiskID,
+                                        RegisterDate = x.RegisterDate,
+                                        RiskDescription = x.RiskDescription,
+                                        Department = x.Department,
+                                        PrimaryRisk = x.PrimaryRisk,
+                                        SecondaryRisk = x.SecondaryRisk,
+                                        LikeHood = x.LikeHood,
+                                        Impact = x.Impact,
+                                        RiskOwner = x.RiskOwner,
+                                        MitigationAction = x.MitigationAction,
+                                        RiskStatus = x.RiskStatus,
+                                        ClosedDate = x.ClosedDate,
+                                        Quantification = x.Quantification,
+                                        UpdatedDate = x.UpdatedDate,
+                                        Remarks = x.Remarks,
+                                        RiskResponse = x.RiskResponse,
+                                        LikehoodId = x.LikehoodId,
+                                        ImpactId = x.ImpactId,
+                                        LikeHoodScore = x.Likehood != null ? x.Likehood.NumScore : 0,
+                                        ImpactScore = x.Impacts != null ? x.Impacts.NumScore : 0,
+                                    }).ToListAsync() ?? new List<RiskRegisterViewModel>();
+                return result;
+            }
+           
         }
 
         public async Task<RiskRegisterViewModel> GetRiskRegisterByIdAsync(int id)
@@ -232,7 +278,11 @@ namespace Insurance.Areas.Risk.Repository
                     Quantification = x.Quantification,
                     UpdatedDate = x.UpdatedDate,
                     Remarks = x.Remarks,
-                    RiskResponse = x.RiskResponse
+                    RiskResponse = x.RiskResponse,
+                    LikehoodId = x.LikehoodId,
+                    ImpactId = x.ImpactId,
+                    LikeHoodScore = x.Likehood != null ? x.Likehood.NumScore : 0,
+                    ImpactScore = x.Impacts != null ? x.Impacts.NumScore : 0,
                 }).FirstOrDefaultAsync() ?? new RiskRegisterViewModel();
             return result;
         }

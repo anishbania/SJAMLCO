@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Insurance.Areas.Risk.Models
 {
@@ -25,6 +26,14 @@ namespace Insurance.Areas.Risk.Models
         public string ? UpdatedBy { get; set; }
         public string Remarks { get; set; }
         public string RiskResponse { get; set; }
+        public int LikehoodId { get; set; }
+        public int ImpactId { get; set; }
+
+        [ForeignKey("LikehoodId")]
+        public Likehood Likehood { get; set; }
+
+        [ForeignKey("ImpactId")]
+        public Impact Impacts { get; set; }
 
     }
 }

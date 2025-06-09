@@ -421,6 +421,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\sample\\sample_format.xlsx",
+      "PackagePath": "staticwebassets\\sample\\sample_format.xlsx"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Insurance.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

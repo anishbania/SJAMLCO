@@ -7,7 +7,7 @@ namespace Insurance.Models
     {
         public string FullName { get; set; }
         public string PrayogkartaName { get; set; }
-        public int BranchId { get; set; }
+        public string Department  { get; set; }
         public bool? HasLoggedIn { get; set; }
         public DateTime? LastLoginDate { get; set; }
     }

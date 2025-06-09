@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Insurance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250608151126_initial")]
-    partial class initial
+    [Migration("20250609065048_initial-I")]
+    partial class initialI
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -196,6 +196,9 @@ namespace Insurance.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("NumScore")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Impacts");
@@ -211,6 +214,9 @@ namespace Insurance.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NumScore")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -256,8 +262,14 @@ namespace Insurance.Migrations
                     b.Property<string>("Impact")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ImpactId")
+                        .HasColumnType("int");
+
                     b.Property<string>("LikeHood")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LikehoodId")
+                        .HasColumnType("int");
 
                     b.Property<string>("MitigationAction")
                         .HasColumnType("nvarchar(max)");
@@ -277,8 +289,8 @@ namespace Insurance.Migrations
                     b.Property<string>("RiskDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RiskID")
-                        .HasColumnType("int");
+                    b.Property<string>("RiskID")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RiskOwner")
                         .HasColumnType("nvarchar(max)");
@@ -299,6 +311,10 @@ namespace Insurance.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ImpactId");
+
+                    b.HasIndex("LikehoodId");
 
                     b.ToTable("RiskRegisters");
                 });
@@ -327,11 +343,11 @@ namespace Insurance.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("BranchId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -822,6 +838,25 @@ namespace Insurance.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Dispatch");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.Risk.Models.RiskRegister", b =>
+                {
+                    b.HasOne("Insurance.Areas.Risk.Models.Impact", "Impacts")
+                        .WithMany()
+                        .HasForeignKey("ImpactId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Insurance.Areas.Risk.Models.Likehood", "Likehood")
+                        .WithMany()
+                        .HasForeignKey("LikehoodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Impacts");
+
+                    b.Navigation("Likehood");
                 });
 
             modelBuilder.Entity("Insurance.Models.District", b =>

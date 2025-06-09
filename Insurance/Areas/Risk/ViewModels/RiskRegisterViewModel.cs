@@ -1,5 +1,7 @@
-﻿using System.ComponentModel;
+﻿using Insurance.Areas.Risk.Models;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Insurance.Areas.Risk.ViewModels
 {
@@ -64,5 +66,25 @@ namespace Insurance.Areas.Risk.ViewModels
 
         [DisplayName("Risk Response")]
         public string RiskResponse { get; set; }
+        [DisplayName("Matrix")]
+        public string Matrix { get; set; }
+        [DisplayName("Likehood Score")]
+        public int LikeHoodScore { get; set; }
+        [DisplayName("Impact Score")]
+        public int ImpactScore { get; set; }
+        public string RiskLevel
+        {
+            get
+            {
+                int score = LikeHoodScore * ImpactScore;
+
+                if (score >= 9) return "HIGH";
+                if (score >= 4) return "MEDIUM";
+                return "LOW";
+            }
+        }
+        public int LikehoodId { get; set; }
+        public int ImpactId { get; set; }        
+
     }
 }

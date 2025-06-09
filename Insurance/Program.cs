@@ -8,7 +8,6 @@ using Insurance.Utilities;
 using System.Security.Claims;
 using Insurance.Repositories;
 using Insurance.Areas.Admins.Interface;
-using Insurance.Areas.Admins.Repository;
 using Insurance.Areas.Risk.Interface;
 using Insurance.Areas.Risk.Repository;
 
@@ -51,7 +50,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddScoped<IUtility, Utility>();
 builder.Services.AddScoped<IPrayogKarta, PrayogKartaRepository>();
 builder.Services.AddScoped<IAllCommonRepository, AllCommonRepository>();
-builder.Services.AddScoped<ICourier, CourierRepository>();
+//builder.Services.AddScoped<ICourier, CourierRepository>();
 builder.Services.AddScoped<IRiskRegister, RiskRegisterRepository>();
 
 builder.Services.AddAuthorization(options =>

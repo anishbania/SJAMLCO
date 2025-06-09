@@ -9,9 +9,12 @@ namespace Insurance.Areas.Risk.Controllers
     public class RiskRegisterController : Controller
     {
         private readonly IRiskRegister _riskRegister;
-        public RiskRegisterController(IRiskRegister riskRegister)
+        private readonly IWebHostEnvironment _env;
+
+        public RiskRegisterController(IRiskRegister riskRegister, IWebHostEnvironment env)
         {
             _riskRegister = riskRegister;
+            _env = env;
         }
         public async Task<IActionResult> Index()
         {
@@ -53,5 +56,20 @@ namespace Insurance.Areas.Risk.Controllers
             }
             return RedirectToAction("Index");
         }
+        public IActionResult DownloadSampleFormat()
+        {
+            var sampleFolder = Path.Combine(_env.WebRootPath, "sample");
+            var filePath = Path.Combine(sampleFolder, "sample_format.xlsx");
+
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound("SampleFormat.xlsx not found on server.");
+            }
+
+            const string contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
+            return PhysicalFile(filePath, contentType, "sample_format.xlsx");
+        }
+
     }
 }

@@ -157,6 +157,7 @@ namespace Insurance.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    NumScore = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -170,6 +171,7 @@ namespace Insurance.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    NumScore = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -215,37 +217,6 @@ namespace Insurance.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RiskCategories", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "RiskRegisters",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RiskID = table.Column<int>(type: "int", nullable: false),
-                    RegisterDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    RiskDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Department = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PrimaryRisk = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SecondaryRisk = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LikeHood = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Impact = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RiskOwner = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MitigationAction = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RiskStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClosedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Quantification = table.Column<int>(type: "int", nullable: false),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreadtedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Remarks = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RiskResponse = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_RiskRegisters", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -443,6 +414,51 @@ namespace Insurance.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "RiskRegisters",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RiskID = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RegisterDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RiskDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Department = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PrimaryRisk = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecondaryRisk = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LikeHood = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Impact = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RiskOwner = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MitigationAction = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RiskStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClosedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Quantification = table.Column<int>(type: "int", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreadtedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Remarks = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RiskResponse = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LikehoodId = table.Column<int>(type: "int", nullable: false),
+                    ImpactId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RiskRegisters", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_RiskRegisters_Impacts_ImpactId",
+                        column: x => x.ImpactId,
+                        principalTable: "Impacts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RiskRegisters_Likehoods_LikehoodId",
+                        column: x => x.LikehoodId,
+                        principalTable: "Likehoods",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "District",
                 columns: table => new
                 {
@@ -573,6 +589,16 @@ namespace Insurance.Migrations
                 name: "IX_Palika_DistrictId",
                 table: "Palika",
                 column: "DistrictId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RiskRegisters_ImpactId",
+                table: "RiskRegisters",
+                column: "ImpactId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RiskRegisters_LikehoodId",
+                table: "RiskRegisters",
+                column: "LikehoodId");
         }
 
         /// <inheritdoc />
@@ -609,12 +635,6 @@ namespace Insurance.Migrations
                 name: "Genders");
 
             migrationBuilder.DropTable(
-                name: "Impacts");
-
-            migrationBuilder.DropTable(
-                name: "Likehoods");
-
-            migrationBuilder.DropTable(
                 name: "LogisticItems");
 
             migrationBuilder.DropTable(
@@ -649,6 +669,12 @@ namespace Insurance.Migrations
 
             migrationBuilder.DropTable(
                 name: "District");
+
+            migrationBuilder.DropTable(
+                name: "Impacts");
+
+            migrationBuilder.DropTable(
+                name: "Likehoods");
 
             migrationBuilder.DropTable(
                 name: "CourierVendor");

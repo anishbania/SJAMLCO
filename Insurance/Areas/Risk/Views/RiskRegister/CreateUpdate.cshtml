@@ -10,6 +10,8 @@
             <form asp-action="CreateUpdate" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input asp-for="ID" type="hidden" />
+                <input asp-for="LikehoodId" type="hidden" />
+                <input asp-for="ImpactId" type="hidden" />
                 <div class="card p-4 mb-2">
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -110,5 +112,42 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        (function(){
+          var $primary   = $('#PrimaryRisk');
+          var $secondary = $('#SecondaryRisk');
+          var $status    = $('#RiskStatus');
+          var $closed    = $('#ClosedDate');
 
+          // A) When primary changes, toggle required on secondary
+          $primary.on('change', function() {
+            if ($(this).val()) {
+              $secondary.prop('required', true);
+            } else {
+              $secondary.prop('required', false);
+              $secondary.val('');  // clear if primary was un-selected
+            }
+          }).trigger('change');
+
+          // B) When status changes, enable/disable closed date
+          $status.on('change', function() {
+            if ($(this).val() === 'Open') {
+              $closed.prop('disabled', true)
+                     .val('');   // clear any date
+            } else {
+              $closed.prop('disabled', false);
+            }
+          }).trigger('change');
+
+          // C) Hook into form submit to check secondary if primary set
+          $('form').on('submit', function(e){
+            if ($primary.val() && !$secondary.val()) {
+              $secondary[0].setCustomValidity('Secondary Risk is required');
+            } else {
+              $secondary[0].setCustomValidity('');
+            }
+            // HTML5 will now stop submission and show the message if invalid
+          });
+        })();
+    </script>
 }

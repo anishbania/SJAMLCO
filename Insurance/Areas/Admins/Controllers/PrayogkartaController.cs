@@ -37,7 +37,7 @@ namespace Insurance.Areas.FinanceSys.Controllers
             }
             if (response.Status == false && response.Message == "AlreadyHaveUser")
             {
-                TempData["error"] = "यो सहकारीको प्रयोगकर्ता बनिसकेको छ";
+                TempData["error"] = "Users already created";
                 return RedirectToAction("Create", "PrayogKarta", new { id = prayogKarta.Id });
             }
             return View();
