@@ -109,6 +109,10 @@
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\person-icon.png",
+      "PackagePath": "staticwebassets\\images\\person-icon.png"
+    },
+    {
       "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\statics\\avataaars.svg",
       "PackagePath": "staticwebassets\\images\\statics\\avataaars.svg"
     },

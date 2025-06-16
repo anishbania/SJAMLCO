@@ -24,6 +24,7 @@ wwwroot\images\CourierFile\901e493d-b5c1-418a-b373-018299fca236.pdf
 wwwroot\images\CourierFile\eb257990-92b0-4549-b3dc-f8e0ddae503e.png
 wwwroot\images\frontImg.jpg
 wwwroot\images\logo.png
+wwwroot\images\person-icon.png
 wwwroot\images\statics\avataaars.svg
 wwwroot\js\adminlte.min.js
 wwwroot\js\adminlte.min.js.map

@@ -9,7 +9,7 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <title>@ViewData["Title"] -Insurance</title>
+    <title>@ViewData["Title"] - Insurance</title>
     <link href="~/css/login.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,39 +17,46 @@
 </head>
 <body>
     <div class="container">
+        <!-- Left Side: Logo -->
         <div class="cover">
             <img src="~/images/logo.png" style="width:450px; height:400px">
         </div>
+
+        <!-- Right Side: Form -->
         <div class="forms">
             <div class="form-content">
                 <div class="login-form">
                     <div class="title">Login</div>
                     <form id="account" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger mt-2" style="color:red;" role="alert"></div>
-                        <div class="input-boxes">
-                            <div class="input-box">
-                                <i class="fas fa-envelope"></i>
-                                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                                <span asp-validation-for="Input.Email" class="text-danger"></span>
-                            </div>
-                            <div class="input-box">
-                                <i class="fas fa-lock"></i>
-                                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                            </div>
-                            <div class="checkbox mb-3">
-                                <label asp-for="Input.RememberMe" class="form-label">
-                                    <input class="form-check-input" asp-for="Input.RememberMe" />
-                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
-                                </label>
-                            </div>
-                            <div class="text"><a href="#">Forgot password?</a></div>
-                            <div class="button input-box">
-                                <input type="submit" value="Sumbit">
-                            </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger mt-2" role="alert"></div>
+
+                        <div class="input-box">
+                            <label>Email</label>
+                            <i class="fas fa-envelope"></i>
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Password</label>
+                            <i class="fas fa-lock"></i>
+                            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-options">
+                            <label asp-for="Input.RememberMe" class="form-label">
+                                <input class="form-check-input" asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                            <a href="#">Forgot password?</a>
+                        </div>
+
+                        <div class="button input-box">
+                            <input type="submit" value="Submit">
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>

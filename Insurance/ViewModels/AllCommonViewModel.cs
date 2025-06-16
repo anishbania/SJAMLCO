@@ -9,30 +9,27 @@ namespace Insurance.ViewModels
         {
             public int Id { get; set; }
             [Required]
-            [Display(Name = "प्रोजेक्टको नाम")]
             public string Name { get; set; } 
             [Required]
-            [DisplayName("कार्यालयको नाम")]
             public string Slogan { get; set; }
             [Required]
             [EmailAddress]
-            [Display(Name = "इमेल")]
             public string Email { get; set; }
-            [Display(Name = "सम्पर्क व्यक्ति")]
+            [Display(Name = "Contact Name")]
             public string ContactName { get; set; }
-            [Display(Name = "सम्पर्क व्यक्तिको मोबाइल नं")]
+            [Display(Name = "Contact Number")]
             [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Invalid Phone number")]
             public string ContactNumber { get; set; }
-            [Display(Name = "फोन नं")]
+            [Display(Name = "Mobile Number")]
             public string MobileNumber { get; set; }
-            [Display(Name = "फ्याक्स नं")]
+            [Display(Name = "Fax No")]
             public string FaxNo { get; set; }
-            [Display(Name = "वेबसाइट")]
+            [Display(Name = "Website")]
             public string Website { get; set; }
             [Display(Name = "ठेगाना")]
             [Required]
             public string Address { get; set; }
-            [Display(Name = "ठेगाना (Eng)")]
+            [Display(Name = "Address (Eng)")]
             [Required]
             public string Address2 { get; set; }
             [Display(Name = "Logo")]
@@ -40,13 +37,13 @@ namespace Insurance.ViewModels
             [Display(Name = "Logo")]
             public IFormFile ProfileImage { get; set; }
 
-            [Display(Name = "प्रदेश")]
+            [Display(Name = "State")]
             public Nullable<int> State { get; set; } /*= 1;*/
-            [Display(Name = "जिल्ला")]
+            [Display(Name = "District")]
             public Nullable<int> District { get; set; } /*= 1;*/
             [Display(Name = "गा.पा./न.पा.")]
             public Nullable<int> Palika { get; set; } /*= 1;*/
-            [Display(Name = "वडा नं")]
+            [Display(Name = "Ward No")]
             public int Ward { get; set; }
         }
 

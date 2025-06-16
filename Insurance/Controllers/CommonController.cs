@@ -1,12 +1,14 @@
-﻿using Insurance.Services;
+﻿using Insurance.Areas.Admins.Interface;
+using Insurance.Areas.Admins.Models;
+using Insurance.Repositories;
+using Insurance.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using static Insurance.ViewModels.AllCommonViewModel;
-using Insurance.Repositories;
-using Insurance.Areas.Admins.Models;
-using Insurance.Areas.Admins.Interface;
 
 namespace Insurance.Controllers
 {
+    [Authorize(Roles = "RSuperAdmin,RAdmin,IT,Admin,User")]
     public class CommonController : Controller
     {
         private readonly IAllCommonRepository _commonRepository = null;

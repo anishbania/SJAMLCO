@@ -10,6 +10,7 @@ using Insurance.Utilities;
 
 namespace Insurance.Controllers
 {
+    [Authorize(Roles = "RSuperAdmin,RAdmin,IT,Admin,User")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -24,7 +25,6 @@ namespace Insurance.Controllers
             _manager = userManager;
             _utility = utility;
         }
-        [Authorize(Roles = "SuperAdmin,Admin,IT")]
         public IActionResult Index()
         {           
             return View();
@@ -56,12 +56,12 @@ namespace Insurance.Controllers
         }
 
 
-        [Authorize(Roles = "SuperAdmin,Admin")]
+        [Authorize(Roles = "SuperAdmin,Admin,IT")]
         public async Task<IActionResult> IndexFiscalYear()
         {
             return View(await _utility.GetAllFiscalYearsAsync());
         }
-        [Authorize(Roles = "SuperAdmin,Admin")]
+        [Authorize(Roles = "SuperAdmin,Admin,IT")]
         public async Task<IActionResult> Create(int id = 0)
         {
             ViewBag.FiscalYears = await _utility.GetPreviousFiscalYear();
@@ -69,7 +69,7 @@ namespace Insurance.Controllers
             return View(await _utility.GetFiscalYearByIdAsync(id));
         }
         [HttpPost]
-        [Authorize(Roles = "SuperAdmin,Admin")]
+        [Authorize(Roles = "SuperAdmin,Admin,IT")]
         public async Task<IActionResult> Create(FiscalYearViewModel model)
         {
             if (ModelState.IsValid)

@@ -1,10 +1,12 @@
 ﻿using Insurance.Areas.Risk.Interface;
 using Insurance.Areas.Risk.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace Insurance.Areas.Risk.Controllers
 {
+    [Authorize(Roles = "IT,RAdmin,RSuperAdmin")]
     [Area("Risk")]
     public class RiskRegisterController : Controller
     {

@@ -1,34 +1,69 @@
-﻿
-<li class="nav-header">Main Setup</li>
+﻿<!-- Collapsible: Main Setup -->
 <li class="nav-item">
-    <a asp-action="IndexFiscalYear" asp-controller="Home" asp-area="" class="nav-link">
-        <i class="far fa-calendar-days nav-icon"></i>
-        <p>Fiscal Year</p>
+    <a class="nav-link collapsed" href="#collapseMainSetup" data-bs-toggle="collapse"
+       aria-expanded="false" aria-controls="collapseMainSetup">
+        <i class="fas fa-fw fa-cogs"></i>
+        <span>Main Setup</span>
+        <i class="fas fa-angle-down float-end"></i>
     </a>
+    <div id="collapseMainSetup" class="collapse">
+        <div class="bg-white py-2 collapse-inner rounded shadow-sm">
+            <a class="collapse-item" asp-action="IndexFiscalYear" asp-controller="Home">
+                <i class="fas fa-calendar-days me-2"></i>Fiscal Year
+                
+            </a>
+            <a class="collapse-item" asp-action="SiteSetting" asp-controller="Common">
+                <i class="fas fa-tools me-2"></i>Setup
+                
+            </a>
+            <a class="collapse-item" asp-action="Index" asp-controller="PrayogKarta" asp-area="Admins">
+                <i class="fas fa-user-alt me-2"></i>User Management
+               
+            </a>
+            @if (User.IsInRole("IT"))
+            {
+                <a class="collapse-item" asp-action="Roles" asp-controller="PrayogKarta" asp-area="Admins">
+                    <i class="fas fa-user-cog me-2"></i> Role Management
+                   
+                </a>
+            }
+        </div>
+    </div>
 </li>
+
+<!-- Collapsible: Newly Added -->
+@if (User.IsInRole("IT") || User.IsInRole("RSuperAdmin"))
+{
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#collapseNewlyAdded" data-bs-toggle="collapse"
+           aria-expanded="false" aria-controls="collapseNewlyAdded">
+            <i class="fas fa-fw fa-plus-circle"></i>
+            <span>Newly Added</span>
+            <i class="fas fa-angle-down float-end"></i>
+        </a>
+        <div id="collapseNewlyAdded" class="collapse">
+            <div class="bg-white py-2 collapse-inner rounded shadow-sm">
+                <a class="collapse-item" asp-area="Admins" asp-action="Index" asp-controller="Courier">
+                    <i class="far fa-clone me-2"></i>Courier Dispatch
+                </a>
+            </div>
+        </div>
+    </li>
+}
+
+<!-- Collapsible: Risk Register -->
 <li class="nav-item">
-    <a asp-action="SiteSetting" asp-controller="Common" asp-area="" class="nav-link">
-        <i class="far fa-calendar-days nav-icon"></i>
-        <p>Setup</p>
+    <a class="nav-link collapsed" href="#collapseRiskRegister" data-bs-toggle="collapse"
+       aria-expanded="false" aria-controls="collapseRiskRegister">
+        <i class="fas fa-fw fa-exclamation-triangle"></i>
+        <span>Risk Register</span>
+        <i class="fas fa-angle-down float-end"></i>
     </a>
-</li>
-<li class="nav-item">
-    <a asp-action="Index" asp-controller="PrayogKarta" asp-area="Admins" class="nav-link">
-        <i class="nav-icon fas fa-user-alt"></i>
-        <p>User Managament</p>
-    </a>
-</li>
-<li class="nav-item">
-    <a asp-action="Roles" asp-controller="PrayogKarta" asp-area="Admins" class="nav-link">
-        <i class="fas fa-user-cog"></i>
-        <p>Role Managament</p>
-    </a>
-</li>
-<li class="nav-header">Newly Added</li>
-<li class="nav-item">
-    <a asp-area="Risk" asp-action="Index" asp-controller="RiskRegister" class="nav-link">
-        <i class="far fa-exclamation-circle"></i>
-         &nbsp;
-        <p>Risk Register</p>
-    </a>
+    <div id="collapseRiskRegister" class="collapse">
+        <div class="bg-white py-2 collapse-inner rounded shadow-sm">
+            <a class="collapse-item" asp-area="Risk" asp-action="Index" asp-controller="RiskRegister">
+                <i class="fas fa-exclamation-circle me-2"></i>Risk Register
+            </a>
+        </div>
+    </div>
 </li>

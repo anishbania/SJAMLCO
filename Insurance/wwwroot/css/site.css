@@ -20,3 +20,94 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+
+.collapse-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: #6c757d;
+    border-radius: 0.35rem;
+    margin: 0.125rem 0.5rem;
+    transition: all 0.15s ease-in-out;
+    font-weight: 500;
+    
+}
+
+    .collapse-item:hover {
+        color: #495057;
+        background-color: #f8f9fc;
+        text-decoration: none;
+       /* transform: translateX(1px);*/
+    }
+
+    .collapse-item:focus {
+        color: #495057;
+        background-color: #e3e6f0;
+        text-decoration: none;
+    }
+
+
+.collapse-inner {
+    /* padding: 0.5rem 0;
+    margin: 0.25rem 0;
+    border-left: 3px solid #e3e6f0;*/
+    margin-left: 0.5rem;
+    padding-left: 1rem;
+    transition: none !important;
+}
+
+/* Arrow animation */   
+.nav-link.collapsed .fa-angle-down {
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:not(.collapsed) .fa-angle-down {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Main nav link styling */
+.nav-link {
+    position: relative;
+    padding: 0.75rem 1rem;
+    transition: all 0.15s ease-in-out;
+}
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 0.35rem;
+    }
+
+/* Shadow and rounded corners enhancement */
+.collapse-inner.rounded.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Icon spacing */
+.fas.fa-fw {
+    margin-right: 0.5rem;
+}
+
+.float-end {
+    transition: transform 0.3s ease-in-out;
+}
+body.sidebar-mini.sidebar-collapse .nav-sidebar .nav-link span,
+body.sidebar-mini.sidebar-collapse .nav-sidebar .nav-link .float-end {
+    display: none !important;
+}
+
+/* when collapsed, hide <p> inside .nav-link */
+body.sidebar-mini.sidebar-collapse
+.nav-sidebar
+.nav-link > p {
+    display: none;
+}
+
+/* Move the first sidebar item (Dashboard) upward */
+.nav-sidebar > .nav-item:first-child {
+    margin-top: auto; /* tweak this value up/down to taste */
+}
+

@@ -52,7 +52,7 @@ namespace Insurance.Areas.Risk.ViewModels
 
         [DisplayName("Closed Date")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime? ClosedDate { get; set; } = DateTime.Now;
+        public DateTime? ClosedDate { get; set; } 
 
         [DisplayName("Quantification")]
         public int Quantification { get; set; }

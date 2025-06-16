@@ -157,7 +157,7 @@ namespace Insurance.Areas.Risk.Repository
                 {
                     _logger.LogError(ex, "Error in AddUpdateRiskRegisterAsync");
                     await transaction.RollbackAsync();
-                    response.Message = "An error occurred while processing your request.";
+                    response.Message =ex.Message;
                 }
             }
             return response;
@@ -194,7 +194,7 @@ namespace Insurance.Areas.Risk.Repository
 
         public async Task<List<RiskRegisterViewModel>> GetAllRiskRegistersAsync()
         {
-            if(userRole=="IT")
+            if(userRole=="IT" || userRole=="RSuperAdmin")
             {
                 var result = await (from x in _context.RiskRegisters
                                     select new RiskRegisterViewModel()

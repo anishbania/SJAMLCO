@@ -1,15 +1,43 @@
-﻿
-<li class="nav-header">Main Setup</li>
+﻿<!-- Collapsible: Main Setup -->
 <li class="nav-item">
-    <a asp-action="SiteSetting" asp-controller="Common" asp-area="" class="nav-link">
-        <i class="far fa-calendar-days nav-icon"></i>
-        <p>Setup</p>
+    <a class="nav-link collapsed" href="#collapseMainSetupUser" data-bs-toggle="collapse"
+       aria-expanded="false" aria-controls="collapseMainSetupUser">
+        <i class="fas fa-fw fa-cogs"></i>
+        <span>Main Setup</span>
+        <i class="fas fa-angle-down float-end"></i>
     </a>
+    <div id="collapseMainSetupUser" class="collapse">
+        <div class="bg-white py-2 collapse-inner rounded shadow-sm">
+            <a class="collapse-item" asp-action="SiteSetting" asp-controller="Common" asp-area="">
+                <i class="fas fa-tools me-2"></i>Setup
+            </a>
+        </div>
+    </div>
 </li>
-<li class="nav-header">Newly Added</li>
+@* 
+<!-- Collapsible: Newly Added -->
 <li class="nav-item">
-    <a asp-area="Admins" asp-action="Index" asp-controller="Courier" class="nav-link">
-        <i class="nav-icon far fa-clone"></i>
-        <p>Courier Dispatch</p>
+    <a class="nav-link collapsed" href="#collapseNewlyAddedUser" data-bs-toggle="collapse"
+       aria-expanded="false" aria-controls="collapseNewlyAddedUser">
+        <i class="fas fa-fw fa-plus-circle"></i>
+        <span>Newly Added</span>
+        <i class="fas fa-angle-down float-end"></i>
     </a>
+</li> *@
+
+<!-- Collapsible: Risk Register -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#collapseRiskRegister" data-bs-toggle="collapse"
+       aria-expanded="false" aria-controls="collapseRiskRegister">
+        <i class="fas fa-fw fa-exclamation-triangle"></i>
+        <span>Risk Register</span>
+        <i class="fas fa-angle-down float-end"></i>
+    </a>    
+    <div id="collapseRiskRegister" class="collapse">
+        <div class="bg-white py-2 collapse-inner rounded shadow-sm">
+            <a class="collapse-item" asp-area="Risk" asp-action="Index" asp-controller="RiskRegister">
+                <i class="fas fa-exclamation-circle me-2"></i>Risk Register
+            </a>
+        </div>
+    </div>
 </li>

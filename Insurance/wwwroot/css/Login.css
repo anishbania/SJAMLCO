@@ -1,127 +1,170 @@
-﻿
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f5f5f5;
-  padding: 30px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    padding: 30px;
 }
 
-/* container: two columns */
 .container {
-  position: relative;
-  width: 100%;
-  max-width: 850px;
-  display: flex;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  background: #fff;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
-/* left half: form area */
-    .container .forms {
+    /* Left image side */
+    .container .cover {
         flex: 1;
-        padding: 40px;
-        background: #fff;
+        background: #a8a5d3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
     }
 
-/* right half: image area */
-.container .cover {
-  flex: 1;
-  background: #a8a5d3;         
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
+        .container .cover img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
 
-.container .cover img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+    /* Right form side */
+    .container .forms {
+        flex: 1;
+        padding: 50px 40px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-/* form internals (you can keep your existing form CSS below) */
 .forms .form-content {
-  max-width: 100%;
+    max-width: 100%;
+    margin-top: 30px;
 }
 
 .forms .login-form .title {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
-  position: relative;
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #333;
+    position: relative;
 }
 
-.forms .login-form .title::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: -6px;
-  width: 30px; height: 3px;
-  background: #7d2ae8;
-}
+    .forms .login-form .title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 30px;
+        height: 3px;
+        background: #7d2ae8;
+    }
 
-/* input box styling */
+/* Input Box Styling */
 .forms .input-box {
-  position: relative;
-  margin-bottom: 15px;
-}
-
-.forms .input-box i {
-  position: absolute;
-  left: 10px; top: 50%;
-  transform: translateY(-50%);
-  color: #7d2ae8;
-}
-
-.forms .input-box input {
-  width: 100%;
-  padding: 10px 10px 10px 36px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  transition: border-color .3s;
-}
-
-.forms .input-box input:focus {
-  border-color: #7d2ae8;
-  outline: none;
-}
-
-/* submit button */
-.forms .button input {
-  width: 100%;
-  padding: 12px;
-  background: #7d2ae8;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.forms .button input:hover {
-  background: #5b13b9;
-}
-
-/* responsive: stack on small */
-@media (max-width: 768px) {
-  .container {
+    position: relative;
+    margin-bottom: 22px;
+    display: flex;
     flex-direction: column;
-  }
-  .container .cover {
-    order: -1;  /* show image on top */
-    width: 100%;
-  }
 }
 
+    .forms .input-box label {
+        font-size: 15px;
+        margin-bottom: 6px;
+        margin-left: 4px;
+        color: #333;
+        font-weight: 500;
+    }
 
+    .forms .input-box i {
+        position: absolute;
+        top: 65%; /* icon vertical alignment */
+        left: 14px;
+        transform: translateY(-50%);
+        color: #7d2ae8;
+        font-size: 16px;
+        pointer-events: none;
+    }
 
+    .forms .input-box input {
+        width: 100%;
+        padding: 12px 12px 12px 42px;
+        font-size: 16px;
+        height: 45px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        transition: border-color 0.3s;
+    }
 
+        .forms .input-box input:focus {
+            border-color: #7d2ae8;
+            outline: none;
+        }
+
+/* Checkbox and link */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+    .form-options label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    .form-options a {
+        color: #7d2ae8;
+        text-decoration: none;
+    }
+
+        .form-options a:hover {
+            text-decoration: underline;
+        }
+
+/* Submit Button */
+.forms .button input {
+    width: 100%;
+    padding: 14px;
+    background: #7d2ae8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+    .forms .button input:hover {
+        background: #5b13b9;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+        .container .cover {
+            order: -1;
+            width: 100%;
+        }
+}

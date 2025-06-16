@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Insurance.Areas.FinanceSys.Controllers
 {
-    [Authorize(Roles = "IT")]
+    [Authorize(Roles = "IT,RSuperAdmin,Admin")]
     [Area("Admins")]
     public class PrayogkartaController : Controller
     {

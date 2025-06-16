@@ -40,7 +40,7 @@ namespace Insurance.Areas.Admins.ViewModels
         [Display(Name = "Confirm Password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string? ConfirmPassword { get; set; }
-        [Display(Name = "Branch")]
+        [Display(Name = "Department")]
         public string Department { get; set; }
 
 

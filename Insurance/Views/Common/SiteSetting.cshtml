@@ -4,13 +4,13 @@
 
 @{
     Layout = "/Views/Shared/_SideBar.cshtml";
-    ViewData["Title"] = "कार्यालय सेटअप";
+    ViewData["Title"] = "Project Setup";
     int i = 1;
 }
 @if (!Model.Any())
 {
     <a class="btn btn-sm btn-outline-primary" asp-action="CreateSiteSetting">
-        <i class="bi bi-plus-circle-fill"></i> थप्नुहोस्
+        <i class="bi bi-plus-circle-fill"></i> Add New
     </a>
 }
 <div class="table-responsive">
@@ -73,7 +73,7 @@
                         @Html.DisplayFor(modelItem => item.Address)
                     </td>
                     <td>
-                        <a class="text-primary" asp-action="CreateSiteSetting" asp-route-id="@item.Id"><i class="dw dw-edit2"></i> सम्पादन</a>
+                        <a class="text-primary" asp-action="CreateSiteSetting" asp-route-id="@item.Id"><i class="dw dw-edit2"></i>Edit</a>
                     </td>
                 </tr>
                 i++;
@@ -81,6 +81,6 @@
         </tbody>
     </table>
 </div>
-<p>जम्मा संख्या  @_utility.English_Nepali(Model.Count().ToString()).</p>
+
 
 <partial name="_AddDatatable">
