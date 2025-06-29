@@ -34,14 +34,14 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label asp-for="PrimaryRisk" class="form-label"></label>
-                            <select asp-for="PrimaryRisk" class="form-control" asp-items="@await _utility.GetRiskCategorySelectListItems() as SelectList">
+                            <select asp-for="PrimaryRisk" class="form-control" asp-items="@await _utility.GetPrimaryRiskCategorySelectListItems() as SelectList">
                                 <option value="" selected disabled>--Please Select--</option>
                             </select>
                             <span asp-validation-for="PrimaryRisk" class="text-danger"></span>
                         </div>
                         <div class="form-group col-md-4">
                             <label asp-for="SecondaryRisk" class="form-label"></label>
-                            <select asp-for="SecondaryRisk" class="form-control" asp-items="@await _utility.GetRiskCategorySelectListItems() as SelectList">
+                            <select asp-for="SecondaryRisk" class="form-control" asp-items="@await _utility.GetSecondaryRiskCategorySelectListItems() as SelectList">
                                 <option value="" selected disabled>--Please Select--</option>
                             </select>
                             <span asp-validation-for="SecondaryRisk" class="text-danger"></span>

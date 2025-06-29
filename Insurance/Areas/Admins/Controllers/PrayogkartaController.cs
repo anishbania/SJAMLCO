@@ -33,6 +33,8 @@ namespace Insurance.Areas.FinanceSys.Controllers
             ResponseModel response = await _prayogKarta.Create(prayogKarta);
             if (response.Status == true)
             {
+                TempData["success"] = "Users created successfully";
+
                 return RedirectToAction("Index");
             }
             if (response.Status == false && response.Message == "AlreadyHaveUser")
@@ -64,6 +66,14 @@ namespace Insurance.Areas.FinanceSys.Controllers
         public async Task<IActionResult> DeleteConfirm(string id)
         {
             ResponseModel response = await _prayogKarta.Delete(id);
+            if(response.Status)
+            {
+                TempData["error"] = "User Deleted";
+            }
+            else
+            {
+                TempData["error"] = "Failed to delete user";
+            }
             return RedirectToAction("Index");
         } 
         [HttpPost]

@@ -12,14 +12,6 @@
        class="btn btn-sm btn-outline-primary">
         <i class="bi bi-plus-circle-fill"></i>&nbsp; New Risk
     </a>
-
-    @*  <a data-toggle="modal" class="btn btn-sm btn-outline-success ms-2"
-       href="#" data-target="#importExcelData">
-        <i class="bi bi-file-earmark-arrow-up me-1"></i>
-        Import from Excel
-    </a> *@
-
-
     <a class="btn btn-sm btn-outline-success ms-2"
        href="#"
        role="button"
@@ -30,73 +22,78 @@
     </a>
 </div>
 
+<div class="card card-form">
+    <div class="card-body p-4">
+        <div class="table-responsive">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead class="table-light">
+                    <tr>
+                        <th>S.N</th>
+                        <th>Actions</th>
+                        <th>@Html.DisplayNameFor(model => model.RiskID)</th>
+                        <th>@Html.DisplayNameFor(model => model.RiskDescription)</th>
+                        <th>@Html.DisplayNameFor(model => model.RegisterDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.Department)</th>
+                        <th>@Html.DisplayNameFor(model => model.PrimaryRisk)</th>
+                        <th>@Html.DisplayNameFor(model => model.SecondaryRisk)</th>
+                        <th>@Html.DisplayNameFor(model => model.LikeHoodScore)</th>
+                        <th>@Html.DisplayNameFor(model => model.ImpactScore)</th>
+                        <th>@Html.DisplayNameFor(model => model.Matrix)</th>
+                        <th>@Html.DisplayNameFor(model => model.RiskLevel)</th>
+                        <th>@Html.DisplayNameFor(model => model.RiskOwner)</th>
+                        <th>@Html.DisplayNameFor(model => model.RiskStatus)</th>
+                        <th>@Html.DisplayNameFor(model => model.ClosedDate)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>
+                                <div class="d-inline">
+                                    @if (@item.RiskStatus == "Open")
+                                    {
+                                        <a asp-action="CreateUpdate" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-pencil"></i></a>
+                                        <a asp-action="Details" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-eye text-warning"></i></a>
+                                        <form asp-action="Delete" asp-route-id="@item.ID" data-ajax="true" data-ajax-method="post" data-ajax-confirm="Are you sure?" data-ajax-complete="deletePage" class="d-inline">
+                                            <button type="submit" class="btn btn-link p-0"> <i class="bi bi-trash text-red"></i></button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="Details" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-eye text-warning"></i></a>
 
-<div class="table-responsive">
-    <table id="example" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>S.N</th>
-                <th>Actions</th>
-                <th>@Html.DisplayNameFor(model => model.RiskID)</th>
-                <th>@Html.DisplayNameFor(model => model.RegisterDate)</th>
-                <th>@Html.DisplayNameFor(model => model.Department)</th>
-                <th>@Html.DisplayNameFor(model => model.PrimaryRisk)</th>
-                <th>@Html.DisplayNameFor(model => model.SecondaryRisk)</th>
-                <th>@Html.DisplayNameFor(model => model.LikeHoodScore)</th>
-                <th>@Html.DisplayNameFor(model => model.ImpactScore)</th>
-                <th>@Html.DisplayNameFor(model => model.Matrix)</th>
-                <th>@Html.DisplayNameFor(model => model.RiskLevel)</th>
-                <th>@Html.DisplayNameFor(model => model.RiskOwner)</th>
-                <th>@Html.DisplayNameFor(model => model.RiskStatus)</th>
-                <th>@Html.DisplayNameFor(model => model.ClosedDate)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @i
-                    </td>
-                    <td>
-                        <div class="d-inline">
-                            @if (@item.RiskStatus == "Open")
-                            {
-                                <a asp-action="CreateUpdate" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-pencil"></i></a>
-                                <a asp-action="Details" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-eye text-warning"></i></a>
-                                <form asp-action="Delete" asp-route-id="@item.ID" data-ajax="true" data-ajax-method="post" data-ajax-confirm="Are you sure?" data-ajax-complete="deletePage" class="d-inline">
-                                    <button type="submit" class="btn btn-link p-0"> <i class="bi bi-trash text-red"></i></button>
-                                </form>
-                            }
-                            else
-                            {
-                                <a asp-action="Details" asp-route-id="@item.ID" class="text-decoration-none me-3"><i class="bi bi-eye text-warning"></i></a>
+                                    }
 
-                            }
-
-                        </div>
-                    </td>
-                    <td>@item.RiskID</td>
-                    <td>@(item.RegisterDate.HasValue ? item.RegisterDate.Value.ToString("yyyy-MM-dd") : string.Empty)</td>
-                    <td>@item.Department</td>
-                    <td>@item.PrimaryRisk</td>
-                    <td>@item.SecondaryRisk</td>
-                    <td>@item.LikeHoodScore</td>
-                    <td>@item.ImpactScore</td>
-                    <td>@(item.LikeHoodScore * item.ImpactScore)</td>
-                    <td class="@(item.RiskLevel == "HIGH" ? "bg-danger text-white" : "")">
-                        @item.RiskLevel
-                    </td>
-                    <td>@item.RiskOwner</td>
-                    <td class="@(item.RiskStatus == "Close" ? "table-success" : "")">
-                        @item.RiskStatus
-                    </td>
-                    <td>@(item.ClosedDate.HasValue ? item.ClosedDate.Value.ToString("yyyy-MM-dd") : string.Empty)</td>
-                </tr>
-                i++;
-            }
-        </tbody>
-    </table>
+                                </div>
+                            </td>
+                            <td>@item.RiskID</td>
+                            <td>@item.RiskDescription</td>
+                            <td>@(item.RegisterDate.HasValue ? item.RegisterDate.Value.ToString("yyyy-MM-dd") : string.Empty)</td>
+                            <td>@item.Department</td>
+                            <td>@item.PrimaryRisk</td>
+                            <td>@item.SecondaryRisk</td>
+                            <td>@item.LikeHoodScore</td>
+                            <td>@item.ImpactScore</td>
+                            <td>@(item.LikeHoodScore * item.ImpactScore)</td>
+                           <td class="@(item.RiskLevel == "HIGH"   ? "bg-danger text-white" :item.RiskLevel == "MEDIUM" ? "bg-warning text-dark" :item.RiskLevel == "LOW"    ? "bg-success text-white" : "")">
+                                @item.RiskLevel
+                            </td>
+                            <td>@item.RiskOwner</td>
+                            <td class="@(item.RiskStatus == "Close" ? "table-success" : "")">
+                                @item.RiskStatus
+                            </td>
+                            <td>@(item.ClosedDate.HasValue ? item.ClosedDate.Value.ToString("yyyy-MM-dd") : string.Empty)</td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 <partial name="_AddDatatable">
@@ -129,7 +126,7 @@
 
                     <form asp-area="Risk"
                           asp-controller="RiskRegister"
-                          asp-action="ImportProposals"
+                          asp-action="Import"
                           method="post"
                           enctype="multipart/form-data">
 

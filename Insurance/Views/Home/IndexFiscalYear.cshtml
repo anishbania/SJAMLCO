@@ -12,59 +12,63 @@
 <a class="btn btn-outline-primary btn-sm" asp-action="Create"><i class="bi bi-plus-circle-fill"></i> New @ViewData["Title"]</a>
 
 
-<table id="example" class="table table-striped" style="width:100%">
-    <thead>
-        <tr>
-            <th>S.N</th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LocalName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BsStartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BsEndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsActive)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                @_utility.English_Nepali(i.ToString())
+<div class="card card-form">
+    <div class="card-body p-4">
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LocalName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BsStartDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BsEndDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsActive)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @_utility.English_Nepali(i.ToString())
 
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LocalName)
-                </td>
-                <td>
-                    @_utility.English_Nepali(item.BsStartDate)
-                </td>
-                <td>
-                    @_utility.English_Nepali(item.BsEndDate)
-                </td>
-                <td>
-                    <span class="font-italic">@(item.IsActive ? "चालु वर्ष" : "")</span>
-                </td>
-                <td>
-                    <a class="text-primary" asp-action="Create" asp-route-id="@item.Id"><i class="dw dw-edit2"></i> Release</a>
-                </td>
-            </tr>
-            i++;
-        }
-    </tbody>
-</table>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LocalName)
+                        </td>
+                        <td>
+                            @_utility.English_Nepali(item.BsStartDate)
+                        </td>
+                        <td>
+                            @_utility.English_Nepali(item.BsEndDate)
+                        </td>
+                        <td>
+                            <span class="font-italic">@(item.IsActive ? "चालु वर्ष" : "")</span>
+                        </td>
+                        <td>
+                            <a class="text-primary" asp-action="Create" asp-route-id="@item.Id"><i class="dw dw-edit2"></i> Release</a>
+                        </td>
+                    </tr>
+                    i++;
+                }
+            </tbody>
+        </table>
 
+    </div>
+</div>
 
 <partial name="~/Areas/Risk/Views/Shared/_AddDatatable.cshtml">

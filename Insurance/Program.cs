@@ -132,7 +132,8 @@ static async Task InitializeDatabaseAsync(WebApplication app)
         await DbInitializer.SeedCourierVendor(context);
         await DbInitializer.SeedLogisticCategories(context);
         await DbInitializer.SeedDepartments(context);
-        await DbInitializer.SeedRiskCategory(context);
+        await DbInitializer.SeedPrimaryRisk(context);
+        await DbInitializer.SeedSecondaryRisk(context);
         await DbInitializer.SeedLikehood(context);
         await DbInitializer.SeedImpact(context);
         await DbInitializer.SeedRiskStatus(context);

@@ -1,9 +1,13 @@
-﻿using Insurance.Areas.Risk.Interface;
+﻿using ClosedXML.Excel;
+using Insurance.Areas.Risk.Interface;
 using Insurance.Areas.Risk.Models;
 using Insurance.Areas.Risk.ViewModels;
+using Insurance.Models;
 using Insurance.Services;
 using Insurance.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using System.Security.Claims;
 
 namespace Insurance.Areas.Risk.Repository
@@ -13,16 +17,18 @@ namespace Insurance.Areas.Risk.Repository
         private readonly ILogger<RiskRegisterRepository> _logger;
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly AppDbContext _context;
         private readonly string userId = null;
         private readonly string userRole = null;
 
-        public RiskRegisterRepository(ILogger<RiskRegisterRepository> logger, IConfiguration configuration, AppDbContext context, IHttpContextAccessor httpContextAccessor)
+        public RiskRegisterRepository(ILogger<RiskRegisterRepository> logger, UserManager<ApplicationUser> userManager, IConfiguration configuration, AppDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
             _httpContextAccessor = httpContextAccessor;
             _configuration = configuration;
             _context = context;
+            _userManager = userManager;
             userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             userRole = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
 
@@ -141,7 +147,7 @@ namespace Insurance.Areas.Risk.Repository
                             Quantification = model.Quantification,
                             Remarks = model.Remarks,
                             RiskResponse = model.RiskResponse,
-                            CreadtedBy=username,
+                            CreatedBy=username,
                             CreatedDate = DateTime.Now,
 
                         };
@@ -194,13 +200,15 @@ namespace Insurance.Areas.Risk.Repository
 
         public async Task<List<RiskRegisterViewModel>> GetAllRiskRegistersAsync()
         {
-            if(userRole=="IT" || userRole=="RSuperAdmin")
+            
+            if (userRole == "IT" || userRole == "RSuperAdmin")
             {
                 var result = await (from x in _context.RiskRegisters
                                     select new RiskRegisterViewModel()
                                     {
                                         ID = x.ID,
                                         RiskID = x.RiskID,
+                                       // Username = username,
                                         RegisterDate = x.RegisterDate,
                                         RiskDescription = x.RiskDescription,
                                         Department = x.Department,
@@ -225,13 +233,14 @@ namespace Insurance.Areas.Risk.Repository
             }
             else
             {
-                var deparment = await _context.Users.AsNoTracking().Where(x => x.Id == userId).Select(x => x.Department).FirstOrDefaultAsync();
+                var department = await _context.Users.AsNoTracking().Where(x => x.Id == userId).Select(x => x.Department).FirstOrDefaultAsync();
                 var result = await (from x in _context.RiskRegisters
-                                    where x.Department == deparment
+                                    where x.Department == department
                                     select new RiskRegisterViewModel()
                                     {
                                         ID = x.ID,
                                         RiskID = x.RiskID,
+                                        //Username = await _context.Users.Where(x => x.Id == userId).Select(x => x.PrayogkartaName).FirstOrDefaultAsync(),
                                         RegisterDate = x.RegisterDate,
                                         RiskDescription = x.RiskDescription,
                                         Department = x.Department,
@@ -254,16 +263,18 @@ namespace Insurance.Areas.Risk.Repository
                                     }).ToListAsync() ?? new List<RiskRegisterViewModel>();
                 return result;
             }
-           
         }
 
         public async Task<RiskRegisterViewModel> GetRiskRegisterByIdAsync(int id)
         {
+           
+
             var result = await _context.RiskRegisters.AsNoTracking().Where(x => x.ID == id)
                 .Select(x => new RiskRegisterViewModel()
                 {
                     ID = x.ID,
                     RiskID = x.RiskID,
+                    //Username = username,
                     RegisterDate = x.RegisterDate,
                     RiskDescription = x.RiskDescription,
                     Department = x.Department,
@@ -284,6 +295,114 @@ namespace Insurance.Areas.Risk.Repository
                     LikeHoodScore = x.Likehood != null ? x.Likehood.NumScore : 0,
                     ImpactScore = x.Impacts != null ? x.Impacts.NumScore : 0,
                 }).FirstOrDefaultAsync() ?? new RiskRegisterViewModel();
+            return result;
+        }
+        public async Task<ImportResult> ImportFromExcelAsync(IFormFile excelFile)
+        {
+            var result = new ImportResult();
+
+            if (excelFile == null || excelFile.Length == 0)
+            {
+                result.Errors.Add("No file provided.");
+                return result;
+            }
+
+            using var stream = excelFile.OpenReadStream();
+            using var workbook = new XLWorkbook(stream);
+            var sheet = workbook.Worksheets.FirstOrDefault();
+            if (sheet == null)
+            {
+                result.Errors.Add("Workbook contains no worksheet.");
+                return result;
+            }
+
+            int row = 2;
+            while (true)
+            {
+                var idCell = sheet.Cell(row, "A");
+                var riskId = idCell.GetString().Trim();
+                if (string.IsNullOrWhiteSpace(riskId))
+                    break;
+
+                try
+                {
+                    // RegisterDate (nullable DateTime)
+                    DateTime? registerDate = null;
+                    if (!sheet.Cell(row, "B").IsEmpty())
+                        registerDate = sheet.Cell(row, "B").GetDateTime();
+
+                    // Text fields (may be empty)
+                    var description = sheet.Cell(row, "C").GetString().Trim();
+                    var department = sheet.Cell(row, "D").GetString().Trim();
+                    var primaryRisk = sheet.Cell(row, "E").GetString().Trim();
+                    var secondaryRisk = sheet.Cell(row, "F").GetString().Trim();
+                    var riskOwner = sheet.Cell(row, "L").GetString().Trim();
+                    var mitigationAction = sheet.Cell(row, "M").GetString().Trim();
+                    var riskStatus = sheet.Cell(row, "N").GetString().Trim();
+                    var riskResponse = sheet.Cell(row, "P").GetString().Trim();
+                    var remarks = sheet.Cell(row, "Q").GetString().Trim();
+
+                    // Numeric fields (nullable int)
+                    int? likeHoodId = null;
+                    if (!sheet.Cell(row, "G").IsEmpty())
+                        likeHoodId = sheet.Cell(row, "G").GetValue<int>();
+
+                    int? impactId = null;
+                    if (!sheet.Cell(row, "H").IsEmpty())
+                        impactId = sheet.Cell(row, "H").GetValue<int>();
+
+                    int? quantification = null;
+                    if (!sheet.Cell(row, "K").IsEmpty())
+                        quantification = sheet.Cell(row, "K").GetValue<int>();
+
+                    // ClosedDate (nullable DateTime)
+                    DateTime? closedDate = null;
+                    if (!sheet.Cell(row, "O").IsEmpty())
+                        closedDate = sheet.Cell(row, "O").GetDateTime();
+
+                    // UpdatedDate (nullable DateTime)
+                    DateTime? updatedDate = null;
+                    if (!sheet.Cell(row, "R").IsEmpty())
+                        updatedDate = sheet.Cell(row, "R").GetDateTime();
+
+                    // Map into entity (make sure these props are nullable)
+                    var entity = new RiskRegister
+                    {
+                        RiskID = riskId,
+                        RegisterDate = registerDate,
+                        RiskDescription = description,
+                        Department = department,
+                        PrimaryRisk = primaryRisk,
+                        SecondaryRisk = secondaryRisk,
+                        LikehoodId = likeHoodId,
+                        ImpactId = impactId,
+                        Quantification = quantification,
+                        RiskOwner = riskOwner,
+                        MitigationAction = mitigationAction,
+                        RiskStatus = riskStatus,
+                        ClosedDate = closedDate,
+                        RiskResponse = riskResponse,
+                        Remarks = remarks,
+                        CreatedBy = "import",
+                        CreatedDate = DateTime.UtcNow,
+                        UpdatedDate = updatedDate
+                    };
+
+                    _context.RiskRegisters.Add(entity);
+                    result.RowsImported++;
+                }
+                catch (Exception ex)
+                {
+                    result.Errors.Add($"Row {row}: {ex.Message}");
+                }
+
+                row++;
+            }
+
+            if (result.RowsImported > 0)
+                await _context.SaveChangesAsync();
+
+            result.Success = result.Errors.Count == 0;
             return result;
         }
     }

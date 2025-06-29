@@ -1920,8 +1920,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>fz7ycy9o18</Fingerprint>
-      <Integrity>Fb+7snV62WGVcKIUnCTSigWNwfI2uFSZ99d22TGAu+E=</Integrity>
+      <Fingerprint>a2rl93320k</Fingerprint>
+      <Integrity>QsGvbWfRNGUu27zAAdZdxVLAvnl51AQUK14v3oI3Nbk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sample\sample_format.xlsx'))</OriginalItemSpec>

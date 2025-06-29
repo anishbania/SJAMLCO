@@ -1,0 +1,89 @@
+﻿@model RiskRegisterViewModel
+@{
+    ViewData["Title"] = "Risk Register Details";
+}
+
+<div class="xs-pd-20-10">
+    <div class="min-height-200px">
+        <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+            <div class="form-container p-4">
+                <div class="form-row">
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.RiskID) :</div>
+                    <div class="col-md-3 text-left">@Model.RiskID</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.RegisterDate) :</div>
+                    <div class="col-md-3 text-left">@Model.RegisterDate?.ToString("yyyy-MM-dd")</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.RiskDescription) :</div>
+                    <div class="col-md-3 text-left">@Model.RiskDescription</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.Department) :</div>
+                    <div class="col-md-3 text-left">@Model.Department</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.PrimaryRisk) :</div>
+                    <div class="col-md-3 text-left">@Model.PrimaryRisk</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.SecondaryRisk) :</div>
+                    <div class="col-md-3 text-left">@Model.SecondaryRisk</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.LikeHood) :</div>
+                    <div class="col-md-3 text-left">@Model.LikeHood</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.Impact) :</div>
+                    <div class="col-md-3 text-left">@Model.Impact</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.RiskOwner) :</div>
+                    <div class="col-md-3 text-left">@Model.RiskOwner</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.MitigationAction) :</div>
+                    <div class="col-md-3 text-left">@Model.MitigationAction</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.RiskStatus) :</div>
+                    <div class="col-md-3 text-left">@Model.RiskStatus</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.ClosedDate) :</div>
+                    <div class="col-md-3 text-left">@Model.ClosedDate?.ToString("yyyy-MM-dd")</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.Quantification) :</div>
+                    <div class="col-md-3 text-left">@Model.Quantification</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.UpdatedDate) :</div>
+                    <div class="col-md-3 text-left">@Model.UpdatedDate?.ToString("yyyy-MM-dd")</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.Remarks) :</div>
+                    <div class="col-md-3 text-left">@Model.Remarks</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.RiskResponse) :</div>
+                    <div class="col-md-3 text-left">@Model.RiskResponse</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.Matrix) :</div>
+                    <div class="col-md-3 text-left">@Model.Matrix</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.LikeHoodScore) :</div>
+                    <div class="col-md-3 text-left">@Model.LikeHoodScore</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.ImpactScore) :</div>
+                    <div class="col-md-3 text-left">@Model.ImpactScore</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.RiskLevel) :</div>
+                    <div class="col-md-3 text-left">@Model.RiskLevel</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.LikehoodId) :</div>
+                    <div class="col-md-3 text-left">@Model.LikehoodId</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.ImpactId) :</div>
+                    <div class="col-md-3 text-left">@Model.ImpactId</div>
+
+                    <div class="col-md-3 text-right">@Html.DisplayNameFor(m => m.Username) :</div>
+                    <div class="col-md-3 text-left">@Model.Username</div>
+
+                </div>
+
+                <div class="form-group flex-row end-0">
+                    <a class="btn btn-warning" asp-action="Index">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

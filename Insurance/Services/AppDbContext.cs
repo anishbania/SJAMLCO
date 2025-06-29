@@ -33,7 +33,8 @@ namespace Insurance.Services
         #region Risk Register 
         public DbSet<RiskRegister> RiskRegisters { get; set; }
         public DbSet<Department> Departments { get; set; }
-        public DbSet<RiskCategory> RiskCategories { get; set; }
+        public DbSet<PrimaryRisk> PrimaryRisk { get; set; }
+        public DbSet<SecondaryRisk> SecondaryRisk { get; set; }
         public DbSet<Likehood> Likehoods { get; set; }
         public DbSet<Impact> Impacts { get; set; }
         public DbSet<RiskStatus> RiskStatus { get; set; } 

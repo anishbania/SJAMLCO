@@ -40,7 +40,8 @@ namespace Insurance.Services
                     FullName = "Anish Baniya",
                     PrayogkartaName = "IT-Anish",
                     Email = "anish.baniya@suryajyotilife.com",
-                    UserName = "anish.baniya@suryajyotilife.com"
+                    UserName = "anish.baniya@suryajyotilife.com",
+                    Department="IT"
                 };
 
                 string defaultPass = "Anish@123";
@@ -206,6 +207,7 @@ namespace Insurance.Services
                     new Department { Name = "REINSURANCE" },
                     new Department { Name = "TRAINING" },
                     new Department { Name = "UNDERWRITING" },
+                    new Department { Name = "RISK DEPARTMENT" }
                 };
                 context.Departments.AddRange(departments);
                 await context.SaveChangesAsync();
@@ -213,26 +215,65 @@ namespace Insurance.Services
 
         }
 
-        public static async Task SeedRiskCategory(AppDbContext context)
+        public static async Task SeedPrimaryRisk(AppDbContext context)
         {
-            var riskCategory = await context.RiskCategories.ToListAsync();
+            var riskCategory = await context.PrimaryRisk.ToListAsync();
             if (riskCategory.Count == 0)
             {
-                List<RiskCategory> years = new List<RiskCategory>()
+                List<PrimaryRisk> years = new List<PrimaryRisk>()
                 {
-                    new RiskCategory {Name="Insurance Risk"},
-                    new RiskCategory {Name="Market Risk"},
-                    new RiskCategory {Name="Credit Risk"},
-                    new RiskCategory {Name="Operational Risk"},
-                    new RiskCategory {Name="Strategic Risk"},
-                    new RiskCategory {Name="Compliance Risk"},
-                    new RiskCategory {Name="Conduct Risk"},
-                    new RiskCategory {Name="Money Laundering"},
-                    new RiskCategory {Name="Climate Risk"},
-                    new RiskCategory {Name="Reputational Risk"},
+                    new PrimaryRisk {Name="Insurance Risk"},
+                    new PrimaryRisk {Name="Market Risk"},
+                    new PrimaryRisk {Name="Credit Risk"},
+                    new PrimaryRisk {Name="Operational Risk"},
+                    new PrimaryRisk {Name="Strategic Risk"},
+                    new PrimaryRisk {Name="Compliance Risk"},
+                    new PrimaryRisk {Name="Conduct Risk"},
+                    new PrimaryRisk {Name="Money Laundering"},
+                    new PrimaryRisk {Name="Climate Risk"},
+                    new PrimaryRisk {Name="Reputational Risk"},
 
                 };
-                context.RiskCategories.AddRange(years);
+                context.PrimaryRisk.AddRange(years);
+                await context.SaveChangesAsync();
+            }
+        }
+        public static async Task SeedSecondaryRisk(AppDbContext context)
+        {
+            var riskCategory = await context.SecondaryRisk.ToListAsync();
+            if (riskCategory.Count == 0)
+            {
+                List<SecondaryRisk> years = new List<SecondaryRisk>()
+                {
+                    new SecondaryRisk {Name="Insurance Risk"},
+                    new SecondaryRisk {Name="Market Risk"},
+                    new SecondaryRisk {Name="Credit Risk"},
+                    new SecondaryRisk {Name="Operational Risk"},
+                    new SecondaryRisk {Name="Strategic Risk"},
+                    new SecondaryRisk {Name="Compliance Risk"},
+                    new SecondaryRisk {Name="Conduct Risk"},
+                    new SecondaryRisk {Name="Money Laundering"},
+                    new SecondaryRisk {Name="Climate Risk"},
+                    new SecondaryRisk {Name="Reputational Risk"},
+                    new SecondaryRisk {Name="Earning Risk"},
+                    new SecondaryRisk {Name="Assest Risk"},
+                    new SecondaryRisk {Name="Spread Risk"},
+                    new SecondaryRisk {Name="Equity Risk"},
+                    new SecondaryRisk {Name="Pricing Risk"},
+                    new SecondaryRisk {Name="Cashflow Risk"},
+                    new SecondaryRisk {Name="Market Structure Risk"},
+                    new SecondaryRisk {Name="Regulatory Risk"},
+                    new SecondaryRisk {Name="Liquidity Risk"},
+                    new SecondaryRisk {Name="Quality Risk"},
+                    new SecondaryRisk {Name="Mortality Risk"},
+                    new SecondaryRisk {Name="Morbidity Risk"},
+                    new SecondaryRisk {Name="Technology Risk"},
+                    new SecondaryRisk {Name="Enviromnental Risk"},
+                    new SecondaryRisk {Name="Fraud Risk"},
+                    new SecondaryRisk {Name="Continuity Risk"},
+
+                };
+                context.SecondaryRisk.AddRange(years);
                 await context.SaveChangesAsync();
             }
         }

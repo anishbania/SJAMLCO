@@ -132,6 +132,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmlza1xWaWV3c1xSaXNrUmVnaXN0ZXJcQ3JlYXRlVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/Risk/Views/RiskRegister/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmlza1xWaWV3c1xSaXNrUmVnaXN0ZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/SuryaJyoti/SJAMLCO/Insurance/Areas/Risk/Views/RiskRegister/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmlza1xWaWV3c1xSaXNrUmVnaXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

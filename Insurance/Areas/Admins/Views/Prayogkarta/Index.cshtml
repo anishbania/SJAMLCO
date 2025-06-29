@@ -7,61 +7,66 @@
     int i = 1;
 }
 
-<a asp-controller="PrayogKarta" asp-action="Create" class="btn btn-sm btn-outline-primary"><i class="bi bi-plus-circle-fill"></i>&nbsp;Add New User</a>
-<div class="table-responsive">
-    <table id="example" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>S.N</th>
-                <th>@Html.DisplayNameFor(model => model.FullName)</th>
-                <th>@Html.DisplayNameFor(model => model.PrayogkartaName)</th>
-                <th>@Html.DisplayNameFor(model => model.Department)</th>
-                <th>@Html.DisplayNameFor(model => model.Email)</th>
-                <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
-                <th>@Html.DisplayNameFor(model => model.HasLogged)</th>
-                <th>@Html.DisplayNameFor(model => model.Role)</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @i
-                    </td>
-                    <td>@item.FullName</td>
-                    <td>@item.PrayogkartaName</td>
-                    <td>@item.Department</td>
-                    <td>@item.Email</td>
-                    <td>@item.PhoneNumber</td>
-                    <td>
-                        @if (item.HasLogged == true)
-                        {
-                            <span title="Last logged - @item.LastLogged"><i class="bi bi-person-check text-primary"></i></span>
-                        }
-                        else
-                        {
-                            <span title="Not logged In"><i class="bi bi-person-exclamation text-red"></i></span>
-                        }
-                    </td>
-                    <td>@item.Role</td>
-                    <td>
-                        <div class="d-inline">
+<a asp-controller="PrayogKarta" asp-action="Create" class="btn btn-sm btn-outline-primary mb-3"><i class="bi bi-plus-circle-fill"></i>&nbsp;Add New User</a>
 
-                            <a href="#" title="Reset Password" onclick="ResetPassword(this, '@item.Id', '@item.FullName')"><i class="fa fa-unlock-alt"></i></a> |
-                            @* <form asp-action="ResetPass" class="btn btn-sm btn-outline-primary" asp-route-id="@item.Id" title="Reset Password"><i class="fa fa-unlock-alt"></i></form> | *@
-                            <a asp-action="Create" asp-route-id="@item.Id"><i class="bi bi-pencil"></i></a> |
-                            <form asp-action="DeleteConfirm" asp-route-id="@item.Id" data-ajax="true" data-ajax-method="post" data-ajax-confirm="Are you sure?" data-ajax-complete="deletePage" class="d-inline">
-                                <button type="submit" class="btn btn-link p-0"> <i class="bi bi-trash text-red"></i></button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-                i++;
-            }
-        </tbody>
-    </table>
+<div class="card card-form">
+    <div class="card-body p-4">
+        <div class="table-responsive">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead class="table-light">
+                    <tr>
+                        <th>S.N</th>
+                        <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                        <th>@Html.DisplayNameFor(model => model.PrayogkartaName)</th>
+                        <th>@Html.DisplayNameFor(model => model.Department)</th>
+                        <th>@Html.DisplayNameFor(model => model.Email)</th>
+                        <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                        <th>@Html.DisplayNameFor(model => model.HasLogged)</th>
+                        <th>@Html.DisplayNameFor(model => model.Role)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>@item.FullName</td>
+                            <td>@item.PrayogkartaName</td>
+                            <td>@item.Department</td>
+                            <td>@item.Email</td>
+                            <td>@item.PhoneNumber</td>
+                            <td>
+                                @if (item.HasLogged == true)
+                                {
+                                    <span title="Last logged - @item.LastLogged"><i class="bi bi-person-check text-primary"></i></span>
+                                }
+                                else
+                                {
+                                    <span title="Not logged In"><i class="bi bi-person-exclamation text-red"></i></span>
+                                }
+                            </td>
+                            <td>@item.Role</td>
+                            <td>
+                                <div class="d-inline">
+
+                                    <a href="#" title="Reset Password" onclick="ResetPassword(this, '@item.Id', '@item.FullName')"><i class="fa fa-unlock-alt"></i></a> |
+                                    @* <form asp-action="ResetPass" class="btn btn-sm btn-outline-primary" asp-route-id="@item.Id" title="Reset Password"><i class="fa fa-unlock-alt"></i></form> | *@
+                                    <a asp-action="Create" asp-route-id="@item.Id"><i class="bi bi-pencil"></i></a> |
+                                    <form asp-action="DeleteConfirm" asp-route-id="@item.Id" data-ajax="true" data-ajax-method="post" data-ajax-confirm="Are you sure?" data-ajax-complete="deletePage" class="d-inline">
+                                        <button type="submit" class="btn btn-link p-0"> <i class="bi bi-trash text-red"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">

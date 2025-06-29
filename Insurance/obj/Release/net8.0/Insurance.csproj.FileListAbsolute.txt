@@ -301,3 +301,11 @@ C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\refint\Insurance.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\Insurance.pdb
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\Insurance.genruntimeconfig.cache
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\ref\Insurance.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\ClosedXML.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\ClosedXML.Parser.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\DocumentFormat.OpenXml.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\DocumentFormat.OpenXml.Framework.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\ExcelNumberFormat.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\RBush.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\SixLabors.Fonts.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\System.IO.Packaging.dll

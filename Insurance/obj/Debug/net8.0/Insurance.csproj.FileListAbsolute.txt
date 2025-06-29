@@ -908,6 +908,11 @@ C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\Insurance.pdb
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\Azure.Core.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\Azure.Identity.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\BeginCollectionItemCore.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\ClosedXML.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\ClosedXML.Parser.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\ExcelNumberFormat.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\Humanizer.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
@@ -982,6 +987,8 @@ C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\NuGet.Packaging.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\RBush.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\SQLitePCLRaw.core.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -994,6 +1001,7 @@ C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\System.Composition.TypedParts.d
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\System.IO.Packaging.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\System.Memory.Data.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\System.Runtime.Caching.dll

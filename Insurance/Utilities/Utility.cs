@@ -332,9 +332,13 @@ namespace Insurance.Utilities
         {
             return new SelectList(await _context.Departments.ToListAsync(), "Name", "Name");
         }
-        public async Task<SelectList> GetRiskCategorySelectListItems()
+        public async Task<SelectList> GetPrimaryRiskCategorySelectListItems()
         {
-            return new SelectList(await _context.RiskCategories.ToListAsync(), "Name", "Name");
+            return new SelectList(await _context.PrimaryRisk.ToListAsync(), "Name", "Name");
+        }
+        public async Task<SelectList> GetSecondaryRiskCategorySelectListItems()
+        {
+            return new SelectList(await _context.SecondaryRisk.ToListAsync(), "Name", "Name");
         }
         public async Task<SelectList> GetLikehoodSelectListItems()
         {

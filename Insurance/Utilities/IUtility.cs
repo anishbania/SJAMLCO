@@ -18,7 +18,8 @@ namespace Insurance.Utilities
 
 
         Task<SelectList> GetDepartmentSelectListItems();
-        Task<SelectList> GetRiskCategorySelectListItems();
+        Task<SelectList> GetPrimaryRiskCategorySelectListItems();
+        Task<SelectList> GetSecondaryRiskCategorySelectListItems();
         Task<SelectList> GetLikehoodSelectListItems();
         Task<SelectList> GetImpactSelectListItems();
         Task<SelectList> GetRiskStatusSelectListItems();

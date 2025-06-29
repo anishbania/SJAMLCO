@@ -73,5 +73,36 @@ namespace Insurance.Areas.Risk.Controllers
             return PhysicalFile(filePath, contentType, "sample_format.xlsx");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Import(IFormFile excelFile)
+        {
+            if (excelFile == null)
+            {
+                ModelState.AddModelError("", "Please select an Excel file to upload.");
+            }
+
+            var result = await _riskRegister.ImportFromExcelAsync(excelFile);
+
+            if (!result.Success)
+            {
+                // show errors back on the form
+                foreach (var err in result.Errors)
+                    ModelState.AddModelError("", err);
+            }
+
+            TempData["success"] = $"{result.RowsImported} rows imported successfully.";
+            return RedirectToAction(nameof(Index));  // or wherever you list
+        }
+        public async Task<IActionResult> Details(int id)
+        {
+            var riskRegister = await _riskRegister.GetRiskRegisterByIdAsync(id);
+            if (riskRegister == null)
+            {
+                TempData["error"] = "Risk Register not found.";
+            }
+            return View(riskRegister);
+
+        }
     }
 }

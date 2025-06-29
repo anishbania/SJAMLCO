@@ -39,6 +39,7 @@ namespace Insurance.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("VendorName")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -79,9 +80,11 @@ namespace Insurance.Migrations
                         .HasColumnType("nvarchar(3)");
 
                     b.Property<string>("ChalaniNo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DartaNo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DispatchDate")
@@ -105,6 +108,7 @@ namespace Insurance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Remarks")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -175,6 +179,7 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -191,6 +196,7 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NumScore")
@@ -210,6 +216,7 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NumScore")
@@ -220,7 +227,7 @@ namespace Insurance.Migrations
                     b.ToTable("Likehoods");
                 });
 
-            modelBuilder.Entity("Insurance.Areas.Risk.Models.RiskCategory", b =>
+            modelBuilder.Entity("Insurance.Areas.Risk.Models.PrimaryRisk", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -229,11 +236,12 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("RiskCategories");
+                    b.ToTable("PrimaryRisk");
                 });
 
             modelBuilder.Entity("Insurance.Areas.Risk.Models.RiskRegister", b =>
@@ -247,7 +255,7 @@ namespace Insurance.Migrations
                     b.Property<DateTime?>("ClosedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CreadtedBy")
+                    b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreatedDate")
@@ -259,13 +267,13 @@ namespace Insurance.Migrations
                     b.Property<string>("Impact")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImpactId")
+                    b.Property<int?>("ImpactId")
                         .HasColumnType("int");
 
                     b.Property<string>("LikeHood")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LikehoodId")
+                    b.Property<int?>("LikehoodId")
                         .HasColumnType("int");
 
                     b.Property<string>("MitigationAction")
@@ -274,7 +282,7 @@ namespace Insurance.Migrations
                     b.Property<string>("PrimaryRisk")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Quantification")
+                    b.Property<int?>("Quantification")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("RegisterDate")
@@ -325,11 +333,29 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("RiskStatus");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.Risk.Models.SecondaryRisk", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SecondaryRisk");
                 });
 
             modelBuilder.Entity("Insurance.Models.ApplicationUser", b =>
@@ -345,6 +371,7 @@ namespace Insurance.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Department")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -355,6 +382,7 @@ namespace Insurance.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FullName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("HasLoggedIn")
@@ -387,6 +415,7 @@ namespace Insurance.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("PrayogkartaName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
@@ -440,9 +469,11 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DistrictId"));
 
                     b.Property<string>("DistrictName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DistrictName_Nep")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("StateId")
@@ -464,6 +495,7 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -486,9 +518,11 @@ namespace Insurance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("BsEndDate")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BsStartDate")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
@@ -507,6 +541,7 @@ namespace Insurance.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("LocalName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -539,9 +574,11 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GenderId"));
 
                     b.Property<string>("GenderEnglish")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GenderNepali")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("GenderId");
@@ -558,9 +595,11 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NepaliName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -580,9 +619,11 @@ namespace Insurance.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("PalikaName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PalikaName_Nep")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PalikaId");
@@ -601,42 +642,52 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Address2")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ContactName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ContactNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("District")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ExpireDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FaxNo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LogoPath")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MobileNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Palika")
                         .HasColumnType("int");
 
                     b.Property<string>("Slogan")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("State")
@@ -646,6 +697,7 @@ namespace Insurance.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Website")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -662,9 +714,11 @@ namespace Insurance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StateId"));
 
                     b.Property<string>("StateName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StateName_Nep")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("StateId");
@@ -841,15 +895,11 @@ namespace Insurance.Migrations
                 {
                     b.HasOne("Insurance.Areas.Risk.Models.Impact", "Impacts")
                         .WithMany()
-                        .HasForeignKey("ImpactId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ImpactId");
 
                     b.HasOne("Insurance.Areas.Risk.Models.Likehood", "Likehood")
                         .WithMany()
-                        .HasForeignKey("LikehoodId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LikehoodId");
 
                     b.Navigation("Impacts");
 

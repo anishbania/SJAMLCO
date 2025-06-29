@@ -4,67 +4,72 @@
     int i = 1;
 }
 
-<a asp-controller="Courier" asp-action="Create" class="btn btn-sm btn-outline-primary"><i class="bi bi-plus-circle-fill"></i>&nbsp;Dispatch New Courier</a>
-<div class="table-responsive">
-    <table id="example" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>S.N</th>
-                <th>@Html.DisplayNameFor(model => model.BranchName)</th>
-                <th>@Html.DisplayNameFor(model => model.VendorName)</th>
-                <th>@Html.DisplayNameFor(model => model.SendBy)</th>
-                <th>@Html.DisplayNameFor(model => model.DispatchDate)</th>
-                <th>@Html.DisplayNameFor(model => model.ReceivedBy)</th>
-                <th>@Html.DisplayNameFor(model => model.ReceivedDate)</th>
-                <th>@Html.DisplayNameFor(model => model.Status)</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @i
-                    </td>
-                    <td>@item.BranchName</td>
-                    <td>@item.VendorName</td>
-                    <td>@item.SendBy</td>
-                    <td>@item.DispatchDate.ToString("MMMM dd, yyyy")</td>
-                    <td>@item.ReceivedBy</td>
-                    <td>@(item.ReceivedDate.HasValue ? item.ReceivedDate.Value.ToString("MMMM dd, yyyy") : "")</td>
-                    <td>
-                        @if (item.Status == "NEW")
-                        {
-                            <span class="badge badge-primary">@item.Status</span>
-                        }
-                        else if (item.Status == "RECEIVED")
-                        {
-                            <span class="badge badge-success">@item.Status</span>
-                        }
-                        else if(item.Status=="RETURNED") 
-                        {
-                            <span class="badge badge-danger">@item.Status</span>
-                        }
-                        else
-                        {
-                            <span class="badge badge-info">@item.Status</span>
-                        }
-                    </td>
-                    <td>
-                        <div class="d-inline">
-                            <a asp-action="Create" asp-route-id="@item.Id" class="text-decoration-none me-3"><i class="bi bi-pencil"></i></a>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="text-decoration-none me-3"><i class="bi bi-eye text-warning"></i></a>
-                            <form asp-action="Delete" asp-route-id="@item.Id" data-ajax="true" data-ajax-method="post" data-ajax-confirm="Are you sure?" data-ajax-complete="deletePage" class="d-inline">
-                                <button type="submit" class="btn btn-link p-0"> <i class="bi bi-trash text-red"></i></button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-                i++;
-            }
-        </tbody>
-    </table>
+<a asp-controller="Courier" asp-action="Create" class="btn btn-sm btn-outline-primary mb-3"><i class="bi bi-plus-circle-fill"></i>&nbsp;Dispatch New Courier</a>
+
+<div class="card card-form">
+    <div class="card-body p-4">
+        <div class="table-responsive">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>S.N</th>
+                        <th>@Html.DisplayNameFor(model => model.BranchName)</th>
+                        <th>@Html.DisplayNameFor(model => model.VendorName)</th>
+                        <th>@Html.DisplayNameFor(model => model.SendBy)</th>
+                        <th>@Html.DisplayNameFor(model => model.DispatchDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.ReceivedBy)</th>
+                        <th>@Html.DisplayNameFor(model => model.ReceivedDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.Status)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>@item.BranchName</td>
+                            <td>@item.VendorName</td>
+                            <td>@item.SendBy</td>
+                            <td>@item.DispatchDate.ToString("MMMM dd, yyyy")</td>
+                            <td>@item.ReceivedBy</td>
+                            <td>@(item.ReceivedDate.HasValue ? item.ReceivedDate.Value.ToString("MMMM dd, yyyy") : "")</td>
+                            <td>
+                                @if (item.Status == "NEW")
+                                {
+                                    <span class="badge badge-primary">@item.Status</span>
+                                }
+                                else if (item.Status == "RECEIVED")
+                                {
+                                    <span class="badge badge-success">@item.Status</span>
+                                }
+                                else if (item.Status == "RETURNED")
+                                {
+                                    <span class="badge badge-danger">@item.Status</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-info">@item.Status</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="d-inline">
+                                    <a asp-action="Create" asp-route-id="@item.Id" class="text-decoration-none me-3"><i class="bi bi-pencil"></i></a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="text-decoration-none me-3"><i class="bi bi-eye text-warning"></i></a>
+                                    <form asp-action="Delete" asp-route-id="@item.Id" data-ajax="true" data-ajax-method="post" data-ajax-confirm="Are you sure?" data-ajax-complete="deletePage" class="d-inline">
+                                        <button type="submit" class="btn btn-link p-0"> <i class="bi bi-trash text-red"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 <partial name="_AddDatatable">
