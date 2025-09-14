@@ -5,8 +5,9 @@
 
 <div class="container mt-2">
     <div class="card p-4 mb-2">
-        <form id="visitForm" asp-controller="Visit" asp-action="CreateVisit" method="post">
+        <form id="visitForm" asp-controller="VisitRegistration" asp-action="CreateVisit" method="post">
             @Html.AntiForgeryToken()
+
             <div id="visit-type-step">
                 <h4 class="mb-3">Step 1: Select Visit Type</h4>
                 <div class="form-group">
@@ -21,8 +22,20 @@
                 </div>
             </div>
 
-            <div id="dynamicFields" style="margin-top:20px;"></div>
+            <!-- QR controls (still inside the form) -->
+            <div class="mt-4">
+                <button id="btnShowQr" type="button" class="btn btn-outline-primary">Show QR</button>
+                <button id="btnDownloadQr" type="button" class="btn btn-outline-secondary">Download QR</button>
+            </div>
 
+            <!-- QR container starts hidden; image src will be set when user clicks Show -->
+            <div id="qrContainer" class="mt-3" style="display:none;">
+                <h5>Open this page on your phone</h5>
+                <img id="qrImage" src="" alt="QR Code for CreateVisit" style="width:200px;height:200px;" />
+                <p class="small text-muted mt-2">Scan to open the Create Visit page on your phone.</p>
+            </div>
+
+            <div id="dynamicFields" style="margin-top:20px;"></div>
         </form>
     </div>
 </div>
@@ -33,28 +46,59 @@
     }
     <script>
         $(document).ready(function () {
-            // --- Step 1 to Step 2 Transition ---
+            var $qrContainer = $('#qrContainer');
+            var $qrImage = $('#qrImage');
+            var qrLoaded = false;
+            var qrUrl = '@Url.Action("QrCodeForCreateVisit", "VisitRegistration", new { area = "VMS" })';
+
+            // Show / Hide QR toggle
+            $('#btnShowQr').on('click', function () {
+                if (!qrLoaded) {
+                    $qrImage.attr('src', qrUrl);
+                    qrLoaded = true;
+                }
+                if ($qrContainer.is(':visible')) {
+                    $qrContainer.hide();
+                    $(this).text('Show QR');
+                } else {
+                    $qrContainer.show();
+                    $(this).text('Hide QR');
+                }
+            });
+
+            // Download QR
+            $('#btnDownloadQr').on('click', function () {
+                var link = document.createElement('a');
+                link.href = qrUrl;
+                link.download = 'createvisit-qr.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+            // Continue -> hide QR controls and load step 2
             $('#btnContinue').on('click', function () {
                 var visitType = $('#VisitType').val();
-                var visitTypeText = $('#VisitType option:selected').text();
 
-                // Validate selection
                 if (!visitType) {
                     alert('Please select a visit type to continue.');
                     return;
                 }
 
-                // AJAX call to get the partial view for Step 2
+                // Hide QR and both buttons immediately to avoid flicker
+                $qrContainer.hide();
+                $('#btnShowQr').hide();
+                $('#btnDownloadQr').hide();
+                $('#btnShowQr').text('Show QR');
+
+                $('#visit-type-step').hide();
+
                 $.ajax({
                     url: '@Url.Action("GetVisitPartial", "VisitRegistration", new { area = "VMS" })',
                     type: 'GET',
-                    data: { type: visitTypeText },
+                    data: { type: visitType },
                     success: function (data) {
-                        // Hide Step 1 and show Step 2 content
-                        $('#visit-type-step').hide();
                         $('#dynamicFields').html(data);
-
-                        // Important: Re-parse the form for unobtrusive validation to work on new fields
                         var form = $('#visitForm');
                         form.removeData('validator');
                         form.removeData('unobtrusiveValidation');
@@ -62,15 +106,24 @@
                     },
                     error: function (xhr, status, error) {
                         console.error('Failed to load dynamic fields:', error);
+                        $('#visit-type-step').show();
+                        $('#btnShowQr').show();
+                        $('#btnDownloadQr').show();
                         alert('An error occurred. Please try again.');
                     }
                 });
             });
-             // --- Back Button Logic ---
-             $(document).on('click', '#btnBack', function() {
+
+            // Back -> show QR controls again
+            $(document).on('click', '#btnBack', function () {
                 $('#dynamicFields').empty();
                 $('#visit-type-step').show();
+                $('#btnShowQr').show();
+                $('#btnDownloadQr').show();
+                $qrContainer.hide();
+                $('#btnShowQr').text('Show QR');
             });
         });
     </script>
+
 }

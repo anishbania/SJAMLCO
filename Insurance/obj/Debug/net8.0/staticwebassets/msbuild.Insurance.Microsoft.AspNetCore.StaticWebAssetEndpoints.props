@@ -352,13 +352,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Insurance.ri21wky8pf.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1127"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 01 Sep 2025 05:16:24 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1127"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Sep 2025 11:07:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Insurance/Insurance.ri21wky8pf.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Insurance.ri21wky8pf.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ri21wky8pf"},{"Name":"integrity","Value":"sha256-/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA="},{"Name":"label","Value":"_content/Insurance/Insurance.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1127"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA=\u0022"},{"Name":"Last-Modified","Value":"Mon, 01 Sep 2025 05:16:24 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1127"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/Sz/j3GJNcnXaGFX0TAE8QUijCpvIj/f1o2TWxNU2eA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Sep 2025 11:07:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Insurance/js/adminlte.min.dbw9uwabcm.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\adminlte.min.js'))</AssetFile>

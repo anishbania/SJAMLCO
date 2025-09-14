@@ -4,6 +4,7 @@ using Insurance.Areas.VMS.ViewModels;
 using Insurance.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using QRCoder;
 using System.Threading.Tasks;
 
 namespace Insurance.Areas.VMS.Controllers
@@ -62,5 +63,40 @@ namespace Insurance.Areas.VMS.Controllers
         {
             return View();
         }
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult QrCodeForCreateVisit()
+        {
+            // Build absolute URL to your CreateVisit page (GET)
+            var createVisitPath = Url.Action("CreateVisit", "VisitRegistration", new { area = "VMS" });
+            string targetUrl = $"{Request.Scheme}://{Request.Host}{createVisitPath}";
+
+            using (var qrGenerator = new QRCodeGenerator())
+            using (var qrData = qrGenerator.CreateQrCode(targetUrl, QRCodeGenerator.ECCLevel.Q))
+            using (var png = new PngByteQRCode(qrData))
+            {
+                var bytes = png.GetGraphic(pixelsPerModule: 20);
+                return File(bytes, "image/png");
+            }
+        }
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult QrCode(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return BadRequest("text is required");
+
+            // If text comes from query use Uri.UnescapeDataString if needed
+            string payload = text;
+
+            using (var qrGenerator = new QRCodeGenerator())
+            using (var qrData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q))
+            using (var png = new PngByteQRCode(qrData))
+            {
+                var bytes = png.GetGraphic(20);
+                return File(bytes, "image/png");
+            }
+        }
+
     }
 }
