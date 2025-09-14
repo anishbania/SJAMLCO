@@ -117,6 +117,10 @@
       "PackagePath": "staticwebassets\\images\\statics\\avataaars.svg"
     },
     {
+      "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\statics\\logo.ico",
+      "PackagePath": "staticwebassets\\images\\statics\\logo.ico"
+    },
+    {
       "Id": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\BarChart.js",
       "PackagePath": "staticwebassets\\js\\BarChart.js"
     },

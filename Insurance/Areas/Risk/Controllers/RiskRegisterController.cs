@@ -104,5 +104,10 @@ namespace Insurance.Areas.Risk.Controllers
             return View(riskRegister);
 
         }
+
+        public IActionResult RiskReportingManual()
+        {
+            return View();
+        }
     }
 }

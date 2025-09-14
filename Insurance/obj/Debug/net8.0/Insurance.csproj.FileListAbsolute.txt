@@ -898,6 +898,7 @@ C:\Users\acer\Desktop\SJAMLCO\Insurance\obj\Debug\net8.0\Insurance.genruntimecon
 C:\Users\acer\Desktop\SJAMLCO\Insurance\obj\Debug\net8.0\ref\Insurance.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\appsettings.Development.json
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\appsettings.json
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\libman.json
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\Insurance.staticwebassets.runtime.json
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\Insurance.staticwebassets.endpoints.json
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\Insurance.exe
@@ -987,6 +988,7 @@ C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\NuGet.Packaging.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\QRCoder.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\RBush.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll

@@ -31,6 +31,7 @@
                         <th>S.N</th>
                         <th>Actions</th>
                         <th>@Html.DisplayNameFor(model => model.RiskID)</th>
+                        <th>@Html.DisplayNameFor(model => model.Username)</th>
                         <th>@Html.DisplayNameFor(model => model.RiskDescription)</th>
                         <th>@Html.DisplayNameFor(model => model.RegisterDate)</th>
                         <th>@Html.DisplayNameFor(model => model.Department)</th>
@@ -71,6 +72,7 @@
                                 </div>
                             </td>
                             <td>@item.RiskID</td>
+                            <td>@item.Username</td>
                             <td>@item.RiskDescription</td>
                             <td>@(item.RegisterDate.HasValue ? item.RegisterDate.Value.ToString("yyyy-MM-dd") : string.Empty)</td>
                             <td>@item.Department</td>

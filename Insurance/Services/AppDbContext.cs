@@ -1,5 +1,6 @@
 ﻿using Insurance.Areas.Admins.Models;
 using Insurance.Areas.Risk.Models;
+using Insurance.Areas.VMS.Models;
 using Insurance.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -37,9 +38,18 @@ namespace Insurance.Services
         public DbSet<SecondaryRisk> SecondaryRisk { get; set; }
         public DbSet<Likehood> Likehoods { get; set; }
         public DbSet<Impact> Impacts { get; set; }
-        public DbSet<RiskStatus> RiskStatus { get; set; } 
+        public DbSet<RiskStatus> RiskStatus { get; set; }
         #endregion
 
+
+        #region Visitors Management System
+        public DbSet<Visitor> Visitors { get; set; }
+        public DbSet<Visit> Visits { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<VisitDocument> VisitDocument { get; set; }
+
+
+        #endregion
     }
 }
 

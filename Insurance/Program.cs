@@ -10,6 +10,8 @@ using Insurance.Repositories;
 using Insurance.Areas.Admins.Interface;
 using Insurance.Areas.Risk.Interface;
 using Insurance.Areas.Risk.Repository;
+using Insurance.Areas.VMS.Interface;
+using Insurance.Areas.VMS.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,6 +54,10 @@ builder.Services.AddScoped<IPrayogKarta, PrayogKartaRepository>();
 builder.Services.AddScoped<IAllCommonRepository, AllCommonRepository>();
 //builder.Services.AddScoped<ICourier, CourierRepository>();
 builder.Services.AddScoped<IRiskRegister, RiskRegisterRepository>();
+builder.Services.AddScoped<IEmployee, EmployeeRepository>();
+builder.Services.AddScoped<IVisitRegistration, VisitRegistrationRepository>();
+builder.Services.AddHostedService<VisitStatusUpdateService>();
+
 
 builder.Services.AddAuthorization(options =>
 {

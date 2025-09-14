@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Insurance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250629105159_initial")]
+    [Migration("20250818070512_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -318,6 +318,9 @@ namespace Insurance.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ID");
 
                     b.HasIndex("ImpactId");
@@ -359,6 +362,118 @@ namespace Insurance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SecondaryRisk");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.VMS.Models.Employee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Department")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.VMS.Models.Visit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateOnly?>("CheckInDate")
+                        .HasColumnType("date");
+
+                    b.Property<TimeOnly?>("CheckInTime")
+                        .HasColumnType("time");
+
+                    b.Property<TimeOnly?>("CheckOutTime")
+                        .HasColumnType("time");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Purpose")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VisitType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VisitorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("VisitorId");
+
+                    b.ToTable("Visits");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.VMS.Models.Visitor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Company")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("CreatedDate")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("EmailAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Visitors");
                 });
 
             modelBuilder.Entity("Insurance.Models.ApplicationUser", b =>
@@ -909,6 +1024,25 @@ namespace Insurance.Migrations
                     b.Navigation("Likehood");
                 });
 
+            modelBuilder.Entity("Insurance.Areas.VMS.Models.Visit", b =>
+                {
+                    b.HasOne("Insurance.Areas.VMS.Models.Employee", "EmployeeToMeet")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Insurance.Areas.VMS.Models.Visitor", "Visitor")
+                        .WithMany("Visits")
+                        .HasForeignKey("VisitorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EmployeeToMeet");
+
+                    b.Navigation("Visitor");
+                });
+
             modelBuilder.Entity("Insurance.Models.District", b =>
                 {
                     b.HasOne("Insurance.Models.State", "State")
@@ -991,6 +1125,11 @@ namespace Insurance.Migrations
             modelBuilder.Entity("Insurance.Areas.Admins.Models.LogisticDispatch", b =>
                 {
                     b.Navigation("LogisticItems");
+                });
+
+            modelBuilder.Entity("Insurance.Areas.VMS.Models.Visitor", b =>
+                {
+                    b.Navigation("Visits");
                 });
 #pragma warning restore 612, 618
         }

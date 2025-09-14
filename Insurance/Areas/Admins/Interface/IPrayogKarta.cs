@@ -1,5 +1,4 @@
 ﻿using Insurance.Areas.Admins.ViewModels;
-using Insurance.Models;
 using Insurance.ViewModels;
 
 namespace Insurance.Areas.FinanceSys.Interface

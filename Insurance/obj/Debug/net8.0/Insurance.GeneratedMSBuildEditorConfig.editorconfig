@@ -140,16 +140,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmlza1xWaWV3c1xSaXNrUmVnaXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/Risk/Views/Shared/_AddDatatable.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmlza1xWaWV3c1xTaGFyZWRcX0FkZERhdGF0YWJsZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/Risk/Views/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmlza1xWaWV3c1xTaGFyZWRcX0FkbWluTGF5b3V0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/Risk/Views/Shared/_UserLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmlza1xWaWV3c1xTaGFyZWRcX1VzZXJMYXlvdXQuY3NodG1s
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/Risk/Views/RiskRegister/RiskReportingManual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmlza1xWaWV3c1xSaXNrUmVnaXN0ZXJcUmlza1JlcG9ydGluZ01hbnVhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/SuryaJyoti/SJAMLCO/Insurance/Areas/Risk/Views/_ViewImports.cshtml]
@@ -158,6 +150,42 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/SuryaJyoti/SJAMLCO/Insurance/Areas/Risk/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmlza1xWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/VMS/Views/Employee/CreateOrEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVk1TXFZpZXdzXEVtcGxveWVlXENyZWF0ZU9yRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/VMS/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVk1TXFZpZXdzXEVtcGxveWVlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/VMS/Views/VisitRegistration/CreateVisit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVk1TXFZpZXdzXFZpc2l0UmVnaXN0cmF0aW9uXENyZWF0ZVZpc2l0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/VMS/Views/VisitRegistration/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVk1TXFZpZXdzXFZpc2l0UmVnaXN0cmF0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/VMS/Views/VisitRegistration/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVk1TXFZpZXdzXFZpc2l0UmVnaXN0cmF0aW9uXFN1Y2Nlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/VMS/Views/VisitRegistration/_DeliveryVisitPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVk1TXFZpZXdzXFZpc2l0UmVnaXN0cmF0aW9uXF9EZWxpdmVyeVZpc2l0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/VMS/Views/VisitRegistration/_InPersonVisitPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVk1TXFZpZXdzXFZpc2l0UmVnaXN0cmF0aW9uXF9JblBlcnNvblZpc2l0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/VMS/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVk1TXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Areas/VMS/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVk1TXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/SuryaJyoti/SJAMLCO/Insurance/Views/Common/CreateSiteSetting.cshtml]
@@ -200,6 +228,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/SuryaJyoti/SJAMLCO/Insurance/Views/Shared/_AddDatatable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGREYXRhdGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/SuryaJyoti/SJAMLCO/Insurance/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -210,6 +246,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/SuryaJyoti/SJAMLCO/Insurance/Views/Shared/_SideBar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlQmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/SuryaJyoti/SJAMLCO/Insurance/Views/Shared/_UserLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/SuryaJyoti/SJAMLCO/Insurance/Views/Shared/_ValidationScriptsPartial.cshtml]

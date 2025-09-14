@@ -1,0 +1,68 @@
+﻿@model IEnumerable<VisitViewModel>
+@{
+    ViewData["Title"] = "Visit Registration";
+    int i = 1;
+
+}
+
+<div class="d-flex mb-3">
+    <a asp-area="VMS" asp-controller="VisitRegistration" asp-action="CreateVisit"
+       class="btn btn-sm btn-outline-primary">
+        <i class="bi bi-plus-circle-fill"></i>&nbsp; New Visit
+    </a>
+</div>
+
+<div class="card card-form">
+    <div class="card-body p-4">
+        <div class="table-responsive">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead class="table-light">
+                    <tr>
+                        <th>S.N</th>
+                        <th>Actions</th>
+                        <th>@Html.DisplayNameFor(model => model.VisitorId)</th>
+                        <th>@Html.DisplayNameFor(model => model.EmployeeId)</th>
+                        <th>@Html.DisplayNameFor(model => model.Purpose)</th>
+                        <th>@Html.DisplayNameFor(model => model.CheckInTime)</th>
+                        <th>@Html.DisplayNameFor(model => model.CheckOutTime)</th>
+                        <th>@Html.DisplayNameFor(model => model.VisitType)</th>
+                        <th>@Html.DisplayNameFor(model => model.Notes)</th>
+                        <th>@Html.DisplayNameFor(model => model.Status)</th>
+                        <th>@Html.DisplayNameFor(model => model.CreatedAt)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>
+                                <div class="d-inline">
+                                    <a asp-action="CreateUpdate" asp-route-id="@item.Id" class="text-decoration-none me-3"><i class="bi bi-pencil"></i></a>
+                                </div>
+                            </td>
+                            <td>@item.VisitorId</td>
+                            <td>@item.EmployeeId</td>
+                            <td>@item.Purpose</td>
+                            <td>@item.CheckInTime</td>
+                            <td>@item.CheckOutTime</td>
+                            <td>@item.VisitType</td>
+                            <td>@item.Notes</td>
+                            <td>@item.Status</td>
+                            <td>@item.CreatedAt</td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<partial name="_AddDatatable">
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }

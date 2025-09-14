@@ -26,6 +26,7 @@ wwwroot\images\frontImg.jpg
 wwwroot\images\logo.png
 wwwroot\images\person-icon.png
 wwwroot\images\statics\avataaars.svg
+wwwroot\images\statics\logo.ico
 wwwroot\js\adminlte.min.js
 wwwroot\js\adminlte.min.js.map
 wwwroot\js\apexcharts.js

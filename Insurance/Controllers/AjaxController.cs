@@ -23,5 +23,10 @@ namespace Insurance.Controllers
         {
             return Json(await _utility.GetPalikaSelectListItems(id));
         }
+        [AllowAnonymous]
+        public async Task<JsonResult> GetEmployeeByDepartment(string name)
+        {
+            return Json(await _utility.GetEmployeeByDepartment(name));
+        }
     }
 }

@@ -53,8 +53,9 @@ namespace Insurance.Areas.Risk.Repository
                 ["IT"] = "IT",
                 ["REINSURANCE"] = "RI",
                 ["TRAINING"] = "TRN",
-                ["UNDERWRITING"] = "UND"
-            };
+                ["UNDERWRITING"] = "UND",
+                ["RISK DEPARTMENT"] = "RISK`",
+            };           
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
@@ -66,6 +67,7 @@ namespace Insurance.Areas.Risk.Repository
                         {
                             data.RegisterDate = model.RegisterDate;
                             data.RiskDescription = model.RiskDescription;
+                            data.Username = model.Department;
                             data.Department = model.Department;
                             data.PrimaryRisk = model.PrimaryRisk;
                             data.SecondaryRisk = model.SecondaryRisk;
@@ -131,6 +133,7 @@ namespace Insurance.Areas.Risk.Repository
                         {
 
                             RiskID =newRiskId,
+                            Username=model.Department,
                             LikehoodId = await _context.Likehoods.Where(x=>x.Name==model.LikeHood).Select(x=>x.Id).FirstOrDefaultAsync(),
                             ImpactId = await _context.Impacts.Where(x => x.Name == model.Impact).Select(x => x.Id).FirstOrDefaultAsync(),
                             RegisterDate = model.RegisterDate,
@@ -208,7 +211,7 @@ namespace Insurance.Areas.Risk.Repository
                                     {
                                         ID = x.ID,
                                         RiskID = x.RiskID,
-                                       // Username = username,
+                                        Username = x.Username,
                                         RegisterDate = x.RegisterDate,
                                         RiskDescription = x.RiskDescription,
                                         Department = x.Department,
@@ -240,7 +243,7 @@ namespace Insurance.Areas.Risk.Repository
                                     {
                                         ID = x.ID,
                                         RiskID = x.RiskID,
-                                        //Username = await _context.Users.Where(x => x.Id == userId).Select(x => x.PrayogkartaName).FirstOrDefaultAsync(),
+                                        Username = x.Username,
                                         RegisterDate = x.RegisterDate,
                                         RiskDescription = x.RiskDescription,
                                         Department = x.Department,
@@ -274,7 +277,7 @@ namespace Insurance.Areas.Risk.Repository
                 {
                     ID = x.ID,
                     RiskID = x.RiskID,
-                    //Username = username,
+                    Username = x.Username,
                     RegisterDate = x.RegisterDate,
                     RiskDescription = x.RiskDescription,
                     Department = x.Department,
@@ -319,56 +322,59 @@ namespace Insurance.Areas.Risk.Repository
             int row = 2;
             while (true)
             {
-                var idCell = sheet.Cell(row, "A");
+                var idCell = sheet.Cell(row, "B");
                 var riskId = idCell.GetString().Trim();
                 if (string.IsNullOrWhiteSpace(riskId))
                     break;
 
                 try
                 {
+                    var username = sheet.Cell(row, "A").GetString().Trim();
+
                     // RegisterDate (nullable DateTime)
                     DateTime? registerDate = null;
-                    if (!sheet.Cell(row, "B").IsEmpty())
-                        registerDate = sheet.Cell(row, "B").GetDateTime();
+                    if (!sheet.Cell(row, "C").IsEmpty())
+                        registerDate = sheet.Cell(row, "C").GetDateTime();
 
                     // Text fields (may be empty)
-                    var description = sheet.Cell(row, "C").GetString().Trim();
-                    var department = sheet.Cell(row, "D").GetString().Trim();
-                    var primaryRisk = sheet.Cell(row, "E").GetString().Trim();
-                    var secondaryRisk = sheet.Cell(row, "F").GetString().Trim();
-                    var riskOwner = sheet.Cell(row, "L").GetString().Trim();
-                    var mitigationAction = sheet.Cell(row, "M").GetString().Trim();
-                    var riskStatus = sheet.Cell(row, "N").GetString().Trim();
-                    var riskResponse = sheet.Cell(row, "P").GetString().Trim();
-                    var remarks = sheet.Cell(row, "Q").GetString().Trim();
+                    var description = sheet.Cell(row, "D").GetString().Trim();
+                    var department = sheet.Cell(row, "E").GetString().Trim();
+                    var primaryRisk = sheet.Cell(row, "F").GetString().Trim();
+                    var secondaryRisk = sheet.Cell(row, "G").GetString().Trim();
+                    var riskOwner = sheet.Cell(row, "M").GetString().Trim();
+                    var mitigationAction = sheet.Cell(row, "N").GetString().Trim();
+                    var riskStatus = sheet.Cell(row, "O").GetString().Trim();
+                    var riskResponse = sheet.Cell(row, "Q").GetString().Trim();
+                    var remarks = sheet.Cell(row, "R").GetString().Trim();
 
                     // Numeric fields (nullable int)
                     int? likeHoodId = null;
-                    if (!sheet.Cell(row, "G").IsEmpty())
-                        likeHoodId = sheet.Cell(row, "G").GetValue<int>();
+                    if (!sheet.Cell(row, "H").IsEmpty())
+                        likeHoodId = sheet.Cell(row, "H").GetValue<int>();
 
                     int? impactId = null;
-                    if (!sheet.Cell(row, "H").IsEmpty())
-                        impactId = sheet.Cell(row, "H").GetValue<int>();
+                    if (!sheet.Cell(row, "I").IsEmpty())
+                        impactId = sheet.Cell(row, "I").GetValue<int>();
 
                     int? quantification = null;
-                    if (!sheet.Cell(row, "K").IsEmpty())
-                        quantification = sheet.Cell(row, "K").GetValue<int>();
+                    if (!sheet.Cell(row, "L").IsEmpty())
+                        quantification = sheet.Cell(row, "L").GetValue<int>();
 
                     // ClosedDate (nullable DateTime)
                     DateTime? closedDate = null;
-                    if (!sheet.Cell(row, "O").IsEmpty())
-                        closedDate = sheet.Cell(row, "O").GetDateTime();
+                    if (!sheet.Cell(row, "P").IsEmpty())
+                        closedDate = sheet.Cell(row, "P").GetDateTime();
 
                     // UpdatedDate (nullable DateTime)
                     DateTime? updatedDate = null;
-                    if (!sheet.Cell(row, "R").IsEmpty())
-                        updatedDate = sheet.Cell(row, "R").GetDateTime();
+                    if (!sheet.Cell(row, "S").IsEmpty())
+                        updatedDate = sheet.Cell(row, "S").GetDateTime();
 
                     // Map into entity (make sure these props are nullable)
                     var entity = new RiskRegister
                     {
                         RiskID = riskId,
+                        Username= username,
                         RegisterDate = registerDate,
                         RiskDescription = description,
                         Department = department,

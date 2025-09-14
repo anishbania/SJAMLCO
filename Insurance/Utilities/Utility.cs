@@ -352,6 +352,16 @@ namespace Insurance.Utilities
         {
             return new SelectList(await _context.RiskStatus.ToListAsync(), "Name", "Name");
         }
+        
+        public async Task<SelectList> GetEmployeeSelectListItems()
+        {
+            return new SelectList(await _context.Employee.ToListAsync(), "Id", "FullName");
+        } 
+        
+        public async Task<SelectList> GetEmployeeByDepartment(string name)
+        {
+            return new SelectList(await _context.Employee.Where(x => (x.Department == name || name == null)).Distinct().ToListAsync(), "FullName", "FullName");
+        }
         //private string GetDynamicFiscalYear(DateTime date)
         //{
         //    int bsYear;

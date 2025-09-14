@@ -1,0 +1,31 @@
+﻿@model VisitViewModel
+@inject IUtility _utility
+
+<h4 class="mb-3">Step 2: Delivery Details</h4>
+<div class="row">
+    <input asp-for="VisitDocument.VisitId" type="hidden" class="form-control" />
+    <div class="col-md-6 mb-3">
+        <label asp-for="VisitDocument.DocumentName" class="form-label"></label>
+        <input asp-for="VisitDocument.DocumentName" class="form-control" />
+        <span asp-validation-for="VisitDocument.DocumentName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="VisitDocument.DocumentType" class="form-label"></label>
+        <input asp-for="VisitDocument.DocumentType" class="form-control" />
+        <span asp-validation-for="VisitDocument.DocumentType" class="text-danger"></span>
+    </div> 
+    <div class="col-md-6 mb-3">
+        <label asp-for="VisitDocument.ScanType" class="form-label"></label>
+        <input asp-for="VisitDocument.ScanType" class="form-control" />
+        <span asp-validation-for="VisitDocument.ScanType" class="text-danger"></span>
+    </div> 
+    <div class="col-md-6 mb-3">
+        <label asp-for="VisitDocument.File" class="form-label"></label>
+        <input asp-for="VisitDocument.File" accept="image/png, image/gif, image/jpeg, application/pdf" multiple="multiple" class="form-control" />
+        <span asp-validation-for="VisitDocument.File" class="text-danger"></span>
+    </div>   
+</div>
+<div class="mt-3">
+    <button id="btnBack" type="button" class="btn btn-secondary">Back</button>
+    <button type="submit" class="btn btn-success">Submit Registration</button>
+</div>

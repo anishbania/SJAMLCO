@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rcSzYTgSn5hIfFhu0tC4twfp04BNz+79q7pLAKuBhWg=",
+  "Hash": "7cVsp8j9CRiARDtjWJzzD/nnpRD05hBXFfrOuJdrjr8=",
   "Source": "Insurance",
   "BasePath": "_content/Insurance",
   "Mode": "Default",
@@ -645,6 +645,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\statics\\avataaars.svg"
+    },
+    {
+      "Identity": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\statics\\logo.ico",
+      "SourceId": "Insurance",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\",
+      "BasePath": "_content/Insurance",
+      "RelativePath": "images/statics/logo#[.{fingerprint}]?.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1bb2w5rqqv",
+      "Integrity": "vSkqNmIsWTs5H/rf99TYhYgvqsQoRgz+KQwz20w5xZ4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\statics\\logo.ico"
     },
     {
       "Identity": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\js\\adminlte.min.js",
@@ -8175,6 +8196,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ZYOO2rFfkuY8pJ0GLgQSQjGI6CTauqo3q5K5uQpbHpQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/statics/logo.1bb2w5rqqv.ico",
+      "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\statics\\logo.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3518"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vSkqNmIsWTs5H/rf99TYhYgvqsQoRgz+KQwz20w5xZ4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 30 Jun 2025 04:28:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1bb2w5rqqv"
+        },
+        {
+          "Name": "label",
+          "Value": "images/statics/logo.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vSkqNmIsWTs5H/rf99TYhYgvqsQoRgz+KQwz20w5xZ4="
+        }
+      ]
+    },
+    {
+      "Route": "images/statics/logo.ico",
+      "AssetFile": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\wwwroot\\images\\statics\\logo.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3518"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vSkqNmIsWTs5H/rf99TYhYgvqsQoRgz+KQwz20w5xZ4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 30 Jun 2025 04:28:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vSkqNmIsWTs5H/rf99TYhYgvqsQoRgz+KQwz20w5xZ4="
         }
       ]
     },

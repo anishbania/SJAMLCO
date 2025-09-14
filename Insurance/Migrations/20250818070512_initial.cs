@@ -98,6 +98,22 @@ namespace Insurance.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Employee",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Department = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employee", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FinanceTypes",
                 columns: table => new
                 {
@@ -288,6 +304,23 @@ namespace Insurance.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Visitors",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Company = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Visitors", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -433,6 +466,7 @@ namespace Insurance.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RiskID = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RegisterDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     RiskDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Department = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -487,6 +521,42 @@ namespace Insurance.Migrations
                         column: x => x.StateId,
                         principalTable: "State",
                         principalColumn: "StateId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Visits",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    VisitorId = table.Column<int>(type: "int", nullable: false),
+                    EmployeeId = table.Column<int>(type: "int", nullable: false),
+                    Purpose = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Department = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CheckInTime = table.Column<TimeOnly>(type: "time", nullable: true),
+                    CheckInDate = table.Column<DateOnly>(type: "date", nullable: true),
+                    CheckOutTime = table.Column<TimeOnly>(type: "time", nullable: true),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    VisitType = table.Column<int>(type: "int", nullable: false),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Visits", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Visits_Employee_EmployeeId",
+                        column: x => x.EmployeeId,
+                        principalTable: "Employee",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Visits_Visitors_VisitorId",
+                        column: x => x.VisitorId,
+                        principalTable: "Visitors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -610,6 +680,16 @@ namespace Insurance.Migrations
                 name: "IX_RiskRegisters_LikehoodId",
                 table: "RiskRegisters",
                 column: "LikehoodId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Visits_EmployeeId",
+                table: "Visits",
+                column: "EmployeeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Visits_VisitorId",
+                table: "Visits",
+                column: "VisitorId");
         }
 
         /// <inheritdoc />
@@ -670,6 +750,9 @@ namespace Insurance.Migrations
                 name: "SiteSetting");
 
             migrationBuilder.DropTable(
+                name: "Visits");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
@@ -689,6 +772,12 @@ namespace Insurance.Migrations
 
             migrationBuilder.DropTable(
                 name: "Likehoods");
+
+            migrationBuilder.DropTable(
+                name: "Employee");
+
+            migrationBuilder.DropTable(
+                name: "Visitors");
 
             migrationBuilder.DropTable(
                 name: "CourierVendor");

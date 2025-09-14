@@ -1,6 +1,7 @@
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\Insurance.exe
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\libman.json
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\Insurance.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\Insurance.runtimeconfig.json
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\Insurance.pdb
@@ -85,6 +86,7 @@ C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\NuGet.Packaging.dl
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\NuGet.ProjectModel.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\NuGet.Protocol.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\NuGet.Versioning.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\QRCoder.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\RBush.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\SixLabors.Fonts.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\obj\Release\net8.0\PubTmp\Out\SQLitePCLRaw.batteries_v2.dll

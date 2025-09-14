@@ -1,0 +1,76 @@
+﻿@model VisitViewModel
+@{
+    ViewData["Title"] = "Visitor Registration";
+}
+
+<div class="container mt-2">
+    <div class="card p-4 mb-2">
+        <form id="visitForm" asp-controller="Visit" asp-action="CreateVisit" method="post">
+            @Html.AntiForgeryToken()
+            <div id="visit-type-step">
+                <h4 class="mb-3">Step 1: Select Visit Type</h4>
+                <div class="form-group">
+                    <label asp-for="VisitType" class="form-label"></label>
+                    <select id="VisitType" class="form-control" asp-for="VisitType" asp-items="Html.GetEnumSelectList<VisitType>()">
+                        <option value="">--Please select a visit type--</option>
+                    </select>
+                    <span asp-validation-for="VisitType" class="text-danger"></span>
+                </div>
+                <div class="mt-3">
+                    <button id="btnContinue" type="button" class="btn btn-primary">Continue</button>
+                </div>
+            </div>
+
+            <div id="dynamicFields" style="margin-top:20px;"></div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            // --- Step 1 to Step 2 Transition ---
+            $('#btnContinue').on('click', function () {
+                var visitType = $('#VisitType').val();
+                var visitTypeText = $('#VisitType option:selected').text();
+
+                // Validate selection
+                if (!visitType) {
+                    alert('Please select a visit type to continue.');
+                    return;
+                }
+
+                // AJAX call to get the partial view for Step 2
+                $.ajax({
+                    url: '@Url.Action("GetVisitPartial", "VisitRegistration", new { area = "VMS" })',
+                    type: 'GET',
+                    data: { type: visitTypeText },
+                    success: function (data) {
+                        // Hide Step 1 and show Step 2 content
+                        $('#visit-type-step').hide();
+                        $('#dynamicFields').html(data);
+
+                        // Important: Re-parse the form for unobtrusive validation to work on new fields
+                        var form = $('#visitForm');
+                        form.removeData('validator');
+                        form.removeData('unobtrusiveValidation');
+                        $.validator.unobtrusive.parse(form);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Failed to load dynamic fields:', error);
+                        alert('An error occurred. Please try again.');
+                    }
+                });
+            });
+             // --- Back Button Logic ---
+             $(document).on('click', '#btnBack', function() {
+                $('#dynamicFields').empty();
+                $('#visit-type-step').show();
+            });
+        });
+    </script>
+}

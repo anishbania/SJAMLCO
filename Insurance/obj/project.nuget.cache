@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "91uVgs3tWWg=",
+  "dgSpecHash": "f7XnwjeNDuk=",
   "success": true,
   "projectFilePath": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\Insurance.csproj",
   "expectedPackageFiles": [
@@ -150,6 +150,7 @@
     "C:\\Users\\anish.baniya\\.nuget\\packages\\nuget.projectmodel\\6.11.0\\nuget.projectmodel.6.11.0.nupkg.sha512",
     "C:\\Users\\anish.baniya\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\anish.baniya\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
+    "C:\\Users\\anish.baniya\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512",
     "C:\\Users\\anish.baniya\\.nuget\\packages\\rbush.signed\\4.0.0\\rbush.signed.4.0.0.nupkg.sha512",
     "C:\\Users\\anish.baniya\\.nuget\\packages\\sixlabors.fonts\\1.0.0\\sixlabors.fonts.1.0.0.nupkg.sha512",
     "C:\\Users\\anish.baniya\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",

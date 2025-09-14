@@ -1,0 +1,56 @@
+﻿@model IEnumerable<EmployeeViewModel>
+@{
+    ViewData["Title"] = "Employee List";
+    int i = 1;
+
+}
+
+<div class="d-flex mb-3">
+    <a asp-area="VMS" asp-controller="Employee" asp-action="CreateOrEdit"
+       class="btn btn-sm btn-outline-primary">
+        <i class="bi bi-plus-circle-fill"></i>&nbsp; New Employee
+    </a>
+</div>
+
+<div class="card card-form">
+    <div class="card-body p-4">
+        <div class="table-responsive">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead class="table-light">
+                    <tr>
+                        <th>S.N</th>
+                        <th>Actions</th>
+                        <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                        <th>@Html.DisplayNameFor(model => model.Department)</th>
+                        <th>@Html.DisplayNameFor(model => model.Email)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>
+                                <div class="d-inline">
+                                    <a asp-action="CreateOrEdit" asp-route-id="@item.Id" class="text-decoration-none me-3"><i class="bi bi-pencil"></i></a>
+                                </div>
+                            </td>
+                            <td>@item.FullName</td>
+                            <td>@item.Department</td>
+                            <td>@item.Email</td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<partial name="_AddDatatable">
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }

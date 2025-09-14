@@ -1,0 +1,87 @@
+﻿@model VisitViewModel
+@inject IUtility _utility
+
+<h4 class="mb-3">Step 2: Visitor Details</h4>
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label asp-for="VisitorDetails.FullName" class="form-label"></label>
+        <input asp-for="VisitorDetails.FullName" class="form-control" />
+        <span asp-validation-for="VisitorDetails.FullName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="VisitorDetails.Company" class="form-label"></label>
+        <input asp-for="VisitorDetails.Company" class="form-control" />
+        <span asp-validation-for="VisitorDetails.Company" class="text-danger"></span>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="Department" class="form-label"></label>
+        <select id="Department" asp-for="Department" class="form-control" asp-items="@await _utility.GetDepartmentSelectListItems() as SelectList">
+            <option value="" selected disabled>--Please Select--</option>
+        </select>
+        <span asp-validation-for="Department" class="text-danger"></span>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="EmployeeId" class="form-label"></label>
+        <select id="EmployeeId" asp-for="EmployeeId" class="form-control" asp-items="@await _utility.GetEmployeeSelectListItems() as SelectList">
+            <option value="" selected disabled>--Please Select--</option>
+        </select>
+        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="LengthOfMeeting" class="form-label"></label>
+        <select asp-for="LengthOfMeeting" class="form-control">
+            <option selected="selected" value="">Please select a duration</option>
+            <option value="00:15:00">15 minutes</option>
+            <option value="00:30:00">30 minutes</option>
+            <option value="01:00:00">1 hour</option>
+            <option value="01:30:00">1 hour 30 minutes</option>
+            <option value="02:00:00">2 hours</option>
+            <option value="03:00:00">3 hours</option>
+        </select>
+        <span asp-validation-for="LengthOfMeeting" class="text-danger"></span>
+
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="Purpose" class="form-label"></label>
+        <textarea asp-for="Purpose" class="form-control"></textarea>
+        <span asp-validation-for="Purpose" class="text-danger"></span>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="Notes" class="form-label"></label>
+        <textarea asp-for="Notes" class="form-control"></textarea>
+        <span asp-validation-for="Notes" class="text-danger"></span>
+    </div>
+</div>
+<div class="mt-3">
+    <button id="btnBack" type="button" class="btn btn-secondary">Back</button>
+    <button type="submit" class="btn btn-success">Submit Registration</button>
+</div>
+<script>
+    $(document).ready(function() {
+             $('#EmployeeId').empty().append('<option value="" disabled selected>--Please Select--</option>');
+             $('#Department').on('change', function () {
+               var name = $(this).val();
+               if (!name) {
+                 $('#EmployeeId').empty().append('<option value="" disabled selected>--Please Select--</option>');
+                 return;
+               }
+               $.ajax({
+                 url: '@Url.Action("GetEmployeeByDepartment", "Ajax", new { area = "" })',
+                 type: 'GET',
+                 data: { name: name },
+                 success: function(data) {
+                   var $employee = $('#EmployeeId').empty().append('<option value="" disabled selected>--Please Select--</option>');
+                   $.each(data, function(i, item) {
+                     $employee.append(
+                       $('<option>').val(item.value).text(item.text)
+                     );
+                   });
+                 },
+                 error: function(xhr, status, error) {
+                   console.error('Failed to load employees:', error);
+                   alert('Unable to load employees for the selected department.');
+                 }
+               });
+             });
+           });
+</script>

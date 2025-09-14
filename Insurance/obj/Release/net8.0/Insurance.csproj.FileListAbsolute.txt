@@ -309,3 +309,5 @@ C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\ExcelNumberFormat.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\RBush.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\SixLabors.Fonts.dll
 C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\System.IO.Packaging.dll
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\libman.json
+C:\SuryaJyoti\SJAMLCO\Insurance\bin\Release\net8.0\QRCoder.dll
