@@ -9083,23 +9083,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anish.baniya\\.nuget\\packages\\": {},
+    "C:\\Users\\acer\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\Insurance.csproj",
+      "projectUniqueName": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\Insurance\\Insurance.csproj",
       "projectName": "Insurance",
-      "projectPath": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\Insurance.csproj",
-      "packagesPath": "C:\\Users\\anish.baniya\\.nuget\\packages\\",
-      "outputPath": "C:\\SuryaJyoti\\SJAMLCO\\Insurance\\obj\\",
+      "projectPath": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\Insurance\\Insurance.csproj",
+      "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\Insurance\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\anish.baniya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -9126,7 +9126,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -9208,7 +9208,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

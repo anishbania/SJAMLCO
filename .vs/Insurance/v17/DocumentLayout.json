@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\SuryaJyoti\\SJAMLCO\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9F8E6F1E-231C-4AD2-BBD3-2F28F92B0B22}|Insurance\\Insurance.csproj|c:\\users\\acer\\desktop\\sj\\sjamlco\\insurance\\areas\\vms\\views\\visitregistration\\createvisit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F8E6F1E-231C-4AD2-BBD3-2F28F92B0B22}|Insurance\\Insurance.csproj|solutionrelative:insurance\\areas\\vms\\views\\visitregistration\\createvisit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F8E6F1E-231C-4AD2-BBD3-2F28F92B0B22}|Insurance\\Insurance.csproj|c:\\users\\acer\\desktop\\sj\\sjamlco\\insurance\\areas\\vms\\views\\visitregistration\\_inpersonvisitpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F8E6F1E-231C-4AD2-BBD3-2F28F92B0B22}|Insurance\\Insurance.csproj|solutionrelative:insurance\\areas\\vms\\views\\visitregistration\\_inpersonvisitpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F8E6F1E-231C-4AD2-BBD3-2F28F92B0B22}|Insurance\\Insurance.csproj|c:\\users\\acer\\desktop\\sj\\sjamlco\\insurance\\areas\\vms\\controllers\\visitregistrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F8E6F1E-231C-4AD2-BBD3-2F28F92B0B22}|Insurance\\Insurance.csproj|solutionrelative:insurance\\areas\\vms\\controllers\\visitregistrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,64 @@
       "DocumentGroups": [
         {
           "DockedWidth": 219,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_InPersonVisitPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\Insurance\\Areas\\VMS\\Views\\VisitRegistration\\_InPersonVisitPartial.cshtml",
+              "RelativeDocumentMoniker": "Insurance\\Areas\\VMS\\Views\\VisitRegistration\\_InPersonVisitPartial.cshtml",
+              "ToolTip": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\Insurance\\Areas\\VMS\\Views\\VisitRegistration\\_InPersonVisitPartial.cshtml",
+              "RelativeToolTip": "Insurance\\Areas\\VMS\\Views\\VisitRegistration\\_InPersonVisitPartial.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-14T06:08:31.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateVisit.cshtml",
+              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\Insurance\\Areas\\VMS\\Views\\VisitRegistration\\CreateVisit.cshtml",
+              "RelativeDocumentMoniker": "Insurance\\Areas\\VMS\\Views\\VisitRegistration\\CreateVisit.cshtml",
+              "ToolTip": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\Insurance\\Areas\\VMS\\Views\\VisitRegistration\\CreateVisit.cshtml",
+              "RelativeToolTip": "Insurance\\Areas\\VMS\\Views\\VisitRegistration\\CreateVisit.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-14T06:07:35.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VisitRegistrationController.cs",
+              "DocumentMoniker": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\Insurance\\Areas\\VMS\\Controllers\\VisitRegistrationController.cs",
+              "RelativeDocumentMoniker": "Insurance\\Areas\\VMS\\Controllers\\VisitRegistrationController.cs",
+              "ToolTip": "C:\\Users\\acer\\Desktop\\SJ\\SJAMLCO\\Insurance\\Areas\\VMS\\Controllers\\VisitRegistrationController.cs",
+              "RelativeToolTip": "Insurance\\Areas\\VMS\\Controllers\\VisitRegistrationController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwCwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T06:05:04.399Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         }
