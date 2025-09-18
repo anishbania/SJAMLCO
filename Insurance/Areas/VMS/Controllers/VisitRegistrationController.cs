@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Insurance.Areas.VMS.Controllers
 {
+    [Authorize(Roles = "IT,Admin,User")]
     [Area("VMS")]
     public class VisitRegistrationController : Controller
     {
@@ -21,6 +22,7 @@ namespace Insurance.Areas.VMS.Controllers
         {
             return View(await _visitRegistration.GetAllAsync());
         }
+        [AllowAnonymous]
         public async Task<IActionResult> CreateVisit(int? id)
         {
             return View(await _visitRegistration.GetByIdAsync(id));

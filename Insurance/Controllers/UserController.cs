@@ -12,7 +12,7 @@ using System.Security.Claims;
 
 namespace Insurance.Controllers
 {
-    [Authorize(Roles = "RSuperAdmin,IT")]
+    [Authorize(Roles = "RSuperAdmin,IT,Admin,User")]
     public class UserController : Controller
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
