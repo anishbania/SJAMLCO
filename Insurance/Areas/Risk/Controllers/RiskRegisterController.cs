@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Insurance.Areas.Risk.Controllers
 {
-    [Authorize(Roles = "IT,RAdmin,RSuperAdmin")]
+    [Authorize(Roles = "IT,RAdmin,RSuperAdmin,Admin,User")]
     [Area("Risk")]
     public class RiskRegisterController : Controller
     {

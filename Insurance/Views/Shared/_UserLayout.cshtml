@@ -14,15 +14,22 @@
         </div>
     </div>
 </li>
-@* 
+
 <!-- Collapsible: Newly Added -->
-<li class="nav-item">
+@* <li class="nav-item">
     <a class="nav-link collapsed" href="#collapseNewlyAddedUser" data-bs-toggle="collapse"
        aria-expanded="false" aria-controls="collapseNewlyAddedUser">
         <i class="fas fa-fw fa-plus-circle"></i>
         <span>Newly Added</span>
         <i class="fas fa-angle-down float-end"></i>
     </a>
+    <div id="collapseNewlyAdded" class="collapse">
+        <div class="bg-white py-2 collapse-inner rounded shadow-sm">
+            <a class="collapse-item" asp-area="Admins" asp-action="Index" asp-controller="Courier">
+                <i class="far fa-clone me-2"></i>Courier Dispatch
+            </a>
+        </div>
+    </div>
 </li> *@
 
 <!-- Collapsible: Risk Register -->
@@ -37,6 +44,28 @@
         <div class="bg-white py-2 collapse-inner rounded shadow-sm">
             <a class="collapse-item" asp-area="Risk" asp-action="Index" asp-controller="RiskRegister">
                 <i class="fas fa-exclamation-circle me-2"></i>Risk Register
+            </a>
+            <a class="collapse-item" asp-area="Risk" asp-action="RiskReportingManual" asp-controller="RiskRegister">
+                <i class="fas fa-exclamation-circle me-2"></i>Risk Reporting Manual
+            </a>
+        </div>
+    </div>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#collapseVMS" data-bs-toggle="collapse"
+       aria-expanded="false" aria-controls="collapseVMS">
+        <i class="fas fa-fw fa-exclamation-triangle"></i>
+        <span>Visitor Management</span>
+        <i class="fas fa-angle-down float-end"></i>
+    </a>
+    <div id="collapseVMS" class="collapse">
+        <div class="bg-white py-2 collapse-inner rounded shadow-sm">
+            <a class="collapse-item" asp-area="VMS" asp-action="Index" asp-controller="Employee">
+                <i class="bi bi-person-badge me-2"></i>Employee Register
+            </a>
+            <a class="collapse-item" asp-area="VMS" asp-action="Index" asp-controller="VisitRegistration">
+                <i class="bi bi-person-plus me-2"></i>Visitor Registration
             </a>
         </div>
     </div>

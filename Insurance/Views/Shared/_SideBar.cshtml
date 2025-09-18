@@ -121,11 +121,11 @@
                                 <p>Dashboard</p>
                             </a>
                         </li>
-                        @if (User.IsInRole("IT") || User.IsInRole("RSuperAdmin"))
+                        @if (User.IsInRole("IT") || User.IsInRole("RSuperAdmin") || User.IsInRole("Admin"))
                         {
                             <partial name="~/Views/Shared/_AdminLayout.cshtml" />
                         }
-                        @if (User.IsInRole("RAdmin"))
+                        @if (User.IsInRole("RAdmin") || User.IsInRole("User"))
                         {
                             <partial name="~/Views/Shared/_UserLayout.cshtml" />
                         }

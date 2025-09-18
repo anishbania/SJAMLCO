@@ -20,7 +20,7 @@
                 <i class="fas fa-user-alt me-2"></i>User Management
                
             </a>
-            @if (User.IsInRole("IT"))
+            @if (User.IsInRole("IT") || User.IsInRole("Admin"))
             {
                 <a class="collapse-item" asp-action="Roles" asp-controller="PrayogKarta" asp-area="Admins">
                     <i class="fas fa-user-cog me-2"></i> Role Management
@@ -32,7 +32,7 @@
 </li>
 
 <!-- Collapsible: Newly Added -->
-@if (User.IsInRole("IT") || User.IsInRole("RSuperAdmin"))
+@if (User.IsInRole("IT"))
 {
     <li class="nav-item">
         <a class="nav-link collapsed" href="#collapseNewlyAdded" data-bs-toggle="collapse"

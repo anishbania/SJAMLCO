@@ -12,6 +12,7 @@ using System.Globalization;
 
 namespace Insurance.Areas.VMS.Controllers
 {
+    [Authorize(Roles = "IT,Admin,User")]
     [Area("VMS")]
     public class VisitRegistrationController : Controller
     {
