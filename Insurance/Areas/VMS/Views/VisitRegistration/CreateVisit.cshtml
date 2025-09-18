@@ -32,7 +32,7 @@
             <div id="qrContainer" class="mt-3" style="display:none;">
                 <h5>Open this page on your phone</h5>
                 <img id="qrImage" src="" alt="QR Code for CreateVisit" style="width:200px;height:200px;" />
-                <p class="small text-muted mt-2">Scan to open the Create Visit page on your phone.</p>
+                <p class="small text-muted mt-2">Scan to open the Create Visit page on your phone (valid for 10 minutes).</p>
             </div>
 
             <div id="dynamicFields" style="margin-top:20px;"></div>
@@ -48,32 +48,38 @@
         $(document).ready(function () {
             var $qrContainer = $('#qrContainer');
             var $qrImage = $('#qrImage');
-            var qrLoaded = false;
-            var qrUrl = '@Url.Action("QrCodeForCreateVisit", "VisitRegistration", new { area = "VMS" })';
 
-            // Show / Hide QR toggle
+            // Base endpoint for QR generation on server. Server should generate a tokenized QR (10-min).
+            var qrEndpoint = '@Url.Action("QrCodeForCreateVisit", "VisitRegistration", new { area = "VMS" })';
+
+            // Helper to force a fresh request (avoid cached PNG)
+            function freshQrUrl() {
+                return qrEndpoint + '?_=' + new Date().getTime();
+            }
+
+            // Show / Hide QR toggle — always request a fresh QR when showing
             $('#btnShowQr').on('click', function () {
-                if (!qrLoaded) {
-                    $qrImage.attr('src', qrUrl);
-                    qrLoaded = true;
-                }
                 if ($qrContainer.is(':visible')) {
+                    // hide
                     $qrContainer.hide();
                     $(this).text('Show QR');
                 } else {
+                    // show fresh QR (fresh token generated server-side)
+                    $qrImage.attr('src', freshQrUrl());
                     $qrContainer.show();
                     $(this).text('Hide QR');
                 }
             });
 
-            // Download QR
+            // Download a fresh QR (new token)
             $('#btnDownloadQr').on('click', function () {
-                var link = document.createElement('a');
-                link.href = qrUrl;
-                link.download = 'createvisit-qr.png';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                var url = freshQrUrl();
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'createvisit-qr.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
             });
 
             // Continue -> hide QR controls and load step 2
@@ -115,7 +121,7 @@
             });
 
             // Back -> show QR controls again
-            $(document).on('click', '#btnBack', function () {
+            $(document).on('click', '#btnBack', function () {   
                 $('#dynamicFields').empty();
                 $('#visit-type-step').show();
                 $('#btnShowQr').show();
@@ -125,5 +131,4 @@
             });
         });
     </script>
-
 }

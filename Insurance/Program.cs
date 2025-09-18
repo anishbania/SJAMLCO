@@ -65,6 +65,8 @@ builder.Services.AddAuthorization(options =>
         policy.RequireClaim(ClaimTypes.Role, "Admin"));
 });
 
+builder.Services.AddDataProtection();
+
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
